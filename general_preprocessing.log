@@ -1,29 +1,23 @@
 INFO:general_preprocessing:
 
 Log File for general preprocessing
-INFO:general_preprocessing:bgzipping file: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883.vcf
-INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883.vcf.gz
-INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883.vcf.gz
-INFO:general_preprocessing:file before reheader: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883.vcf.gz
-INFO:general_preprocessing:file after reheader: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP.vcf.gz
-INFO:general_preprocessing:command to reheader vcf: echo "UDN238771"|bcftools reheader -s - -o "/scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP.vcf.gz.tmp" "/scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883.vcf.gz"
-INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP.vcf.gz
-INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP.vcf.gz
-INFO:general_preprocessing:file before multiallelic splitting, left allignment and normalization: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP.vcf.gz
-INFO:general_preprocessing:file after multiallelic splitting, left allignment and normalization: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA.vcf.gz
-INFO:general_preprocessing:command to do multiallelic splitting, left allignment and normalization:bcftools norm --multiallelics - --check-ref x --fasta-ref=/share/PI/euan/apps/bcbio/genomes/Hsapiens/GRCh37/seq/GRCh37.fa /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP.vcf.gz --output-type z --output /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA.vcf.gz
-INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA.vcf.gz
-INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA.vcf.gz
-INFO:general_preprocessing:file before duplicate removal: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA.vcf.gz
-INFO:general_preprocessing:file after duplicate removal: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD.vcf.gz
-INFO:general_preprocessing:command for duplicate removal bcftools norm -d both /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA.vcf.gz --output-type z --output /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD.vcf.gz
-INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD.vcf.gz
-INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD.vcf.gz
-INFO:general_preprocessing:file before stripping chr prefix: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD.vcf.gz
-INFO:general_preprocessing:file after stripping chr prefix: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP.vcf.gz
-INFO:general_preprocessing:command for stripping chr prefix bcftools annotate --rename-chrs /scratch/PI/euan/common/udn/code/chromosome_notation.txt /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD.vcf.gz --output-type z --output /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP.vcf.gz
-INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP.vcf.gz
-INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP.vcf.gz
-INFO:general_preprocessing:cmd to rename file to the new name: mv /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP.vcf.gz /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP_final_preprocessed.vcf.gz
-INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP_final_preprocessed.vcf.gz
-INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP_final_preprocessed.vcf.gz
+INFO:general_preprocessing:bgzipping file: /scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884.vcf
+INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884.vcf.gz
+INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884.vcf.gz
+INFO:general_preprocessing:file before reheader: /scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884.vcf.gz
+INFO:general_preprocessing:file after reheader: /scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884_rhP.vcf.gz
+INFO:general_preprocessing:command to reheader vcf: echo "UDN474088"|bcftools reheader -s - -o "/scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884_rhP.vcf.gz.tmp" "/scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884.vcf.gz"
+INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884_rhP.vcf.gz
+INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884_rhP.vcf.gz
+INFO:general_preprocessing:file before multiallelic splitting, left allignment and normalization: /scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884_rhP.vcf.gz
+INFO:general_preprocessing:file after multiallelic splitting, left allignment and normalization: /scratch/PI/euan/common/udn/gateway/data/UDN474088/UDN474088-SL255884_rhP_smA.vcf.gz
+INFO:general_preprocessing:command to do multiallelic splitting, left allignment and normalization:bcftools norm --multiallelics - --check-ref x --fasta-ref=/share/PI/euan/apps/bcbio/genomes/Hsapiens/GRCh37/seq/GRCh37.fa /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz --output-type z --output /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz
+INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz
+INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz
+INFO:general_preprocessing:file before duplicate removal: /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz
+INFO:general_preprocessing:file after duplicate removal: /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz
+INFO:general_preprocessing:command for duplicate removal bcftools norm -d both /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz --output-type z --output /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz
+INFO:general_preprocessing:tabixing file: /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz
+INFO:general_preprocessing:command to tabix file: tabix /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz
+INFO:general_preprocessing:file before stripping chr prefix: /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz
+INFO:general_preprocessing:file after stripping chr prefix: /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD_chP.vcf.gz

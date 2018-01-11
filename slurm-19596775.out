@@ -1,0 +1,15 @@
+Lines   total/split/realigned/skipped:	11453530/607860/637895/0
+Lines   total/split/realigned/skipped:	12396865/0/0/0
+***** start general_preprocessing.py *****
+input vcf name /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883.vcf
+bgzip -c /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883.vcf > "/scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883.vcf.gz"
+Traceback (most recent call last):
+  File "general_preprocessing.py", line 344, in <module>
+    main()
+  File "general_preprocessing.py", line 339, in main
+    finalVcf = apply_preprocessing(inputVcf, outputDir, reheaderVcf, splitMultiallelic, stripChrPrefix, concat, removeDups, deleteIntermediateFiles, snpFile, indelFile, outputFile)
+  File "general_preprocessing.py", line 280, in apply_preprocessing
+    currentWorkingVcf = rename_to_final(currentWorkingVcf, outputFile)
+  File "general_preprocessing.py", line 191, in rename_to_final
+    return finalName
+NameError: global name 'finalName' is not defined

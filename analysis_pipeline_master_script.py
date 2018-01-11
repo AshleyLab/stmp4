@@ -142,7 +142,8 @@ def get_directory_of_file(filePath):
 #find the final preprocessed vcf which is the vcf with the suffix final_preprocessed
 #C: THIS IS EXTREMELY UNRELIABLE, NEEDS TO BE REPLACED
 #THERE NEEDS TO BE A WAY OF RELIABLY GETTING FILE PRODUCED BY GENERAL_PREPROCESSING.PY
-def find_final_preprocessed_vcf(dirPath):
+def find_final_preprocessed_vcf_DEPRECATED(dirPath): #DEPCREATED
+		
 	print 'finding vcf in ' + dirPath
 	print 'returning automatically ' + "/scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP_final_preprocessed.vcf.gz"
 	return "/scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883_rhP_smA_rmD_chP_final_preprocessed.vcf.gz"
@@ -239,10 +240,14 @@ if len(controlParamDict['inputOrProbandVcf']) > 0:  #only do the following if an
 			if 'rhP' in controlParamDict['preprocessing']: reheaderVcf = 'rhP'
 			if 'ccP' in controlParamDict['preprocessing']: concat = 'ccP'
 			if 'rmD' in controlParamDict['preprocessing']: removeDups = 'rmD'
-			cmd = 'python {preprocessingScript} {iVcf} {d} {sMAllelic} {sChrPrefix} {reheadVcf} {ccat} {rDups} {dIFiles} {snp} {indel}'.format(
+
+	
+			outputFile = v + ".preprocessed"
+
+			cmd = 'python {preprocessingScript} {iVcf} {o} {sMAllelic} {sChrPrefix} {reheadVcf} {ccat} {rDups} {dIFiles} {snp} {indel}'.format(
 					preprocessingScript = preprocessingScriptPath,
 					iVcf = v,
-					d = outputDir,
+					o = outputFile,
 					sMAllelic = splitMultiallelic,
 					sChrPrefix = stripChrPrefix,
 					reheadVcf = reheaderVcf,
@@ -255,11 +260,15 @@ if len(controlParamDict['inputOrProbandVcf']) > 0:  #only do the following if an
 			print cmd
 			subprocess.Popen(cmd, shell=True).wait()
 			#finally we reset the value in our vcfs array to be the final preprocessed vcf (C: it's overwritten (?))
-			vcfs[cntr] = os.path.join(fileDirectory, find_final_preprocessed_vcf(fileDirectory))
+			#vcfs[cntr] = os.path.join(fileDirectory, find_final_preprocessed_vcf(fileDirectory))
+			vcfs[cntr] = outputFile
 			cntr += 1
 
 	#if there are multiple VCFS we are working with please merge them
 	
+	print 'vcfs'
+	print(vcfs)
+
 	vcfNames = []
 
 	for vcf in vcfs: 
@@ -274,8 +283,12 @@ if len(controlParamDict['inputOrProbandVcf']) > 0:  #only do the following if an
 
 		vcfNames.append(vcf)
 
+	print "vcfnames"
+	print(vcfNames)
+
 	if len(vcfs) > 1:
 		print 'multiple vcfs'
+		print(vcfNames)
 		#vcfNames = vcfs
 		cmd = 'bcftools merge -o finalOutputMergedVcf.vcf ' + ' '.join(vcfNames) #TODO ALERT SPECIFY FORMATTING FOR VCF NAMES
 		print cmd

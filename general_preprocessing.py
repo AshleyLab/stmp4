@@ -183,9 +183,9 @@ def stripChromosomePrefix(vcf_filepath, out_dir, skip_if_exists=False):
     return outputFile
 
 #renames the last vcf we completed to a name with the flag 'final preprocessed'
-def rename_to_final(vcfPath):
-	finalName = strip_suffix(vcfPath, False) + '_final_preprocessed.vcf.gz'
-	cmd = 'mv {src} {dst}'.format(src = vcfPath, dst = finalName)
+def rename_to_final(vcfPath, outputFile):
+	#finalName = strip_suffix(vcfPath, False) + '_final_preprocessed.vcf.gz'
+	cmd = 'mv {src} {dst}'.format(src = vcfPath, dst = outputFile)
 	logger.info('cmd to rename file to the new name: ' + cmd)
 	subprocess.Popen(cmd, shell=True).wait()
 	return finalName
@@ -206,7 +206,8 @@ def apply_preprocessing(inputVcf, outputDir,
 	removeDups,
 	deleteIntermediateFiles,
 	snpFile,
-	indelFile
+	indelFile, 
+	outputFile
 	):
 
 	#TODO apply sorting ???
@@ -276,7 +277,7 @@ def apply_preprocessing(inputVcf, outputDir,
 
 	#rename the vcf to flag it as the final one
 	#for now we dont rename to final
-	currentWorkingVcf = rename_to_final(currentWorkingVcf)
+	currentWorkingVcf = rename_to_final(currentWorkingVcf, outputFile)
 
 	tabix_file(currentWorkingVcf)
 	print 'final vcf stored at :', currentWorkingVcf
@@ -315,14 +316,15 @@ def main():
 	#run_unit_tests()
 
 	if len(sys.argv) < 2:
-		print "help--run program by specifying input vcf, output directory, followed by a list of preprocessing arguments, i.e: python stmp_preprocessing.py inputVcf outputDir stripChrPrefix  |options availible: , splitMultiallelic, stripChrPrefix, reheaderVcf, concat, norm, removeDups"
+		print "help--run program by specifying input vcf, output directory, followed by a list of preprocessing arguments, i.e: python stmp_preprocessing.py inputVcf outputFile stripChrPrefix  |options availible: , splitMultiallelic, stripChrPrefix, reheaderVcf, concat, norm, removeDups"
 		print "note: if concat is specified, you must specify the snp and indel files as the two last arguments of the function"
 		print "currently if concat is specified you just need to specify a dummy input vcf variable TODO FIX THIS"
 		sys.exit(1)
 	#a list of common variants from db snp
 	inputVcf = sys.argv[1]
 	print 'input vcf name ' + inputVcf
-	outputDir = sys.argv[2]
+	outputFile = sys.argv[2]
+	outputDir = os.path.dirname(outputFile)
 	preprocessingArgs = sys.argv[3:]
 	splitMultiallelic, stripChrPrefix, reheaderVcf, concat, removeDups, deleteIntermediateFiles = parse_args(preprocessingArgs)
 	#if concat is true that means we must've specified a snp and indel file via the command line
@@ -334,7 +336,7 @@ def main():
 		snpFile = None
 		indelFile = None
 
-	finalVcf = apply_preprocessing(inputVcf, outputDir, reheaderVcf, splitMultiallelic, stripChrPrefix, concat, removeDups, deleteIntermediateFiles, snpFile, indelFile)
+	finalVcf = apply_preprocessing(inputVcf, outputDir, reheaderVcf, splitMultiallelic, stripChrPrefix, concat, removeDups, deleteIntermediateFiles, snpFile, indelFile, outputFile)
 	print "final preprocessed vcf: ", finalVcf
 	print '***** end general_preprocessing.py *****'
 

@@ -1,5 +1,0 @@
-{'preprocessing   chP     rhP     smA     rmD': [], 'inputOrProbandBam': [], 'filtering fbL': [], 'udnId   UDN238771': [], 'variantListToFilterOn   ': [], 'websearchAnnotations  omim': ['fathmm  mTaster sift  phylop  mgi'], 'alreadyGeneratedXls': [], 'familyVcfs      ': [], 'calling rtg': [], 'gcXls': ['/scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771_2018.xlsx'], 'familyBams': [], 'familyFastqs': [], 'finalOutputDir  /scratch/PI/euan/common/udn/gateway/data/UDN238771/charlie2/': [], 'annotation      exA     gnA': ['clV'], 'inputOrProbandFastq': [], 'inputOrProbandVcf       /scratch/PI/euan/common/udn/gateway/data/UDN238771/UDN238771-SL255883.vcf': [], 'runArchitecture': [], 'pedFile': [], 'debugArguments  saveFiles': []}
-Traceback (most recent call last):
-  File "analysis_pipeline_master_script.py", line 178, in <module>
-    outputDir = controlParamDict['finalOutputDir'][0]
-KeyError: 'finalOutputDir'
