@@ -1,5 +1,5 @@
-# stmp3
-A third, more modest but less broken version of stmp
+# stmp4
+A fourth!, more modest but less broken version of stmp
 
 **usage**: python analysis_pipeline_master_script.py argument_configs.tsv 
 please refer to the file template.tsv for an explanation of potential arguments
