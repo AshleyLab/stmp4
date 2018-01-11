@@ -1,0 +1,20 @@
+[[annotation]]
+file="/scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz"
+fields = ["AF_AFR", "AF_AMR", "AF_ASJ", "AF_EAS", "AF_FIN", "AF_NFE", "AF_OTH", "AF_SAS", "AN_AFR", "AN_AMR", "AN_ASJ", "AN_EAS", "AN_FIN", "AN_NFE", "AN_OTH", "AN_SAS", "AN_POPMAX", "AN_Female", "AN_Male", ]
+ops=["first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first"]
+
+[[annotation]]
+file="/scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz"
+fields = ["KG_AF_POPMAX", "ESP_AF_POPMAX", "clinvar_pathogenic", "KG_AF_GLOBAL", "KG_AC", "POPMAX", "AN_POPMAX", "AC_POPMAX", "AF", "AN", "AN_AFR", "AN_AMR", "AN_ASJ", "AN_EAS", "AN_FIN", "AN_NFE", "AN_OTH", "AN_SAS", ]
+ops=["first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first"]
+
+[[annotation]]
+file="/scratch/PI/euan/common/stmpDatafiles/clinvar_20170905.vcf.gz"
+fields = ["CLNSIG"]
+ops=["first"]
+
+[[postannotation]]
+fields=["lua_start"]
+op="lua:lua_start - 2"
+name="lua_start_minus_2"
+type="Integer"
