@@ -164,7 +164,7 @@ def vcf_to_xls(vcfFilePath, outputDir, udnId):
 	return outputXlsxName
 
 #just for testing
-#alert add processing for proper gzipping etc
+#alert add processing for proper (b?)gzipping etc
 #vcf = '/home/noahfrie/common/udn/gateway/data/UDN781395/747009-UDN781395-P_HLYC7BCXY-2-ID07._ccP_rhP_smA_rmD_chP_final_preprocessed_fbL_testVCFANNO.vcf'
 #vcf_to_xls(vcf)
 

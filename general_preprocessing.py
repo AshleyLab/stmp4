@@ -3,16 +3,9 @@
 #it archives all commands run 
 #it is different than stmp preprocessing which is just filters that are run ahead of time (hence "preprocessing) for runtime considerations
 
-import sys
-import subprocess
-import vcf
-import vcfUtils
-import general_utils
+import sys, subprocess, vcf, vcfUtils, general_utils, os, logigng
 #import segregation_util
-import os
-import logging
 #import stmp_annotation_util
-
 
 fasta_ref="/share/PI/euan/apps/bcbio/genomes/Hsapiens/GRCh37/seq/GRCh37.fa"
 
@@ -23,8 +16,8 @@ logging.basicConfig(level=logging.INFO, filemode='w', filename='general_preproce
 logger.setLevel(logging.INFO)
 logger.info("\n\nLog File for general preprocessing")
 
-#given a filepath extracts the udn id number and returns it
-#ie 547485_UDN123456_reheader.vcf.gz returns UDN123456
+#Given a filepath, extracts the UDNID 
+#E.g., 547485_UDN123456_reheader.vcf.gz returns UDN123456
 def extract_udnid(filename):
 	cntr = 0
 	for c in filename:
@@ -39,16 +32,13 @@ def extract_udnid(filename):
 	sys.exit()
 
 
-#strips the .vcf.gz suffix from a filename, allowing us to extend it
-#note that this function assumes that every file is of the form .vcf.gz
-#if its not we are in trouble
-
-#FIX THIS--ie the way its extracting the last letter of the vcf name is sketchy
+#Strips the ".vcf.gz" suffix from a filename, allowing us to extend it
+#TODO: kinda sketchy
 def strip_suffix(vcfFile, snpIndelMode):
 	suffix = vcfFile[len(vcfFile) - 7:]
-	if suffix != '.vcf.gz':
-		print vcfFile
-		print "error file does not end in vcf.gz"
+	if suffix != ".vcf.gz":
+		print(vcfFile)
+		print("error file does not end in vcf.gz")
 		sys.exit()
 	if snpIndelMode:
 		#hard coded return values based on the conventions of how the vcf files are named
@@ -62,25 +52,24 @@ def strip_suffix(vcfFile, snpIndelMode):
 		return vcfFile[:len(vcfFile) - 7]
 
 
-############### compress and index vcf file
-# bgzip - Block compression/decompression utility
+#Compresses a VCF
 def bgzip_file(f):
-	if f[len(f) - 1] != 'f': 
-		print 'error trying to zip something that isnt a .vcf file'
-		print 'maybe the file is already compressed? If so please decompress it and try again'
-		print f
+	if f[len(f) - 3] != "vcf":
+		print(f, "doesn't look like an uncompressed VCF") 
 		sys.exit()
-	logger.info('bgzipping file: ' + f) #comma to plus
-	cmd = 'bgzip -c {fileToBeZipped} > "{fileToBeZipped}.gz"'.format(fileToBeZipped = f)
-	#logger.info('command to bgzip file: ' + cmd)
+
+	cmd = "bgzip -c {fileToBeZipped} > {fileToBeZipped}.gz".format(fileToBeZipped = f)
+	logger.info("command to bgzip file: " + cmd)
 	print cmd
+
 	subprocess.Popen(cmd, shell=True).wait()
+	print("Bgzipping done")
 
 	#return the filepath for the bgzipped file
-	return f + '.gz'
+	return f + ".gz"
 
-#checks if any filenames exist in the current directory
-#note this is not sensitive to the diffece between reheader.vcf and reheader_norm.vcf.  To make this distinction you need to pass in reheader. as the flagStr
+#Finds files in curDir with flagStr in their name
+#Note: not sensitive to the difference between reheader.vcf and reheader_norm.vcf if flagStr is "reheader"; to make this distinction, pass in "reheader." as the flagStr
 def check_if_exists(curDir, flagStr):
 	for subdir, dirs, files in os.walk(curDir):
 		for f in files:
@@ -88,45 +77,48 @@ def check_if_exists(curDir, flagStr):
 				return f
 	return None
 
-# Tabix indexes a TAB-delimited genome position file in.tab.bgz and creates an index file ( in.tab.bgz.tbi or in.tab.bgz.csi ) when region is absent from the command-line.
-# The input data file must be position sorted and compressed by bgzip
-# TODO: The input data file must be position sorted. this is not tested and done yet
+#Creates a Tabix index file for a bgzipped (.vcf.gz) VCF
 def tabix_file(f):
-	logger.info('tabixing file: ' + f) #C: comma to plus
 	cmd = 'tabix {fileToBeTabix}'.format(fileToBeTabix = f)
 	logger.info('command to tabix file: ' + cmd)
+	print("Tabixing", cmd)
 	subprocess.Popen(cmd, shell=True).wait()
-	#note: we dont return anything (having the tabix'd file is sufficient)
+	print("Tabixing done")
 
-
-# bcftools concat: combine VCF/BCF files. All source files must have the same sample columns appearing in the same order.
-# -a, --allow-overlaps: First coordinate of the next file can precede last record of the current file.
-# -O, --output-type: Output compressed BCF (b), uncompressed BCF (u), compressed VCF (z), uncompressed VCF (v)
-# -o, --output FILE
+#Concatenate SNP and INDEL VCF files
 def concat_snp_indel(snpFile, indelFile):
-	logger.info("concatinating " + snpFile + " and " + indelFile)
+
+	logger.info("concatenating " + snpFile + " and " + indelFile)
 	outputFile = strip_suffix(snpFile, True) + '_ccP.vcf.gz'
-	cmd = 'bcftools concat --allow-overlaps {snps} {indels} --output-type z --output {oFile}'.format(snps = snpFile, indels = indelFile, oFile = outputFile)
+
+	cmd = "bcftools concat --allow-overlaps {snps} {indels} --output-type z --output {oFile}".format(snps = snpFile, indels = indelFile, oFile = outputFile)
+	# bcftools concat: combine VCF/BCF files. All source files must have the same sample columns appearing in the same order.
+	# -a, --allow-overlaps: First coordinate of the next file can precede last record of the current file.
+	# -O, --output-type: Output compressed BCF (b), uncompressed BCF (u), compressed VCF (z), uncompressed VCF (v)
+	# -o, --output FILE
+	
+	print("Concatting", cmd)
 	subprocess.Popen(cmd, shell=True).wait()
 	logger.info("output file after concatination: ", outputFile)
 	logger.info("cmd to concatinate snp and indel files: ", cmd)
-	#return the output file path
+	print("Concatting done")	
+
 	return outputFile
 
-
+#Reheaders a VCF
 #bcftools reheader: reheader vcf/bcf files
 #-h, --header FILE
 #-o, --output FILE
 #-s, --samples FILE
 #new sample names, one name per line, in the same order as they appear in the VCF file. Alternatively, only samples which need to be renamed can be listed as "old_name new_name\n" pairs separated by whitespaces, each on a separate line. If a sample name contains spaces, the spaces can be escaped using the backslash character, for example "Not\ a\ good\ sample\ name".
-#Note that the convoluted logic of this code is a legacy of prag's vcf reheader which can be found in the master branch of the udn pipeline
 def reheader_vcf(vcfFilePath):
+
 	reheadered_vcf_path = general_utils.rreplace(vcfFilePath, '.vcf', '_rhP.vcf', num_occurrences=1)
 	reheadered_vcf_path_tmp = reheadered_vcf_path+'.tmp'
 
-	#extract the udn id from the vcf file path
-	vcf_name = extract_udnid(vcfFilePath)
-	cmd = 'echo "{udnid}"|bcftools reheader -s - -o "{reheadered_vcf_path_tmp}" "{non_reheadered_vcf_path}"'.format(udnid=vcf_name, reheadered_vcf_path_tmp=reheadered_vcf_path_tmp, non_reheadered_vcf_path=vcfFilePath)
+	UDNID = extract_udnid(vcfFilePath)
+	cmd = 'echo "{udnid}" | bcftools reheader -s - -o "{reheadered_vcf_path_tmp}" "{non_reheadered_vcf_path}"'.format(udnid=UDNID, reheadered_vcf_path_tmp=reheadered_vcf_path_tmp, non_reheadered_vcf_path=vcfFilePath) #Can remove quotation marks here?
+
 	subprocess.Popen(cmd, shell=True).wait()
 	os.rename(reheadered_vcf_path_tmp, reheadered_vcf_path)
 	logger.info('file before reheader: ' + vcfFilePath)

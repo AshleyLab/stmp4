@@ -22,7 +22,6 @@ import write_annotated_vcf_to_xls
 import merge_and_process_xls
 import general_preprocessing
 import annotate_from_web_searches
-#import segregation_util
 
 #Location of this script (useful for tools like vcfanno where we need to cd in and out of this directory)
 scriptPath = '/home/ccurnin/stmp3/analysis_pipeline_master_script.py'
@@ -41,13 +40,13 @@ def parse_control_tsv(tsvPath):
 			if line[0] == "#": #Lines that begin with "#" are recognized as comments
 				continue
 			
-			lineData = line.strip('\n').split('\t') #Get rid of new lines, split line on tabs
+			lineData = line.strip('\n').split('\t') #Get rid of newlines, split line on tabs
 			
-			#Fill controlParamDict, using the first item in the line, the argument name, as the key. the cont
+			#Fill controlParamDict using the first item in the line, the argument name, as the key
 			values = []
 
 			for item in lineData[1:]: 
-				if not item.isspace() and item != '': valuesappend(item)  
+				if not item.isspace() and item != '': values.append(item)  
 			controlParamDict[lineData[0]] = values
 
 	return controlParamDict
@@ -216,9 +215,9 @@ if len(controlParamDict['inputOrProbandVcf']) > 0:
 
 		finalVCF = outputFile
 
-		#Zip (bgzip? gzip?) the VCF, if it's not zipped already
+		#Bgzip the VCF, if it's not zipped already
 		if ".gz" not in finalVCF: 
-			cmdGzip = "gzip " + finalVCF
+			cmdGzip = "bgzip " + finalVCF
 			print("Gzipping", cmdGzip)
 			subprocess.Popen(cmdGzip, shell=True).wait()
 			finalVCF += ".gz"
