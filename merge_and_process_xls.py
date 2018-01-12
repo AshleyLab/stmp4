@@ -83,9 +83,9 @@ def read_xls_sheets(xlsName):
 	return sheetDict, sheetNames
 
 def sort_sheets(df):
-	print df
+	#print df
 	sys.exit()
-	print df.sort([''])
+	#print df.sort([''])
 
 #arbitrary function for fixing issues with STMP/ingenuity inconsistency
 #basically if there is a stmp pos that is close to or equal to ingenuity pos overwrite the ingenuity pos with the stmp pos

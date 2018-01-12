@@ -23,7 +23,7 @@ Here are the stages of processing data in the pipeline goes through, and the ass
   * **smA**--split multiallelics and left normalize
   * **chP**--strip chr prefix
   * **rhP**--reheader vcf
-  * **ccP**--concat snp and indel vcfs (note if you include this argument for a case with SNP/INDEL vcfs it will break
+  * **ccP**--concat snp and indel vcfs (note if you include this argument for a case with SNP/INDEL vcfs it will break; if the ccP preprocessing argument is specified we will search the directory the input vcfs are in an merge them with the complementary snp or indel vcf?
   * **rmD**--remove duplicate records
 
 **Part 3**: perform pre annotation filtering. Specify arguments on the *filtering* line of the configuration tsv. The goal of pre annotation filtering is to reduce the size of the vcf with filter steps before the main computationally intensive steps begin. 

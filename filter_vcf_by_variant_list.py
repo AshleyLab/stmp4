@@ -5,24 +5,37 @@ import pandas as pd
 import sys
 
 def filter_vcf_by_variant_list(variantTextFile, vcf, outputFileName):
-	#first we need to bgzip the file
-	#check if the file is not compressed, if it is compress it
-	print 'filtering ' + vcf
+	print("**START filter_vcf_by_variant_list**")
+	print("filtering " + vcf)
+
+	#We need a .vcf.gz
+	#If the file is not compressed, compress it
+
 	if '.gz' not in vcf:
+
+		print("bgzipping")
+
 		cmd = 'bgzip {iVcf}'.format(iVcf = vcf)
 		subprocess.Popen(cmd, shell=True).wait()
 		vcf = vcf + '.gz' 
+
+		print("bgzipped vcf about to be filtered: " + vcf)
+
 		cmd = 'tabix {iVcf}'.format(iVcf = vcf)
 		subprocess.Popen(cmd, shell=True).wait()
+
 	cmd = 'bcftools view {iVcf} -R {variantTFile} -o {outputFName}'.format(
 			iVcf = vcf,
 			variantTFile = variantTextFile,
 			outputFName = outputFileName
 		)
+
 	print 'bcftools command: ', cmd
 	subprocess.Popen(cmd, shell=True).wait()
+
 	print outputFileName
-	return outputFileName
+	print("**END filter_vcf_by_variant_list**")
+	#return outputFileName
 
 #utility function to write a xls to a variant list
 #hey alert, we probaly want to write this file to the GC work file area

@@ -182,13 +182,12 @@ def stripChromosomePrefix(vcf_filepath, out_dir, skip_if_exists=False):
 
     return outputFile
 
-#renames the last vcf we completed to a name with the flag 'final preprocessed'
+#renames the last vcf we completed to the outputFile given to genera_preprocessing.py by the master script
 def rename_to_final(vcfPath, outputFile):
-	#finalName = strip_suffix(vcfPath, False) + '_final_preprocessed.vcf.gz'
 	cmd = 'mv {src} {dst}'.format(src = vcfPath, dst = outputFile)
 	logger.info('cmd to rename file to the new name: ' + cmd)
 	subprocess.Popen(cmd, shell=True).wait()
-	return finalName
+	return outputFile
 
 
 def delete_intermediate_files(intermediateFiles):
