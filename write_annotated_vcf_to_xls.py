@@ -125,42 +125,32 @@ def vcf_to_xls(vcfFilePath, outputDir, udnId):
 		infoFieldsDict = {} #a dict indexed by key containing the info field information: NUMBER?, TYPE, DESCRIPTION
 		print(lines)
 		for line in lines:
-			print line
 			if line[0] == '#':
-				print 'is #'
 				#read in the info fields
 				if line[0:6] == '##INFO':
-					print 'is info'
 					parse_info_header(line, infoFieldsDict)
 			else:
-				print 'is not #'
 				splitLineFields = line.split('\t')
 				if firstRecordFlag: #do special initialization of the df for the first row 
-					print 'is firstRecordFlag'
 					formatTags = splitLineFields[8].split(':')
-					print 'initializing infoDf'
 					infoDf = initialize_info_df(infoFieldsDict, formatTags)
-					print 'infoDf initialized'
-					print(infoDf)
+					print "infoDf initialized"
 					df = initialize_df(infoFieldsDict, formatTags)
 					firstRecordFlag = False
 				set_row_of_df(df, df.columns, splitLineFields, infoFieldsDict) #sets the current row 
 	if onlyKeepSpecifiedColumns:
-		print 'is onlyKeepSpecifiedColumns'
-		print 'resetting infoDf'
+		print 'Resetting infoDf'
 		infoDf = only_keep_specified_rows(infoDf, columnsToInclude)
-		print 'infoDf reset'
-		print(infoDf)
 		df = only_keep_specified_columns(df, columnsToInclude)
 	
 	#and finally write the dataframe to an xls	
 	outputXlsxName = os.path.join(outputDir, udnId + '_stmpAnnotatedOutput.xlsx')	 
 	writer = pd.ExcelWriter(outputXlsxName)
-	print 'I am a cat'
+	print "Calling to_excel..."
 	infoDf.to_excel(writer, 'Column Descriptions', index = False)
 	df.to_excel(writer,'Sheet1', index = False)  
 	writer.save()
-	print 'xlsx data written to ', outputXlsxName
+	print("xlsx data written to", outputXlsxName)
 	return outputXlsxName
 
 #just for testing

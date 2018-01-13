@@ -39,7 +39,7 @@ def merge_and_add_columns(df1, df2, userColumnsToAdd, idxForColMappingsdf1, idxF
 					returnMergedDf.set_value(index, column, r[column])
 	return returnMergedDf
 
-#utility function to convert a value to float if an only if it can be
+#Converts a value to float iff it can be
 def convert_to_float_or_zero(i):
 	try: 
 		float(i)
@@ -48,6 +48,7 @@ def convert_to_float_or_zero(i):
 		return 0
 
 def add_allele_freq_summary_column(df):
+	print(df)
 	alleleFreqCols = ['AF_EAS', 'AF_NFE', 'AF_SAS', 'AF_AMR', 'AF_AFR']
 	df['GNOMAD_Max_Allele_Freq'] = np.empty(len(df.index))
 	df['GNOMAD_Max_Allele_Freq_POP'] = np.empty(len(df.index))
@@ -130,45 +131,55 @@ def merge_columns_across_spreadsheets(spreadSheetPipeline, spreadSheetUser, outp
 	if len(sheetDictUser) != 1:
 		print 'error we expect an excel sheet from the user with a single sheet'
 		sys.exit()
+	
 	mergedDfPipeline = merge_and_add_columns(sheetDictPipeline[sheetDictPipelineNames[1]], sheetDictUser[sheetDictUserNames[0]], [ #indicies indicate where we can find the two actual data spreadsheets
 	'Transcript ID', 'Transcript Variant', 'Protein Variant', 'Gene Region', 'Gene Symbol'], 0, 1) #list of columns to add from the user uploaded columns
 	
-	colsToAddToDf = ['AF_EAS', 'AF_NFE', 'AF_SAS', 'AF_AMR', 'AF_AFR', 'NC', 'NI', 'NA', 'ESP_AF_POPMAX', 'KG_AF_POPMAX', 'SD', 'SF', 'QUAL', 'ID', 'FILTER', 'GT', 'NJ', 'SX', 'GI', 'AN_AFR', 'AN_AMR', 'AN_ASJ', 'AN_EAS', 'AN_FIN', 'AN_NFE', 'AN_OTH', 'AN_SAS', 'clinvar_pathogenic', 'KG_AF_GLOBAL', 'KG_AC', 'POPMAX', 'AN_POPMAX', 'AC_POPMAX', 'AF', 'AN', 'AN_Female', 'AN_Male']
+	colsToAddToDf = ['AF_EAS', 'AF_NFE', 'AF_SAS', 'AF_AMR', 'AF_AFR', 
+	'NC', 'NI', 'NA', 'ESP_AF_POPMAX', 'KG_AF_POPMAX', 
+	'SD', 'SF', 'QUAL', 'ID', 'FILTER', 'GT', 'NJ', 'SX', 'GI', 
+	'AN_AFR', 'AN_AMR', 'AN_ASJ', 'AN_EAS', 'AN_FIN', 'AN_NFE', 'AN_OTH', 'AN_SAS', 
+	'clinvar_pathogenic', 'KG_AF_GLOBAL', 'KG_AC', 'POPMAX', 'AN_POPMAX', 
+	'AC_POPMAX', 'AF', 'AN', 'AN_Female', 'AN_Male']
+
 	colsFinal = []
 	for x in colsToAddToDf: #fix the columns in case they are missing
+		print(x)
 		if x in sheetDictPipeline[sheetDictPipelineNames[1]].columns.tolist():
+			print("appending", x)
 			colsFinal.append(x)
 
-	mergedDfUser = merge_and_add_columns(sheetDictUser[sheetDictUserNames[0]], sheetDictPipeline[sheetDictPipelineNames[1]], colsFinal, 1, 0) # the 0s /1s relate to is it the GC xls first or the pipeline xls first
+	# the 0s /1s relate to is it the GC xls first or the pipeline xls first
+	mergedDfUser = merge_and_add_columns(sheetDictUser[sheetDictUserNames[0]], sheetDictPipeline[sheetDictPipelineNames[1]], colsFinal, 1, 0)
 	add_allele_freq_summary_column(mergedDfUser)
 
-	if False:
-		sort_sheets(mergedDfUser)
+	#if False:
+	#	sort_sheets(mergedDfUser)
 
-	#save everything to an xlsx
+	#Save everything to an XLSX
 	outputXlsxName = os.path.join(outputDir, udnId + '_merged.xlsx')
 
 	writer = pd.ExcelWriter(outputXlsxName,options={'encoding':'latin-1'})
-
 	#sheetDictPipeline[sheetDictPipelineNames[0]].to_excel(writer, 'Column Descriptions', index = False)
 	mergedDfUser.to_excel(writer,'Sheet1', index = False)
 
 	writer.save()
 	return outputXlsxName
 
-
 renameDict = {'SX': 'SwissProtExpression', 'GI': 'ProximalGeneInfo', 'SD': 'SwissProtDiseaseAssociation', 'mTaster': 'MutationTaster', 'SF': 'SwissProtFunction', 'phylop': 'phyloP', 'NI': 'MutationTasterPVal', 'sift': 'Sift', 'GNOMAD_Max_Allele_Freq': 'GNOMADMaxAlleleFreq', 'POPMAX': 'ExacPopmax', 'AN_POPMAX': 'ExacANPopmax', 'AC_POPMAX': 'ExacACPopmax', 'AF':'ExacAf', 'AN':'ExacAn', 'AN_Female': 'GNOMAD_AN_FEMALE', 'AN_Male': 'GNOMAD_AN_MALE'}
-#utility function we use to make the columns of the xls human readable as needed
+#Changes column headers to make them more clear
 def make_cols_human_readable(df): 
+
 	colsToRename = renameDict
-	#make sure we dont try to rename a column that isnt actually there
 	for key, value in colsToRename.items():
+		#Don't rename a column that's not actually there
 		if key not in df.columns.tolist():
 			del colsToRename[key]
+
 	df = df.rename(columns=colsToRename)
 	return df
 
-#check each cell.  If the cell has a comma and the value before the comma is a float, just take the first half
+#If any cell has a comma and the value before the comma is a float, just take the first half
 def clean_up_comma_separated_values(df):
 	cols = df.columns
 	for index, row in df.iterrows():
@@ -194,10 +205,10 @@ def clean_cell_values(df):
 		#clean up commas separated values
 	return df
 
-orderedCols = ['Chromosome', 'Position', 'Reference Allele', 'Sample Allele', 'Variation Type', 'Gene Region', 
-'Gene Symbol', 'Transcript ID', 'Transcript Variant', 'Protein Variant', 'Translation Impact',
-'GNOMAD_Max_Allele_Freq'
-]
+orderedCols = ['Chromosome', 'Position', 'Reference Allele', 'Sample Allele', 'Variation Type',
+'Gene Region', 'Gene Symbol', 'Transcript ID', 'Transcript Variant', 'Protein Variant', 
+'Translation Impact','GNOMAD_Max_Allele_Freq']
+
 def sort_cols(df):
 	#inefficient way to order the columns
 	firstCols = [] #all columns whose order we care about
@@ -212,7 +223,6 @@ def sort_cols(df):
 	df = df.reindex_axis(sortedCols, axis=1)
 	return df
 
-
 #function to rename columns, reorder columns etc in xls data
 def improve_legibility_of_xls(xlsName):
 	xls = pd.ExcelFile(xlsName)
@@ -226,6 +236,3 @@ def improve_legibility_of_xls(xlsName):
 	df.to_excel(writer,'Sheet1', index = False)
 	writer.save()
 	return outputXlsxName
-
-
-

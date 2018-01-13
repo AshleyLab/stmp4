@@ -3,7 +3,7 @@
 #it archives all commands run 
 #it is different than stmp preprocessing which is just filters that are run ahead of time (hence "preprocessing) for runtime considerations
 
-import sys, subprocess, vcf, vcfUtils, general_utils, os, logigng
+import sys, subprocess, vcf, vcfUtils, general_utils, os, logging
 #import segregation_util
 #import stmp_annotation_util
 
@@ -54,10 +54,9 @@ def strip_suffix(vcfFile, snpIndelMode):
 
 #Compresses a VCF
 def bgzip_file(f):
-	if f[len(f) - 3] != "vcf":
-		print(f, "doesn't look like an uncompressed VCF") 
-		sys.exit()
-
+	if f[-3::] != "vcf":
+		print(f, "doesn't look like a VCF") 
+		return
 	cmd = "bgzip -c {fileToBeZipped} > {fileToBeZipped}.gz".format(fileToBeZipped = f)
 	logger.info("command to bgzip file: " + cmd)
 	print cmd
@@ -79,7 +78,7 @@ def check_if_exists(curDir, flagStr):
 
 #Creates a Tabix index file for a bgzipped (.vcf.gz) VCF
 def tabix_file(f):
-	cmd = 'tabix {fileToBeTabix}'.format(fileToBeTabix = f)
+	cmd = 'tabix -f {fileToBeTabix}'.format(fileToBeTabix = f)
 	logger.info('command to tabix file: ' + cmd)
 	print("Tabixing", cmd)
 	subprocess.Popen(cmd, shell=True).wait()
@@ -112,14 +111,18 @@ def concat_snp_indel(snpFile, indelFile):
 #-s, --samples FILE
 #new sample names, one name per line, in the same order as they appear in the VCF file. Alternatively, only samples which need to be renamed can be listed as "old_name new_name\n" pairs separated by whitespaces, each on a separate line. If a sample name contains spaces, the spaces can be escaped using the backslash character, for example "Not\ a\ good\ sample\ name".
 def reheader_vcf(vcfFilePath):
-
+	print("reheadering", vcfFilePath)
 	reheadered_vcf_path = general_utils.rreplace(vcfFilePath, '.vcf', '_rhP.vcf', num_occurrences=1)
-	reheadered_vcf_path_tmp = reheadered_vcf_path+'.tmp'
+	reheadered_vcf_path_tmp = reheadered_vcf_path + '.tmp'
 
 	UDNID = extract_udnid(vcfFilePath)
 	cmd = 'echo "{udnid}" | bcftools reheader -s - -o "{reheadered_vcf_path_tmp}" "{non_reheadered_vcf_path}"'.format(udnid=UDNID, reheadered_vcf_path_tmp=reheadered_vcf_path_tmp, non_reheadered_vcf_path=vcfFilePath) #Can remove quotation marks here?
 
+	print("Reheadering", cmd)
 	subprocess.Popen(cmd, shell=True).wait()
+
+	print("r_v_p_t", reheadered_vcf_path_tmp, "r_v_p", reheadered_vcf_path)
+	
 	os.rename(reheadered_vcf_path_tmp, reheadered_vcf_path)
 	logger.info('file before reheader: ' + vcfFilePath)
 	logger.info('file after reheader: ' + reheadered_vcf_path)

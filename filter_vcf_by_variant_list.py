@@ -21,7 +21,7 @@ def filter_vcf_by_variant_list(variantTextFile, vcf, outputFileName):
 
 		print("bgzipped vcf about to be filtered: " + vcf)
 
-		cmd = 'tabix {iVcf}'.format(iVcf = vcf)
+		cmd = 'tabix -f {iVcf}'.format(iVcf = vcf)
 		subprocess.Popen(cmd, shell=True).wait()
 
 	cmd = 'bcftools view {iVcf} -R {variantTFile} -o {outputFName}'.format(
@@ -44,7 +44,6 @@ def write_xls_to_variant_list(xlsName, udnId):
 	df = xls.parse(xls.sheet_names[0]) 
 	listToBeWritten = []
 	for index, row in df.iterrows():
-		print row
 		listToBeWritten.append((row['Chromosome'], row['Position']))
 	outputFName = udnId + '_variants.txt'
 	listToBeWritten = sorted(listToBeWritten, key=lambda x: x[0]) #fix the order

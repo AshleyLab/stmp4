@@ -24,7 +24,7 @@ import general_preprocessing
 import annotate_from_web_searches
 
 #Location of this script (useful for tools like vcfanno where we need to cd in and out of this directory)
-scriptPath = '/home/ccurnin/stmp4/analysis_pipeline_master_script.py'
+scriptPath = '/home/ccurnin/stmp3/analysis_pipeline_master_script.py'
 
 #Parses arguments.tsv and returns a dictionary
 #The function will break if the tsv doesn't have all fields
@@ -255,6 +255,9 @@ if len(controlParamDict['inputOrProbandVcf']) > 0:
 	
 	print("Step 2 done: currentWorkingVcf is " + currentWorkingVcf)
 
+#TEST
+#sys.exit() - no errors
+
 ##Step 3: Pre-Annotation Filtering
 print("Starting Step 3 with", currentWorkingVcf)
 if len(controlParamDict["filtering"]) > 0:
@@ -290,6 +293,9 @@ if len(controlParamDict["filtering"]) > 0:
 		else: 
 			print("ERROR: can't filter without variantListToFilterOn or gcXls")
 			sys.exit()
+
+#TEST
+#sys.exit() - no errors
 
 ##Step 4: Annotation
 #Absolute paths for annotation files
@@ -337,7 +343,7 @@ if len(controlParamDict['annotation']) > 0:
 	print("Running vcfanno", vcfannoCmd)
 	
 	#1
-	subprocess.Popen(vcfannoCmd, shell=True).wait()
+	subprocess.Popen(cmd, shell=True).wait()
 
 	#2
 	#try:
@@ -345,7 +351,7 @@ if len(controlParamDict['annotation']) > 0:
 	#	subprocess.check_output(vcfannoCmd, shell=True)
 	#except subprocess.CalledProcessError as e:
 	#	print("EXCEPT")
-	#    	print e.output
+	#   	print e.output
 	
 	#print("Done with try-except.")
 	#3
@@ -367,6 +373,9 @@ if len(controlParamDict['annotation']) > 0:
 	os.chdir(scriptPathDir)
 
 	currentWorkingVcf = outputVcfPath
+
+#TEST
+sys.exit()
 
 ##Step 5: Post-Annotation Filtering
 #TODO
@@ -416,7 +425,6 @@ if len(controlParamDict['gcXls']) > 0:
 ##Step 10: Generate PowerPoint Slides from XLS
 cmd = '{pythonP} {pptxScript} '.format(pythonP = pythonPath, pptxScript = powerPointExportScriptPath) + currentWorkingXls + ' ' + udnId + ' ' + outputDir
 print("Generating PowerPoint", cmd)
-print("cwd", os.getcwd())
 subprocess.Popen(cmd, shell=True).wait()
 
 ###PIPELINE ENDS###

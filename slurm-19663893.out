@@ -1,0 +1,89 @@
+Lines   total/split/realigned/skipped:	11461853/533423/542519/0
+Lines   total/split/realigned/skipped:	12278341/0/0/0
+***** start general_preprocessing.py *****
+input vcf name /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf
+bgzip -c /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf > /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz
+Bgzipping done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD_chP.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+Tabixing done
+final vcf stored at : /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+final preprocessed vcf:  /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+***** end general_preprocessing.py *****
+-rw-rw----+ 1 ccurnin euan 742175924 Jan 12 19:26 /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz:	VCF version 4.1 BGZF-compressed variant calling data
+python: can't open file 'general_preprocessing.py': [Errno 2] No such file or directory
+
+=============================================
+vcfanno version 0.2.8 [built with go1.8]
+
+see: https://github.com/brentp/vcfanno
+=============================================
+vcfanno.go:115: found 38 sources from 3 files
+vcfanno.go:187: Info Error: AN_ASJ not found in header >> this error/warning may occur many times. reporting once here...
+vcfanno.go:187: Info Error: lua_start not found in header >> this error/warning may occur many times. reporting once here...
+vcfanno.go:241: annotated 31 variants in 0.30 seconds (103.3 / second)
+{'websearchAnnotations': ['omim', 'fathmm', 'mTaster', 'sift', 'phylop', 'mgi', 'rvis'], 'inputOrProbandBam': [], 'filtering': ['fbL'], 'alreadyGeneratedXls': [], 'debugArguments': [], 'udnId': ['UDN771219'], 'finalOutputDir': ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp/'], 'calling': ['rtg'], 'gcXls': ['/home/ccurnin/toAnnotate/ElM_LOF_output_forCharlie_Chloe_1.xlsx'], 'familyBams': [], 'familyFastqs': [], 'preprocessing': ['chP', 'rhP', 'smA', 'rmD'], 'familyVcfs': [], 'inputOrProbandFastq': [], 'variantListToFilterOn': [], 'runArchitecture': [], 'pedFile': [], 'inputOrProbandVcf': ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf'], 'annotation': ['exA', 'gnA', 'clV']}
+('codeBaseDir, from', 'analysis_pipeline_master_script_5_exit_6.py', 'to', '')
+('preprocessingScriptPath', 'general_preprocessing.py')
+('cwd', '/home/ccurnin/stmp4')
+executing calling arguments:  ['rtg']
+('Executing the preprocessing arguments ', ['chP', 'rhP', 'smA', 'rmD'])
+/home/ccurnin/stmp4
+('Calling general_preprocessing.py', 'python general_preprocessing.py /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz smA chP rhP  rmD False  ')
+('Preprocessing done', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+('vcfs', ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf'])
+('finalVCFs', ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz'])
+single VCF
+Step 2 done: currentWorkingVcf is /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+('Starting Step 3 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+filtering in main script /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+('Filtering fbL, output to', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf')
+('Filtering on list from gcXls', 'UDN771219_variants.txt')
+**START filter_vcf_by_variant_list**
+filtering /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+bcftools command:  bcftools view /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz -R UDN771219_variants.txt -o /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf
+/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf
+**END filter_vcf_by_variant_list**
+new currentWorkingVcf/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf
+('Starting Step 4 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf')
+file="/scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz"
+
+fields = ["AF_AFR", "AF_AMR", "AF_ASJ", "AF_EAS", "AF_FIN", "AF_NFE", "AF_OTH", "AF_SAS", "AN_AFR", "AN_AMR", "AN_ASJ", "AN_EAS", "AN_FIN", "AN_NFE", "AN_OTH", "AN_SAS", "AN_POPMAX", "AN_Female", "AN_Male", ]
+
+ops=["first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first"]
+
+file="/scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz"
+
+fields = ["KG_AF_POPMAX", "ESP_AF_POPMAX", "clinvar_pathogenic", "KG_AF_GLOBAL", "KG_AC", "POPMAX", "AN_POPMAX", "AC_POPMAX", "AF", "AN", "AN_AFR", "AN_AMR", "AN_ASJ", "AN_EAS", "AN_FIN", "AN_NFE", "AN_OTH", "AN_SAS", ]
+
+ops=["first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first"]
+
+file="/scratch/PI/euan/common/stmpDatafiles/clinvar_20170905.vcf.gz"
+
+fields = ["CLNSIG"]
+
+ops=["first"]
+
+('In directory', '/share/PI/euan/apps/stmp3/vcfanno')
+('Running vcfanno', './vcfanno_linux64 -p 4 -lua /share/PI/euan/apps/stmp3/vcfanno/example/custom.lua /home/ccurnin/stmp4/myTestConfFile.toml /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf > /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL_final_annotated_vcf.vcf')
+TRY
+Done with try-except.
+Traceback (most recent call last):
+  File "analysis_pipeline_master_script_5_exit_6.py", line 358, in <module>
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  File "/share/PI/euan/apps/bcbio/anaconda/lib/python2.7/subprocess.py", line 711, in __init__
+    errread, errwrite)
+  File "/share/PI/euan/apps/bcbio/anaconda/lib/python2.7/subprocess.py", line 1343, in _execute_child
+    raise child_exception
+OSError: [Errno 2] No such file or directory

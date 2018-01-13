@@ -1,0 +1,50 @@
+Lines   total/split/realigned/skipped:	11461853/533423/542519/0
+Lines   total/split/realigned/skipped:	12278341/0/0/0
+***** start general_preprocessing.py *****
+input vcf name /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf
+bgzip -c /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf > /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz
+Bgzipping done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz')
+Tabixing done
+('reheadering', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz')
+('Reheadering', 'echo "UDN771219" | bcftools reheader -s - -o "/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz.tmp" "/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz"')
+('r_v_p_t', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz.tmp', 'r_v_p', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz')
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD_chP.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+Tabixing done
+final vcf stored at : /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+final preprocessed vcf:  /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+***** end general_preprocessing.py *****
+-rw-rw----+ 1 ccurnin euan 742175923 Jan 12 19:56 /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz:	VCF version 4.1 BGZF-compressed variant calling data
+{'websearchAnnotations': ['omim', 'fathmm', 'mTaster', 'sift', 'phylop', 'mgi', 'rvis'], 'inputOrProbandBam': [], 'filtering': ['fbL'], 'alreadyGeneratedXls': [], 'debugArguments': [], 'udnId': ['UDN771219'], 'finalOutputDir': ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp/'], 'calling': ['rtg'], 'gcXls': ['/home/ccurnin/toAnnotate/ElM_LOF_output_forCharlie_Chloe_1.xlsx'], 'familyBams': [], 'familyFastqs': [], 'preprocessing': ['chP', 'rhP', 'smA', 'rmD'], 'familyVcfs': [], 'inputOrProbandFastq': [], 'variantListToFilterOn': [], 'runArchitecture': [], 'pedFile': [], 'inputOrProbandVcf': ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf'], 'annotation': ['exA', 'gnA', 'clV']}
+('codeBaseDir, from', 'analysis_pipeline_master_script_3_exit_4.py', 'to', '')
+('preprocessingScriptPath', 'general_preprocessing.py')
+('cwd', '/home/ccurnin/stmp4')
+executing calling arguments:  ['rtg']
+('Executing the preprocessing arguments ', ['chP', 'rhP', 'smA', 'rmD'])
+/home/ccurnin/stmp4
+('Calling general_preprocessing.py', 'python general_preprocessing.py /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz smA chP rhP  rmD False  ')
+('Preprocessing done', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+('vcfs', ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf'])
+('finalVCFs', ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz'])
+single VCF
+Step 2 done: currentWorkingVcf is /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+('Starting Step 3 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+filtering in main script /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+('Filtering fbL, output to', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf')
+('Filtering on list from gcXls', 'UDN771219_variants.txt')
+**START filter_vcf_by_variant_list**
+filtering /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+bcftools command:  bcftools view /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz -R UDN771219_variants.txt -o /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf
+/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf
+**END filter_vcf_by_variant_list**
+new currentWorkingVcf/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf
