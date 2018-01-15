@@ -1,0 +1,1177 @@
+Lines   total/split/realigned/skipped:	11461853/533423/542519/0
+Lines   total/split/realigned/skipped:	12278341/0/0/0
+***** start general_preprocessing.py *****
+input vcf name /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf
+bgzip -c /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf > /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz
+Bgzipping done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz')
+Tabixing done
+('reheadering', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz')
+('Reheadering', 'echo "UDN771219" | bcftools reheader -s - -o "/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz.tmp" "/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf.gz"')
+('r_v_p_t', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz.tmp', 'r_v_p', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz')
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD_chP.vcf.gz')
+Tabixing done
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+Tabixing done
+final vcf stored at : /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+final preprocessed vcf:  /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+***** end general_preprocessing.py *****
+-rw-rw----+ 1 ccurnin euan 742175924 Jan 12 23:00 /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz:	VCF version 4.1 BGZF-compressed variant calling data
+
+=============================================
+vcfanno version 0.2.8 [built with go1.8]
+
+see: https://github.com/brentp/vcfanno
+=============================================
+vcfanno.go:115: found 38 sources from 3 files
+vcfanno.go:187: Info Error: AN_ASJ not found in header >> this error/warning may occur many times. reporting once here...
+vcfanno.go:187: Info Error: lua_start not found in header >> this error/warning may occur many times. reporting once here...
+vcfanno.go:241: annotated 139 variants in 3.16 seconds (44.0 / second)
+-rw-rw----+ 1 ccurnin euan 101698 Jan 12 23:02 /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL_final_annotated_vcf.vcf
+the file should be run by typing the command in this exact manner: 
+python powerpoint_export.py excelSpreadsheetFilename UDNID
+the excel spreadsheet must either be in the same directory as this piece of code or you must explicitly specify its filepath
+make sure your excel filename doesnt have spaces! Spaces confuse linux
+beginning export
+powerpoint export finished, saving powerpoint file as  /scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/UDN771219_curationSlides.pptx
+{'websearchAnnotations': ['omim', 'fathmm', 'mTaster', 'sift', 'phylop', 'mgi', 'rvis'], 'inputOrProbandBam': [], 'filtering': ['fbL'], 'alreadyGeneratedXls': [], 'debugArguments': [], 'udnId': ['UDN771219'], 'finalOutputDir': ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/'], 'calling': ['rtg'], 'gcXls': ['/home/ccurnin/toAnnotate/ElM_PredictedDeleterious_HPO_output_forCharlie_Chloe_2.xlsx'], 'familyBams': [], 'familyFastqs': [], 'preprocessing': ['chP', 'rhP', 'smA', 'rmD'], 'familyVcfs': [], 'inputOrProbandFastq': [], 'variantListToFilterOn': [], 'runArchitecture': [], 'pedFile': [], 'inputOrProbandVcf': ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf'], 'annotation': ['exA', 'gnA', 'clV']}
+('codeBaseDir, from', 'analysis_pipeline_master_script.py', 'to', '')
+('preprocessingScriptPath', 'general_preprocessing.py')
+('cwd', '/home/ccurnin/stmp4')
+executing calling arguments:  ['rtg']
+('Executing the preprocessing arguments ', ['chP', 'rhP', 'smA', 'rmD'])
+/home/ccurnin/stmp4
+('Calling general_preprocessing.py', 'python general_preprocessing.py /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz smA chP rhP  rmD False  ')
+('Preprocessing done', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+('Tabixing', 'tabix -f /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+('vcfs', ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167.vcf'])
+('finalVCFs', ['/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz'])
+single VCF
+Step 2 done: currentWorkingVcf is /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+('Starting Step 3 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz')
+filtering in main script /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+('Filtering fbL, output to', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf')
+('Filtering on list from gcXls', 'UDN771219_variants.txt')
+**START filter_vcf_by_variant_list**
+filtering /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz
+bcftools command:  bcftools view /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz -R UDN771219_variants.txt -o /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf
+/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf
+**END filter_vcf_by_variant_list**
+new currentWorkingVcf/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf
+('Starting Step 4 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf')
+file="/scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz"
+
+fields = ["AF_AFR", "AF_AMR", "AF_ASJ", "AF_EAS", "AF_FIN", "AF_NFE", "AF_OTH", "AF_SAS", "AN_AFR", "AN_AMR", "AN_ASJ", "AN_EAS", "AN_FIN", "AN_NFE", "AN_OTH", "AN_SAS", "AN_POPMAX", "AN_Female", "AN_Male", ]
+
+ops=["first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first"]
+
+file="/scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz"
+
+fields = ["KG_AF_POPMAX", "ESP_AF_POPMAX", "clinvar_pathogenic", "KG_AF_GLOBAL", "KG_AC", "POPMAX", "AN_POPMAX", "AC_POPMAX", "AF", "AN", "AN_AFR", "AN_AMR", "AN_ASJ", "AN_EAS", "AN_FIN", "AN_NFE", "AN_OTH", "AN_SAS", ]
+
+ops=["first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first","first"]
+
+file="/scratch/PI/euan/common/stmpDatafiles/clinvar_20170905.vcf.gz"
+
+fields = ["CLNSIG"]
+
+ops=["first"]
+
+('In directory', '/share/PI/euan/apps/stmp3/vcfanno')
+('Running vcfanno', './vcfanno_linux64 -p 4 -lua /share/PI/euan/apps/stmp3/vcfanno/example/custom.lua /home/ccurnin/stmp4/myTestConfFile.toml /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf > /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL_final_annotated_vcf.vcf')
+vcfanno done
+('Running ls', 'ls -l /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL_final_annotated_vcf.vcf')
+0
+('Starting Step 5 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL_final_annotated_vcf.vcf')
+('Starting Step 6 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL_final_annotated_vcf.vcf')
+calling write_annotated_vcf_to_xls.vcf_to_xls
+writing  /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL_final_annotated_vcf.vcf  to xls format
+['##fileformat=VCFv4.1\n', '##contig=<ID=1,length=249250621>\n', '##contig=<ID=2,length=243199373>\n', '##contig=<ID=3,length=198022430>\n', '##contig=<ID=4,length=191154276>\n', '##contig=<ID=5,length=180915260>\n', '##contig=<ID=6,length=171115067>\n', '##contig=<ID=7,length=159138663>\n', '##contig=<ID=8,length=146364022>\n', '##contig=<ID=9,length=141213431>\n', '##contig=<ID=10,length=135534747>\n', '##contig=<ID=11,length=135006516>\n', '##contig=<ID=12,length=133851895>\n', '##contig=<ID=13,length=115169878>\n', '##contig=<ID=14,length=107349540>\n', '##contig=<ID=15,length=102531392>\n', '##contig=<ID=16,length=90354753>\n', '##contig=<ID=17,length=81195210>\n', '##contig=<ID=18,length=78077248>\n', '##contig=<ID=19,length=59128983>\n', '##contig=<ID=20,length=63025520>\n', '##contig=<ID=21,length=48129895>\n', '##contig=<ID=22,length=51304566>\n', '##contig=<ID=X,length=155270560>\n', '##contig=<ID=Y,length=59373566>\n', '##contig=<ID=MT,length=16569>\n', '##contig=<ID=GL000207.1,length=4262>\n', '##contig=<ID=GL000226.1,length=15008>\n', '##contig=<ID=GL000229.1,length=19913>\n', '##contig=<ID=GL000231.1,length=27386>\n', '##contig=<ID=GL000210.1,length=27682>\n', '##contig=<ID=GL000239.1,length=33824>\n', '##contig=<ID=GL000235.1,length=34474>\n', '##contig=<ID=GL000201.1,length=36148>\n', '##contig=<ID=GL000247.1,length=36422>\n', '##contig=<ID=GL000245.1,length=36651>\n', '##contig=<ID=GL000197.1,length=37175>\n', '##contig=<ID=GL000203.1,length=37498>\n', '##contig=<ID=GL000246.1,length=38154>\n', '##contig=<ID=GL000249.1,length=38502>\n', '##contig=<ID=GL000196.1,length=38914>\n', '##contig=<ID=GL000248.1,length=39786>\n', '##contig=<ID=GL000244.1,length=39929>\n', '##contig=<ID=GL000238.1,length=39939>\n', '##contig=<ID=GL000202.1,length=40103>\n', '##contig=<ID=GL000234.1,length=40531>\n', '##contig=<ID=GL000232.1,length=40652>\n', '##contig=<ID=GL000206.1,length=41001>\n', '##contig=<ID=GL000240.1,length=41933>\n', '##contig=<ID=GL000236.1,length=41934>\n', '##contig=<ID=GL000241.1,length=42152>\n', '##contig=<ID=GL000243.1,length=43341>\n', '##contig=<ID=GL000242.1,length=43523>\n', '##contig=<ID=GL000230.1,length=43691>\n', '##contig=<ID=GL000237.1,length=45867>\n', '##contig=<ID=GL000233.1,length=45941>\n', '##contig=<ID=GL000204.1,length=81310>\n', '##contig=<ID=GL000198.1,length=90085>\n', '##contig=<ID=GL000208.1,length=92689>\n', '##contig=<ID=GL000191.1,length=106433>\n', '##contig=<ID=GL000227.1,length=128374>\n', '##contig=<ID=GL000228.1,length=129120>\n', '##contig=<ID=GL000214.1,length=137718>\n', '##contig=<ID=GL000221.1,length=155397>\n', '##contig=<ID=GL000209.1,length=159169>\n', '##contig=<ID=GL000218.1,length=161147>\n', '##contig=<ID=GL000220.1,length=161802>\n', '##contig=<ID=GL000213.1,length=164239>\n', '##contig=<ID=GL000211.1,length=166566>\n', '##contig=<ID=GL000199.1,length=169874>\n', '##contig=<ID=GL000217.1,length=172149>\n', '##contig=<ID=GL000216.1,length=172294>\n', '##contig=<ID=GL000215.1,length=172545>\n', '##contig=<ID=GL000205.1,length=174588>\n', '##contig=<ID=GL000219.1,length=179198>\n', '##contig=<ID=GL000224.1,length=179693>\n', '##contig=<ID=GL000223.1,length=180455>\n', '##contig=<ID=GL000195.1,length=182896>\n', '##contig=<ID=GL000212.1,length=186858>\n', '##contig=<ID=GL000222.1,length=186861>\n', '##contig=<ID=GL000200.1,length=187035>\n', '##contig=<ID=GL000193.1,length=189789>\n', '##contig=<ID=GL000194.1,length=191469>\n', '##contig=<ID=GL000225.1,length=211173>\n', '##contig=<ID=GL000192.1,length=547496>\n', '##FILTER=<ID=LowQual,Description="Low quality">\n', '##FILTER=<ID=PASS,Description="All filters passed">\n', '##FILTER=<ID=VQSRTrancheINDEL99.00to99.90,Description="Truth sensitivity tranche level for INDEL model at VQS Lod: -13.1048 <= x < -1.1873">\n', '##FILTER=<ID=VQSRTrancheINDEL99.90to100.00,Description="Truth sensitivity tranche level for INDEL model at VQS Lod: -37492.4257 <= x < -13.1048">\n', '##FILTER=<ID=VQSRTrancheINDEL99.90to100.00+,Description="Truth sensitivity tranche level for INDEL model at VQS Lod < -37492.4257">\n', '##FILTER=<ID=VQSRTrancheSNP99.90to100.00,Description="Truth sensitivity tranche level for SNP model at VQS Lod: -39996.8018 <= x < -6.126">\n', '##FILTER=<ID=VQSRTrancheSNP99.90to100.00+,Description="Truth sensitivity tranche level for SNP model at VQS Lod < -39996.8018">\n', '##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">\n', '##INFO=<ID=AC_POPMAX,Number=A,Type=String,Description="AC in the population with the max AF (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AF_AFR,Number=A,Type=Float,Description="Allele Frequency among African/African American genotypes, for each ALT allele, in the same order as listed (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AF_AMR,Number=A,Type=Float,Description="Allele Frequency among Admixed American genotypes, for each ALT allele, in the same order as listed (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AF_ASJ,Number=A,Type=Float,Description="Allele Frequency among Ashkenazi Jewish genotypes, for each ALT allele, in the same order as listed (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AF_EAS,Number=A,Type=Float,Description="Allele Frequency among East Asian genotypes, for each ALT allele, in the same order as listed (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AF_FIN,Number=A,Type=Float,Description="Allele Frequency among Finnish genotypes, for each ALT allele, in the same order as listed (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AF_NFE,Number=A,Type=Float,Description="Allele Frequency among Non-Finnish European genotypes, for each ALT allele, in the same order as listed (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AF_OTH,Number=A,Type=Float,Description="Allele Frequency among Other (population not assigned) genotypes, for each ALT allele, in the same order as listed (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AF_SAS,Number=A,Type=Float,Description="Allele Frequency among South Asian genotypes, for each ALT allele, in the same order as listed (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AN_AFR,Number=1,Type=Integer,Description="African/African American Chromosome Count (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AN_AMR,Number=1,Type=Integer,Description="American Chromosome Count (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AN_ASJ,Number=1,Type=String,Description="calculated by first of overlapping values in field AN_ASJ from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz">\n', '##INFO=<ID=AN_EAS,Number=1,Type=Integer,Description="East Asian Chromosome Count (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AN_FIN,Number=1,Type=Integer,Description="Finnish Chromosome Count (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AN_Female,Number=1,Type=Integer,Description="Total number of alleles in Female called genotypes (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AN_Male,Number=1,Type=Integer,Description="Total number of alleles in Male called genotypes (from /scratch/PI/euan/common/gnomad_data/vcf/exomes/gnomad.exomes.r2.0.1.sites.vcf.gz)">\n', '##INFO=<ID=AN_NFE,Number=1,Type=Integer,Description="Non-Finnish European Chromosome Count (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AN_OTH,Number=1,Type=Integer,Description="Other Chromosome Count (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AN_POPMAX,Number=A,Type=String,Description="AN in the population with the max AF (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=AN_SAS,Number=1,Type=Integer,Description="South Asian Chromosome Count (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=BaseQRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities">\n', '##INFO=<ID=CCC,Number=1,Type=Integer,Description="Number of called chromosomes">\n', '##INFO=<ID=CLNSIG,Number=.,Type=String,Description="Clinical significance for this single variant (from /scratch/PI/euan/common/stmpDatafiles/clinvar_20170905.vcf.gz)">\n', '##INFO=<ID=ClippingRankSum,Number=1,Type=Float,Description="Z-score From Wilcoxon rank sum test of Alt vs. Ref number of hard clipped bases">\n', '##INFO=<ID=DB,Number=0,Type=Flag,Description="dbSNP Membership">\n', '##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">\n', '##INFO=<ID=DS,Number=0,Type=Flag,Description="Were any of the samples downsampled?">\n', '##INFO=<ID=END,Number=1,Type=Integer,Description="Stop position of the interval">\n', '##INFO=<ID=ESP_AF_POPMAX,Number=A,Type=String,Description="Max allele frequency across populations in ESP (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=FS,Number=1,Type=Float,Description="Phred-scaled p-value using Fisher\'s exact test to detect strand bias">\n', '##INFO=<ID=GQ_MEAN,Number=1,Type=Float,Description="Mean of all GQ values">\n', '##INFO=<ID=GQ_STDDEV,Number=1,Type=Float,Description="Standard deviation of all GQ values">\n', '##INFO=<ID=HWP,Number=1,Type=Float,Description="P value from test of Hardy Weinberg Equilibrium">\n', '##INFO=<ID=HaplotypeScore,Number=1,Type=Float,Description="Consistency of the site with at most two segregating haplotypes">\n', '##INFO=<ID=InbreedingCoeff,Number=1,Type=Float,Description="Inbreeding coefficient as estimated from the genotype likelihoods per-sample when compared against the Hardy-Weinberg expectation">\n', '##INFO=<ID=KG_AC,Number=A,Type=String,Description="Allele Count in 1000 Genomes (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=KG_AF_GLOBAL,Number=A,Type=String,Description="Overall allele frequency in 1000 Genomes (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=KG_AF_POPMAX,Number=A,Type=String,Description="Max allele frequency across populations in 1000 Genomes (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=MLEAC,Number=A,Type=Integer,Description="Maximum likelihood expectation (MLE) for the allele counts (not necessarily the same as the AC), for each ALT allele, in the same order as listed">\n', '##INFO=<ID=MLEAF,Number=A,Type=Float,Description="Maximum likelihood expectation (MLE) for the allele frequency (not necessarily the same as the AF), for each ALT allele, in the same order as listed">\n', '##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">\n', '##INFO=<ID=MQ0,Number=1,Type=Integer,Description="Total Mapping Quality Zero Reads">\n', '##INFO=<ID=MQRankSum,Number=1,Type=Float,Description="Z-score From Wilcoxon rank sum test of Alt vs. Ref read mapping qualities">\n', '##INFO=<ID=NCC,Number=1,Type=Integer,Description="Number of no-called samples">\n', '##INFO=<ID=NEGATIVE_TRAIN_SITE,Number=0,Type=Flag,Description="This variant was used to build the negative training set of bad variants">\n', '##INFO=<ID=POPMAX,Number=A,Type=String,Description="Population with max AF (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=POSITIVE_TRAIN_SITE,Number=0,Type=Flag,Description="This variant was used to build the positive training set of good variants">\n', '##INFO=<ID=QD,Number=1,Type=Float,Description="Variant Confidence/Quality by Depth">\n', '##INFO=<ID=ReadPosRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt vs. Ref read position bias">\n', '##INFO=<ID=SOR,Number=1,Type=Float,Description="Symmetric Odds Ratio of 2x2 contingency table to detect strand bias">\n', '##INFO=<ID=VQSLOD,Number=1,Type=Float,Description="Log odds ratio of being a true variant versus being false under the trained gaussian mixture model">\n', '##INFO=<ID=clinvar_pathogenic,Number=A,Type=String,Description="Clinvar Pathogenic Status (from /scratch/PI/euan/common/stmpDatafiles/ExAC.r0.3.1.sites.vep.vcf.gz)">\n', '##INFO=<ID=culprit,Number=1,Type=String,Description="The annotation which was the worst performing in the Gaussian mixture model, likely the reason why the variant was filtered out">\n', '##INFO=<ID=lua_start_minus_2,Number=.,Type=Integer,Description="calculated field: lua_start_minus_2">\n', '##INFO=<ID=set,Number=1,Type=String,Description="Source VCF for the merged record in CombineVariants">\n', '##FORMAT=<ID=AD,Number=.,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">\n', '##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth (reads with MQ=255 or with bad mates are filtered)">\n', '##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">\n', '##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">\n', '##FORMAT=<ID=MIN_DP,Number=1,Type=Integer,Description="Minimum DP observed within the GVCF block">\n', '##FORMAT=<ID=PGT,Number=1,Type=String,Description="Physical phasing haplotype information, describing how the alternate alleles are phased in relation to one another">\n', '##FORMAT=<ID=PID,Number=1,Type=String,Description="Physical phasing ID information, where each unique ID within a given sample (but not across samples) connects records within a phasing group">\n', '##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">\n', '##FORMAT=<ID=SB,Number=4,Type=Integer,Description="Per-sample component statistics which comprise the Fisher\'s Exact Test to detect strand bias.">\n', '##ALT=<ID=NON_REF,Description="Represents any possible alternative allele at this location">\n', '##GATKCommandLine=<ID=ApplyRecalibration,Version=3.2-2-gec30cee,Date="Tue Nov 15 09:37:34 CST 2016",Epoch=1479224254397,CommandLineOptions="analysis_type=ApplyRecalibration input_file=[] showFullBamList=false read_buffer_size=null phone_home=AWS gatk_key=null tag=NA read_filter=[] intervals=null excludeIntervals=null interval_set_rule=UNION interval_merging=ALL interval_padding=0 reference_sequence=/gpfs/gpfs1/levylab/genomes/gatk/human_g1k_v37.fasta nonDeterministicRandomSeed=false disableDithering=false maxRuntime=-1 maxRuntimeUnits=MINUTES downsampling_type=BY_SAMPLE downsample_to_fraction=null downsample_to_coverage=1000 baq=OFF baqGapOpenPenalty=40.0 refactor_NDN_cigar_string=false fix_misencoded_quality_scores=false allow_potentially_misencoded_quality_scores=false useOriginalQualities=false defaultBaseQualities=-1 performanceLog=null BQSR=null quantize_quals=0 disable_indel_quals=false emit_original_quals=false preserve_qscores_less_than=6 globalQScorePrior=-1.0 validation_strictness=SILENT remove_program_records=false keep_program_records=false sample_rename_mapping_file=null unsafe=null disable_auto_index_creation_and_locking_when_reading_rods=false num_threads=1 num_cpu_threads_per_data_thread=1 num_io_threads=0 monitorThreadEfficiency=false num_bam_file_handles=null read_group_black_list=null pedigree=[] pedigreeString=[] pedigreeValidationType=STRICT allow_intervals_with_unindexed_bam=false generateShadowBCF=false variant_index_type=DYNAMIC_SEEK variant_index_parameter=-1 logging_level=INFO log_to_file=null help=false version=false input=[(RodBinding name=input source=/gpfs/gpfs1/levylab/data/CLIA_vc/data_161114/merged/work/chroms_merged.vcf)] recal_file=(RodBinding name=recal_file source=/gpfs/gpfs1/levylab/data/CLIA_vc/data_161114/merged/work/filtered/work/snps.recal) tranches_file=/gpfs/gpfs1/levylab/data/CLIA_vc/data_161114/merged/work/filtered/work/snps.tranches out=org.broadinstitute.gatk.engine.io.stubs.VariantContextWriterStub no_cmdline_in_header=org.broadinstitute.gatk.engine.io.stubs.VariantContextWriterStub sites_only=org.broadinstitute.gatk.engine.io.stubs.VariantContextWriterStub bcf=org.broadinstitute.gatk.engine.io.stubs.VariantContextWriterStub ts_filter_level=99.5 lodCutoff=null ignore_filter=null excludeFiltered=false mode=SNP filter_reads_with_N_cigar=false filter_mismatching_base_and_quals=false filter_bases_not_stored=false">\n', '##GATKCommandLine=<ID=SelectVariants,Version=3.3-0-g37228af,Date="Fri Nov 18 14:22:06 CST 2016",Epoch=1479500526928,CommandLineOptions="analysis_type=SelectVariants input_file=[] showFullBamList=false read_buffer_size=null phone_home=AWS gatk_key=null tag=NA read_filter=[] intervals=null excludeIntervals=null interval_set_rule=UNION interval_merging=ALL interval_padding=0 reference_sequence=/gpfs/gpfs1/myerslab/reference/genomes/bwa-0.7.8/GRCh37.fa nonDeterministicRandomSeed=false disableDithering=false maxRuntime=-1 maxRuntimeUnits=MINUTES downsampling_type=BY_SAMPLE downsample_to_fraction=null downsample_to_coverage=1000 baq=OFF baqGapOpenPenalty=40.0 refactor_NDN_cigar_string=false fix_misencoded_quality_scores=false allow_potentially_misencoded_quality_scores=false useOriginalQualities=false defaultBaseQualities=-1 performanceLog=null BQSR=null quantize_quals=0 disable_indel_quals=false emit_original_quals=false preserve_qscores_less_than=6 globalQScorePrior=-1.0 validation_strictness=SILENT remove_program_records=false keep_program_records=false sample_rename_mapping_file=null unsafe=null disable_auto_index_creation_and_locking_when_reading_rods=false no_cmdline_in_header=false sites_only=false never_trim_vcf_format_field=false bcf=false bam_compression=null simplifyBAM=false disable_bam_indexing=false generate_md5=false num_threads=1 num_cpu_threads_per_data_thread=1 num_io_threads=0 monitorThreadEfficiency=false num_bam_file_handles=null read_group_black_list=null pedigree=[] pedigreeString=[] pedigreeValidationType=STRICT allow_intervals_with_unindexed_bam=false generateShadowBCF=false variant_index_type=DYNAMIC_SEEK variant_index_parameter=-1 logging_level=INFO log_to_file=null help=false version=false variant=(RodBinding name=variant source=/gpfs/gpfs1/levylab/data/UDN_vc/genotypes_161114.filtered.vcf) discordance=(RodBinding name= source=UNBOUND) concordance=(RodBinding name= source=UNBOUND) out=org.broadinstitute.gatk.engine.io.stubs.VariantContextWriterStub sample_name=[C1011-HJ-0079] sample_expressions=null sample_file=null exclude_sample_name=[] exclude_sample_file=[] select_expressions=[] excludeNonVariants=false excludeFiltered=false restrictAllelesTo=ALL keepOriginalAC=false mendelianViolation=false mendelianViolationQualThreshold=0.0 select_random_fraction=0.0 remove_fraction_genotypes=0.0 selectTypeToInclude=[] keepIDs=null fullyDecode=false forceGenotypesDecode=false justRead=false maxIndelSize=2147483647 ALLOW_NONOVERLAPPING_COMMAND_LINE_SAMPLES=false filter_reads_with_N_cigar=false filter_mismatching_base_and_quals=false filter_bases_not_stored=false">\n', '##GVCFBlock=minGQ=0(inclusive),maxGQ=1(exclusive)\n', '##reference=file:///gpfs/gpfs1/myerslab/reference/genomes/bwa-0.7.8/GRCh37.fa\n', '##source=SelectVariants\n', '##bcftools_normVersion=1.4.1+htslib-1.4.1\n', '##bcftools_normCommand=norm --multiallelics - --check-ref x --fasta-ref=/share/PI/euan/apps/bcbio/genomes/Hsapiens/GRCh37/seq/GRCh37.fa --output-type z --output /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP.vcf.gz; Date=Fri Jan 12 22:48:54 2018\n', '##bcftools_normCommand=norm -d both --output-type z --output /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA.vcf.gz; Date=Fri Jan 12 22:54:01 2018\n', '##bcftools_annotateVersion=1.4.1+htslib-1.4.1\n', '##bcftools_annotateCommand=annotate --rename-chrs /scratch/PI/euan/common/udn/code/chromosome_notation.txt --output-type z --output /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD_chP.vcf.gz /scratch/PI/euan/common/udn/gateway/data/UDN771219/UDN771219-SL209167_rhP_smA_rmD.vcf.gz; Date=Fri Jan 12 22:57:32 2018\n', '##bcftools_viewVersion=1.4.1+htslib-1.4.1\n', '##bcftools_viewCommand=view -R UDN771219_variants.txt -o /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL.vcf /scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167.vcf.gz; Date=Fri Jan 12 23:01:57 2018\n', '#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tUDN771219\n', '1\t12443036\t.\tC\tT\t700.3\tPASS\tAC=1;AF=0.0001483;AN=121412;BaseQRankSum=-1.716;ClippingRankSum=-0.015;DP=60;FS=0;GQ_MEAN=139.87;GQ_STDDEV=153.61;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.281;NCC=0;POSITIVE_TRAIN_SITE;QD=11.67;ReadPosRankSum=0.888;SOR=0.818;VQSLOD=16.93;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00017987;AF_OTH=0;AF_SAS=0;AN_AFR=10404;AN_AMR=11578;AN_ASJ=9776;AN_EAS=8654;AN_FIN=6614;AN_NFE=66504;AN_OTH=898;AN_SAS=16030;AN_POPMAX=66504;AN_Female=110822;AN_Male=134200;KG_AF_POPMAX=0.0010000000474974513;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=18\tGT:AD:DP:GQ:PL\t0/1:29,31:60:99:736,0,695\n', '1\t16902784\t.\tG\tT\t576.7\tVQSRTrancheSNP99.90to100.00\tAC=1;AF=0.002595,0.0004613;AN=121394;BaseQRankSum=-0.113;ClippingRankSum=0.272;DP=174;FS=5.921;GQ_MEAN=141.67;GQ_STDDEV=76.01;InbreedingCoeff=-0.0714;MQ=39.59;MQ0=0;MQRankSum=-1.572;NCC=0;QD=1.76;ReadPosRankSum=1.34;SOR=1.716;VQSLOD=-70.66;culprit=DP;AF_AFR=0.00056148,0;AF_AMR=0.00018855,0;AF_ASJ=0,0;AF_EAS=6.3243e-05,0;AF_FIN=0.00041498,4.6108e-05;AF_NFE=0.00088048,4.7852e-05;AF_OTH=0.00058525,0;AF_SAS=0.0002359,0;AN_AFR=9242;AN_AMR=11510;AN_ASJ=9472;AN_EAS=8638;AN_FIN=6530;AN_NFE=64374;AN_OTH=886;AN_SAS=16384;AN_POPMAX=9242,64374;AN_Female=104668;AN_Male=127662;KG_AF_POPMAX=0,0;ESP_AF_POPMAX=0,0;KG_AF_GLOBAL=0,0;KG_AC=0,0;POPMAX=AFR,NFE;AC_POPMAX=47,31\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:157,17:174:99:0|1:16902780_C_A:232,0,6367\n', '1\t19166377\t.\tC\tT\t496.3\tPASS\tAC=1;AF=5.765e-05;AN=121412;BaseQRankSum=1.55;ClippingRankSum=-0.451;DP=46;FS=0;GQ_MEAN=116.93;GQ_STDDEV=82.71;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.319;NCC=0;QD=10.79;ReadPosRankSum=1.24;SOR=0.693;VQSLOD=15.8;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0.00011596;AF_FIN=0;AF_NFE=4.476e-05;AF_OTH=0;AF_SAS=0.00022741;AN_AFR=10406;AN_AMR=11574;AN_ASJ=9850;AN_EAS=8654;AN_FIN=6604;AN_NFE=66734;AN_OTH=906;AN_SAS=16512;AN_POPMAX=16512;AN_Female=111356;AN_Male=134900;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00023255814448930323;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=SAS;AC_POPMAX=4\tGT:AD:DP:GQ:PL\t0/1:22,24:46:99:532,0,413\n', '1\t145416614\t.\tG\tT\t486.3\tPASS\tAC=1;AF=0.000173;AN=121412;BaseQRankSum=-2.605;ClippingRankSum=-0.177;DP=44;FS=11.642;GQ_MEAN=121.87;GQ_STDDEV=98.89;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.884;NCC=0;POSITIVE_TRAIN_SITE;QD=11.05;ReadPosRankSum=1.36;SOR=0.407;VQSLOD=18.25;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00034023;AF_OTH=0.00018228;AF_SAS=0;AN_AFR=10402;AN_AMR=11576;AN_ASJ=9848;AN_EAS=8654;AN_FIN=6614;AN_NFE=66730;AN_OTH=908;AN_SAS=16512;AN_POPMAX=66730;AN_Female=111310;AN_Male=134868;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00046511628897860646;clinvar_pathogenic=1;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=21\tGT:AD:DP:GQ:PL\t0/1:20,24:44:99:522,0,477\n', '1\t156905823\t.\tG\tA\t443.3\tPASS\tAC=1;AF=0.0002389;AN=121412;BaseQRankSum=2.15;ClippingRankSum=-1.101;DP=49;FS=0;GQ_MEAN=121.07;GQ_STDDEV=99.42;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.61;NCC=0;QD=9.05;ReadPosRankSum=0.495;SOR=0.73;VQSLOD=15.24;culprit=MQRankSum;AF_AFR=0.00032671;AF_AMR=0.00074507;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00054647;AF_OTH=0.00036496;AF_SAS=0;AN_AFR=10400;AN_AMR=11554;AN_ASJ=9836;AN_EAS=8654;AN_FIN=6454;AN_NFE=66544;AN_OTH=902;AN_SAS=16118;AN_POPMAX=66544;AN_Female=111286;AN_Male=134802;KG_AF_POPMAX=0.0010000000474974513;ESP_AF_POPMAX=0.0005813953466713428;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=26\tGT:AD:DP:GQ:PL\t0/1:28,21:49:99:479,0,656\n', '1\t201338951\t.\tG\tA\t491.3\tPASS\tAC=1;AF=0.0001647;AN=121412;BaseQRankSum=4.89;ClippingRankSum=-1.552;DP=53;FS=0;GQ_MEAN=123.4;GQ_STDDEV=114.11;InbreedingCoeff=0.2611;MQ=60;MQ0=0;MQRankSum=-1.229;NCC=0;QD=9.27;ReadPosRankSum=-0.727;SOR=0.564;VQSLOD=13.58;culprit=ReadPosRankSum;AF_AFR=0;AF_AMR=2.9778e-05;AF_ASJ=0;AF_EAS=0.00028989;AF_FIN=0;AF_NFE=0.00020588;AF_OTH=0;AF_SAS=6.4973e-05;AN_AFR=10402;AN_AMR=11576;AN_ASJ=9850;AN_EAS=8654;AN_FIN=6614;AN_NFE=66732;AN_OTH=904;AN_SAS=16512;AN_POPMAX=66732;AN_Female=111356;AN_Male=134904;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;clinvar_pathogenic=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=18\tGT:AD:DP:GQ:PL\t0/1:30,23:53:99:527,0,598\n', '1\t225607471\t.\tA\tG\t547.3\tPASS\tAC=1;AF=5.766e-05;AN=121410;BaseQRankSum=-2.174;ClippingRankSum=1.67;DP=49;FS=1.1;GQ_MEAN=127.87;GQ_STDDEV=108.49;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.172;NCC=0;QD=11.17;ReadPosRankSum=0.671;SOR=0.481;VQSLOD=15.28;culprit=MQRankSum;AF_AFR=0.00013072;AF_AMR=0;AF_ASJ=0;AF_EAS=5.7978e-05;AF_FIN=0;AF_NFE=0.00017922;AF_OTH=0;AF_SAS=0;AN_AFR=10382;AN_AMR=11574;AN_ASJ=9848;AN_EAS=8642;AN_FIN=6614;AN_NFE=66696;AN_OTH=908;AN_SAS=16502;AN_POPMAX=66696;AN_Female=111280;AN_Male=134756;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00011627907224465162;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=7\tGT:AD:DP:GQ:PL\t0/1:23,26:49:99:583,0,519\n', '1\t236758906\t.\tC\tT\t615.3\tPASS\tAC=1;AF=0.0001977;AN=121412;BaseQRankSum=4.51;ClippingRankSum=0.24;DP=53;FS=1.054;GQ_MEAN=135.2;GQ_STDDEV=98.26;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.774;NCC=0;POSITIVE_TRAIN_SITE;QD=11.61;ReadPosRankSum=-0.222;SOR=0.919;VQSLOD=14.8;culprit=DP;AF_AFR=0.00013072;AF_AMR=0.00029797;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00032306;AF_OTH=0.00018275;AF_SAS=0;AN_AFR=10388;AN_AMR=11554;AN_ASJ=9842;AN_EAS=8598;AN_FIN=6610;AN_NFE=66614;AN_OTH=906;AN_SAS=16498;AN_POPMAX=11554;AN_Female=111184;AN_Male=134686;KG_AF_POPMAX=0.00139999995008111;ESP_AF_POPMAX=0.0003488372021820396;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=AMR;AC_POPMAX=4\tGT:AD:DP:GQ:PL\t0/1:26,27:53:99:651,0,489\n', '2\t27601172\t.\tC\tG\t559.3\tPASS\tAC=1;AF=7.414e-05;AN=121398;BaseQRankSum=1.52;ClippingRankSum=0.933;DP=51;FS=1.083;GQ_MEAN=125.47;GQ_STDDEV=121.08;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.198;NCC=0;QD=10.97;ReadPosRankSum=1.14;SOR=0.488;VQSLOD=15.75;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00021053;AF_OTH=0.0001856;AF_SAS=0;AN_AFR=9966;AN_AMR=11462;AN_ASJ=9830;AN_EAS=8458;AN_FIN=6318;AN_NFE=65486;AN_OTH=878;AN_SAS=16452;AN_POPMAX=65486;AN_Female=104998;AN_Male=129290;KG_AF_POPMAX=0.0010000000474974513;ESP_AF_POPMAX=0.0003488372021820396;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=9\tGT:AD:DP:GQ:PL\t0/1:25,26:51:99:595,0,561\n', '2\t29293599\t.\tG\tA\t562.3\tPASS\tAC=1;AF=0.0001074;AN=121062;BaseQRankSum=-0.127;ClippingRankSum=0.354;DP=39;FS=2.747;GQ_MEAN=126.93;GQ_STDDEV=131.15;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.042;NCC=0;QD=14.42;ReadPosRankSum=-0.496;SOR=0.368;VQSLOD=15.34;culprit=ReadPosRankSum;AF_AFR=0.00013086;AF_AMR=8.9344e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00016119;AF_OTH=0;AF_SAS=0;AN_AFR=9760;AN_AMR=11564;AN_ASJ=9848;AN_EAS=8624;AN_FIN=6612;AN_NFE=66612;AN_OTH=894;AN_SAS=16512;AN_POPMAX=66612;AN_Female=111304;AN_Male=134876;KG_AF_POPMAX=0.0020000000949949026;ESP_AF_POPMAX=0.0003555344883352518;KG_AF_GLOBAL=0.0005990415229462087;KG_AC=3;POPMAX=NFE;AC_POPMAX=10\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:22,17:39:99:0|1:29293599_G_A:598,0,1131\n', '2\t43571360\t.\tT\tC\t405.3\tPASS\tAC=1;AF=0.000298;AN=120796;BaseQRankSum=-4.345;ClippingRankSum=0.058;DP=56;FS=1.029;GQ_MEAN=118.8;GQ_STDDEV=90.22;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.846;NCC=0;QD=7.24;ReadPosRankSum=0.534;SOR=0.747;VQSLOD=15.37;culprit=QD;AF_AFR=6.8503e-05;AF_AMR=0.00016818;AF_ASJ=0.00022407;AF_EAS=0;AF_FIN=0.00041073;AF_NFE=0.00057576;AF_OTH=0;AF_SAS=0;AN_AFR=7748;AN_AMR=7496;AN_ASJ=8926;AN_EAS=6908;AN_FIN=5242;AN_NFE=49192;AN_OTH=652;AN_SAS=12384;AN_POPMAX=49192;AN_Female=104060;AN_Male=125692;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00024295432376675308;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=31\tGT:AD:DP:GQ:PL\t0/1:30,26:56:99:441,0,710\n', '2\t98430726\t.\tA\tC\t481.3\tPASS\tAC=1;AF=3.31e-05;AN=120828;BaseQRankSum=-4.457;ClippingRankSum=-0.436;DP=53;FS=2.347;GQ_MEAN=126.73;GQ_STDDEV=108.33;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-2.215;NCC=0;QD=9.08;ReadPosRankSum=1.11;SOR=1.102;VQSLOD=15.41;culprit=MQRankSum;AF_AFR=0;AF_AMR=2.9794e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=9.8529e-05;AF_OTH=0;AF_SAS=0;AN_AFR=9800;AN_AMR=11554;AN_ASJ=9846;AN_EAS=8626;AN_FIN=6614;AN_NFE=66698;AN_OTH=898;AN_SAS=16502;AN_POPMAX=66698;AN_Female=111276;AN_Male=134814;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00024265954561997205;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=4\tGT:AD:DP:GQ:PL\t0/1:26,27:53:99:517,0,619\n', '2\t179306432\t.\tC\tCAGTTTCCATAAATGACTCTAGCCTGCAAATTGTAGTATATTCTCTCTTA\t443.7\tVQSRTrancheINDEL99.00to99.90\tAC=1;AF=0.5;AN=2;BaseQRankSum=1.93;ClippingRankSum=0.309;DP=56;FS=2.263;GQ_MEAN=127.6;GQ_STDDEV=57.84;InbreedingCoeff=-0.0714;MQ=60;MQ0=0;MQRankSum=0.87;NCC=0;NEGATIVE_TRAIN_SITE;QD=0.3;ReadPosRankSum=-3.672;SOR=1.044;VQSLOD=-5.197;culprit=ReadPosRankSum;AF_AFR=0,0,0,0,0,0;AF_AMR=0,0,0,2.9996e-05,0,2.9996e-05;AF_ASJ=0,0,0.00010227,0,0,0;AF_EAS=0,0,0,0,0,0;AF_FIN=0,0,4.4891e-05,4.4891e-05,0,0;AF_NFE=2.7008e-05,5.4016e-05,0,9.0027e-06,0,0;AF_OTH=0,0,0,0,0,0;AF_SAS=0,0,0,0,0,0;AN_AFR=15256;AN_AMR=33338;AN_ASJ=9778;AN_EAS=17156;AN_FIN=22276;AN_NFE=111078;AN_OTH=5442;AN_SAS=30712;AN_POPMAX=111078,111078,9778,22276,0,33338;AN_Female=110758;AN_Male=134278\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:45,11:56:99:0|1:179306432_C_CAGTTTCCATAAATGACTCTAGCCTGCAAATTGTAGTATATTCTCTCTTA:326,0,17285\n', '2\t179567166\t.\tT\tA\t533.3\tPASS\tAC=1;AF=0.0002069,8.275e-06;AN=120842;BaseQRankSum=-0.23;ClippingRankSum=-1.13;DP=49;FS=0;GQ_MEAN=131.8;GQ_STDDEV=120.99;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.05;NCC=0;QD=10.88;ReadPosRankSum=-0.39;SOR=0.622;VQSLOD=15.61;culprit=MQ;AF_AFR=6.5419e-05;AF_AMR=2.9781e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00044816;AF_OTH=0;AF_SAS=0;AN_AFR=9800;AN_AMR=11576;AN_ASJ=9838;AN_EAS=8626;AN_FIN=6614;AN_NFE=66644;AN_OTH=898;AN_SAS=16430;AN_POPMAX=66644,8626;AN_Female=111210;AN_Male=134806;KG_AF_POPMAX=0,0;ESP_AF_POPMAX=0.0006072382675483823,0;KG_AF_GLOBAL=0,0;KG_AC=0,0;POPMAX=NFE,EAS;AC_POPMAX=25,1\tGT:AD:DP:GQ:PL\t0/1:25,24:49:99:569,0,617\n', '2\t179590139\t.\tT\tC\t589.3\tPASS\tAC=1;AF=0.0002152;AN=120834;BaseQRankSum=-3.14;ClippingRankSum=-0.823;DP=57;FS=1.007;GQ_MEAN=135.33;GQ_STDDEV=135.74;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.36;NCC=0;QD=10.34;ReadPosRankSum=2.81;SOR=0.656;VQSLOD=15.28;culprit=ReadPosRankSum;AF_AFR=6.6313e-05;AF_AMR=6.0518e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00043383;AF_OTH=0;AF_SAS=0;AN_AFR=7848;AN_AMR=7888;AN_ASJ=9482;AN_EAS=6082;AN_FIN=5632;AN_NFE=49592;AN_OTH=660;AN_SAS=8986;AN_POPMAX=49592;AN_Female=108408;AN_Male=131060;KG_AF_POPMAX=0.00139999995008111;ESP_AF_POPMAX=0.0006024096510373056;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=24\tGT:AD:DP:GQ:PL\t0/1:30,27:57:99:625,0,753\n', '2\t198352663\t.\tT\tC\t707.3\tPASS\tAC=1;AF=4.942e-05;AN=121408;BaseQRankSum=-2.04;ClippingRankSum=0.571;DP=67;FS=3.367;GQ_MEAN=143.53;GQ_STDDEV=166;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.93;NCC=0;QD=10.56;ReadPosRankSum=2.69;SOR=1.207;VQSLOD=15.37;culprit=MQRankSum;AF_AFR=0,0;AF_AMR=0,0;AF_ASJ=0,0;AF_EAS=0,5.7978e-05;AF_FIN=4.4851e-05,0;AF_NFE=0.00013459,0;AF_OTH=0.00018275,0;AF_SAS=3.2495e-05,0;AN_AFR=10008;AN_AMR=11468;AN_ASJ=9844;AN_EAS=8618;AN_FIN=6574;AN_NFE=66082;AN_OTH=896;AN_SAS=16408;AN_POPMAX=66082;AN_Female=111206;AN_Male=134730;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00011630611697910354;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=5\tGT:AD:DP:GQ:PL\t0/1:35,32:67:99:743,0,856\n', '2\t219140307\t.\tC\tT\t839.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=2.96;ClippingRankSum=-0.843;DP=61;FS=7.242;GQ_MEAN=122.93;GQ_STDDEV=98.02;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.72;NCC=0;QD=13.76;ReadPosRankSum=-0.242;SOR=1.517;VQSLOD=15.45;culprit=MQRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=5.8025e-05;AF_FIN=0;AF_NFE=0;AF_OTH=0;AF_SAS=0;AN_AFR=15276;AN_AMR=33540;AN_ASJ=9816;AN_EAS=17234;AN_FIN=22280;AN_NFE=111222;AN_OTH=5474;AN_SAS=30772;AN_POPMAX=17234;AN_Female=111054;AN_Male=134560\tGT:AD:DP:GQ:PL\t0/1:25,36:61:99:875,0,475\n', '2\t220022915\t.\tC\tT\t398.3\tPASS\tAC=1;AF=0.0002224;AN=121412;BaseQRankSum=3.1;ClippingRankSum=0;DP=48;FS=0;GQ_MEAN=118.2;GQ_STDDEV=88.42;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.569;NCC=0;QD=8.3;ReadPosRankSum=1.18;SOR=0.724;VQSLOD=15.63;culprit=MQ;AF_AFR=6.5342e-05;AF_AMR=2.9778e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00059981;AF_OTH=0.00018228;AF_SAS=0;AN_AFR=10392;AN_AMR=11578;AN_ASJ=9850;AN_EAS=8650;AN_FIN=6614;AN_NFE=66708;AN_OTH=908;AN_SAS=16512;AN_POPMAX=66708;AN_Female=111350;AN_Male=134904;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.0010465115774422884;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=26\tGT:AD:DP:GQ:PL\t0/1:29,19:48:99:434,0,637\n', '2\t231120221\t.\tC\tT\t574.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-0.027;ClippingRankSum=1.17;DP=53;FS=1.087;GQ_MEAN=101.67;GQ_STDDEV=140.47;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.219;NCC=0;QD=10.84;ReadPosRankSum=0.276;SOR=0.508;VQSLOD=14.41;culprit=MQRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=8.9763e-06;AF_OTH=0;AF_SAS=0;AN_AFR=15286;AN_AMR=33548;AN_ASJ=9836;AN_EAS=17248;AN_FIN=22294;AN_NFE=111404;AN_OTH=5474;AN_SAS=30782;AN_POPMAX=111404;AN_Female=111198;AN_Male=134674\tGT:AD:DP:GQ:PL\t0/1:27,26:53:99:610,0,604\n', '2\t241401875\t.\tC\tT\t601.3\tPASS\tAC=1;AF=0.0003257;AN=119748;BaseQRankSum=1.65;ClippingRankSum=0.134;DP=53;FS=1.079;GQ_MEAN=121;GQ_STDDEV=99.7;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.063;NCC=0;QD=11.34;ReadPosRankSum=1.78;SOR=0.455;VQSLOD=15.46;culprit=ReadPosRankSum;AF_AFR=7.5712e-05,0;AF_AMR=0.0001828,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0.0002124,0;AF_NFE=0.00057829,9.9705e-06;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=5488;AN_AMR=7820;AN_ASJ=9406;AN_EAS=5378;AN_FIN=3060;AN_NFE=42376;AN_OTH=540;AN_SAS=12976;AN_POPMAX=42376;AN_Female=100038;AN_Male=125804;KG_AF_POPMAX=0.0010000000474974513;ESP_AF_POPMAX=0.000586166454013437;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=30\tGT:AD:DP:GQ:PL\t0/1:24,29:53:99:637,0,478\n', '2\t241826521\t.\tT\tC\t362.3\tPASS\tAC=1;AF=0.0002481;AN=120902;BaseQRankSum=-4.711;ClippingRankSum=-0.039;DP=50;FS=4.037;GQ_MEAN=118.73;GQ_STDDEV=78.32;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.467;NCC=0;QD=7.25;ReadPosRankSum=0.409;SOR=0.751;VQSLOD=15.51;culprit=QD;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0.00013469;AF_NFE=0.00051643;AF_OTH=0;AF_SAS=0;AN_AFR=9798;AN_AMR=11570;AN_ASJ=9848;AN_EAS=8626;AN_FIN=6612;AN_NFE=66708;AN_OTH=898;AN_SAS=16510;AN_POPMAX=66708;AN_Female=110594;AN_Male=134268;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.0006006727344356477;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=30\tGT:AD:DP:GQ:PL\t0/1:27,23:50:99:398,0,671\n', '2\t242075315\t.\tT\tC\t524.3\tPASS\tAC=1;AF=0.0002059;AN=121412;BaseQRankSum=-3.105;ClippingRankSum=0.774;DP=53;FS=1.067;GQ_MEAN=125.67;GQ_STDDEV=120.78;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.97;NCC=0;QD=9.89;ReadPosRankSum=-0.489;SOR=0.491;VQSLOD=15.53;culprit=ReadPosRankSum;AF_AFR=0;AF_AMR=0.00017867;AF_ASJ=0;AF_EAS=0;AF_FIN=4.4851e-05;AF_NFE=0.0004297;AF_OTH=0.00018228;AF_SAS=0;AN_AFR=10380;AN_AMR=11572;AN_ASJ=9848;AN_EAS=8642;AN_FIN=6612;AN_NFE=66676;AN_OTH=908;AN_SAS=16512;AN_POPMAX=66676;AN_Female=111344;AN_Male=134904;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00023255814448930323;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=24\tGT:AD:DP:GQ:PL\t0/1:26,27:53:99:560,0,609\n', '3\t44803004\t.\tG\tT\t425.3\tPASS\tAC=1;AF=0.00028,8.236e-06;AN=121412;BaseQRankSum=0.264;ClippingRankSum=1.02;DP=42;FS=1.21;GQ_MEAN=120.6;GQ_STDDEV=92.13;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.977;NCC=0;QD=10.13;ReadPosRankSum=1.02;SOR=1.085;VQSLOD=15.5;culprit=MQRankSum;AF_AFR=0.00013106;AF_AMR=0.00017888;AF_ASJ=0;AF_EAS=0;AF_FIN=4.4908e-05;AF_NFE=0.00063876;AF_OTH=0.0003655;AF_SAS=0;AN_AFR=9950;AN_AMR=11460;AN_ASJ=9826;AN_EAS=8588;AN_FIN=6546;AN_NFE=65458;AN_OTH=886;AN_SAS=16278;AN_POPMAX=65458,65458;AN_Female=110972;AN_Male=134512;KG_AF_POPMAX=0.00139999995008111,0;ESP_AF_POPMAX=0.0006976744043640792,0;KG_AF_GLOBAL=0.00019968050764873624,0;KG_AC=1,0;POPMAX=NFE,NFE;AC_POPMAX=29,1\tGT:AD:DP:GQ:PL\t0/1:20,22:42:99:461,0,451\n', '3\t52486222\t.\tG\tT\t513.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-0.99;ClippingRankSum=0.138;DP=47;FS=0;GQ_MEAN=124.33;GQ_STDDEV=117.45;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.862;NCC=0;QD=10.92;ReadPosRankSum=-0.968;SOR=0.77;VQSLOD=15.51;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PL\t0/1:23,24:47:99:549,0,548\n', '3\t122873827\t.\tA\tT\t564.3\tPASS\tAC=1;AF=0.0003459,1.647e-05;AN=121412;BaseQRankSum=2.29;ClippingRankSum=0.093;DP=41;FS=0;GQ_MEAN=116.13;GQ_STDDEV=71.2;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.384;NCC=0;POSITIVE_TRAIN_SITE;QD=13.76;ReadPosRankSum=0.622;SOR=0.542;VQSLOD=16.94;culprit=MQ;AF_AFR=0.00019603,0;AF_AMR=0,2.9778e-05;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=4.4899e-05,0;AF_NFE=0.00090421,8.9526e-06;AF_OTH=0.00036456,0;AF_SAS=0,3.2486e-05;AN_AFR=10406;AN_AMR=11578;AN_ASJ=9850;AN_EAS=8654;AN_FIN=6614;AN_NFE=66730;AN_OTH=908;AN_SAS=16512;AN_POPMAX=66730,16512;AN_Female=111346;AN_Male=134878;KG_AF_POPMAX=0.0010000000474974513,0;ESP_AF_POPMAX=0.0008139534620568156,0;KG_AF_GLOBAL=0.00019968050764873624,0;KG_AC=1,0;POPMAX=NFE,SAS;AC_POPMAX=38,1\tGT:AD:DP:GQ:PL\t0/1:17,24:41:99:600,0,372\n', '3\t182948795\t.\tG\tA\t865.3\tPASS\tAC=1;AF=7.413e-05;AN=121412;BaseQRankSum=5.18;ClippingRankSum=-0.281;DP=75;FS=0.874;GQ_MEAN=141.4;GQ_STDDEV=148.79;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.36;NCC=0;QD=11.54;ReadPosRankSum=1.37;SOR=0.544;VQSLOD=14.85;culprit=MQ;AF_AFR=6.5359e-05;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00017053;AF_OTH=0;AF_SAS=0;AN_AFR=10396;AN_AMR=11516;AN_ASJ=9844;AN_EAS=8650;AN_FIN=6610;AN_NFE=66602;AN_OTH=906;AN_SAS=16484;AN_POPMAX=66602;AN_Female=111142;AN_Male=134614;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00023255814448930323;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=8\tGT:AD:DP:GQ:PL\t0/1:36,39:75:99:901,0,679\n', '4\t8621131\t.\tA\tC\t452.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-1.736;ClippingRankSum=-1.182;DP=42;FS=0;GQ_MEAN=121.67;GQ_STDDEV=101.87;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.075;NCC=0;QD=10.77;ReadPosRankSum=-1.333;SOR=0.693;VQSLOD=15.67;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PL\t0/1:21,21:42:99:488,0,507\n', '4\t39501825\t.\tG\tA\t504.3\tPASS\tAC=1;AF=0.000486;AN=121408;BaseQRankSum=2.94;ClippingRankSum=-1.242;DP=41;FS=1.238;GQ_MEAN=117.6;GQ_STDDEV=85.25;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.98;NCC=0;QD=12.3;ReadPosRankSum=0.85;SOR=0.425;VQSLOD=14.67;culprit=MQ;AF_AFR=0.00039236;AF_AMR=0.00050786;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00080716;AF_OTH=0.00018281;AF_SAS=3.2787e-05;AN_AFR=10376;AN_AMR=11566;AN_ASJ=9836;AN_EAS=8644;AN_FIN=6614;AN_NFE=66664;AN_OTH=906;AN_SAS=16494;AN_POPMAX=66664;AN_Female=111086;AN_Male=134452;KG_AF_POPMAX=0.0010000000474974513;ESP_AF_POPMAX=0.0008139534620568156;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=51\tGT:AD:DP:GQ:PL\t0/1:19,22:41:99:540,0,418\n', '4\t114468804\t.\tA\tG\t384.3\tPASS\tAC=1;AF=1.688e-05;AN=118474;BaseQRankSum=-2.874;ClippingRankSum=0.166;DP=52;FS=0;GQ_MEAN=119.6;GQ_STDDEV=83.76;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.55;NCC=0;QD=7.39;ReadPosRankSum=0.24;SOR=0.719;VQSLOD=15.08;culprit=QD;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=1.1802e-05;AF_OTH=0;AF_SAS=0;AN_AFR=2152;AN_AMR=1232;AN_ASJ=8852;AN_EAS=1594;AN_FIN=2318;AN_NFE=12864;AN_OTH=272;AN_SAS=7556;AN_POPMAX=NA;AN_Female=83536;AN_Male=102140;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NA;AC_POPMAX=NA\tGT:AD:DP:GQ:PL\t0/1:29,23:52:99:420,0,718\n', '4\t123277134\t.\tC\tT\t394.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=3.12;ClippingRankSum=0.719;DP=41;FS=9.155;GQ_MEAN=120.87;GQ_STDDEV=85.9;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.641;NCC=0;QD=9.62;ReadPosRankSum=0.379;SOR=1.099;VQSLOD=16.94;culprit=MQ\tGT:AD:DP:GQ:PL\t0/1:22,19:41:99:430,0,479\n', '5\t76358989\t.\tGA\tG\t948.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=0.068;ClippingRankSum=1.04;DP=59;FS=3.67;GQ_MEAN=159.33;GQ_STDDEV=224.67;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.312;NCC=0;QD=16.07;ReadPosRankSum=-0.646;SOR=1.274;VQSLOD=0.382;culprit=SOR\tGT:AD:DP:GQ:PL\t0/1:30,29:59:99:984,0,971\n', '5\t98205548\t.\tATTC\tA\t1137.3\tPASS\tAC=1;AF=9.062e-05;AN=121392;BaseQRankSum=0.034;ClippingRankSum=1.05;DP=63;FS=0;GQ_MEAN=171.87;GQ_STDDEV=277.05;InbreedingCoeff=-0.0345;MQ=60.33;MQ0=0;MQRankSum=0.529;NCC=0;QD=18.05;ReadPosRankSum=-0.172;SOR=0.648;VQSLOD=3.35;culprit=FS;AF_AFR=6.5608e-05;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00014459;AF_OTH=0;AF_SAS=0;AN_AFR=9854;AN_AMR=10548;AN_ASJ=9814;AN_EAS=7922;AN_FIN=6350;AN_NFE=58934;AN_OTH=866;AN_SAS=15546;AN_POPMAX=58934;AN_Female=110726;AN_Male=134076;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.0002423654805170372;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=10\tGT:AD:DP:GQ:PL\t0/1:32,31:63:99:1173,0,1453\n', '5\t125912806\t.\tG\tA\t450.3\tPASS\tAC=1;AF=0.0005189;AN=121412;BaseQRankSum=4.69;ClippingRankSum=-0.19;DP=38;FS=2.873;GQ_MEAN=114;GQ_STDDEV=51.3;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.833;NCC=0;QD=11.85;ReadPosRankSum=0.745;SOR=1.014;VQSLOD=15.78;culprit=MQ;AF_AFR=0;AF_AMR=8.9334e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=0.0012108;AF_NFE=0.00074294;AF_OTH=0.00054685;AF_SAS=0.00055227;AN_AFR=10402;AN_AMR=11566;AN_ASJ=9850;AN_EAS=8654;AN_FIN=6614;AN_NFE=66726;AN_OTH=908;AN_SAS=16508;AN_POPMAX=16508;AN_Female=111362;AN_Male=134908;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00046511628897860646;clinvar_pathogenic=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=SAS;AC_POPMAX=12\tGT:AD:DP:GQ:PL\t0/1:18,20:38:99:486,0,298\n', '5\t145543991\t.\tC\tG\t608.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-0.68;ClippingRankSum=-0.713;DP=56;FS=19.529;GQ_MEAN=135.87;GQ_STDDEV=132.95;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.926;NCC=0;QD=10.86;ReadPosRankSum=2.3;SOR=2.819;VQSLOD=14.09;culprit=SOR\tGT:AD:DP:GQ:PL\t0/1:28,28:56:99:644,0,615\n', '5\t146258203\t.\tG\tC\t517.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-0.836;ClippingRankSum=1.7;DP=64;FS=2.074;GQ_MEAN=120.87;GQ_STDDEV=122.37;InbreedingCoeff=-0.0385;MQ=60;MQ0=0;MQRankSum=-1.227;NCC=0;QD=8.08;ReadPosRankSum=1.12;SOR=1.001;VQSLOD=15.7;culprit=MQRankSum\tGT:AD:DP:GQ:PL\t0/1:35,29:64:99:553,0,719\n', '6\t489033\t.\tC\tT\t458.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=1.57;ClippingRankSum=0.5;DP=56;FS=5.691;GQ_MEAN=126.27;GQ_STDDEV=101.93;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.2;NCC=0;QD=8.18;ReadPosRankSum=1.78;SOR=1.615;VQSLOD=15.97;culprit=ReadPosRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=2.6858e-05;AF_OTH=0;AF_SAS=0;AN_AFR=15300;AN_AMR=33458;AN_ASJ=9850;AN_EAS=17240;AN_FIN=22292;AN_NFE=111700;AN_OTH=5474;AN_SAS=30732;AN_POPMAX=111700;AN_Female=111250;AN_Male=134796\tGT:AD:DP:GQ:PL\t0/1:33,23:56:99:494,0,778\n', '6\t31599756\t.\tG\tT\t453.3\tPASS\tAC=1;AF=8.499e-06;AN=117662;BaseQRankSum=-1.866;ClippingRankSum=-0.691;DP=48;FS=3.917;GQ_MEAN=121.47;GQ_STDDEV=102.33;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.27;NCC=0;QD=9.44;ReadPosRankSum=2.28;SOR=0.953;VQSLOD=15.77;culprit=ReadPosRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=4.6347e-05;AF_OTH=0;AF_SAS=0;AN_AFR=8878;AN_AMR=11406;AN_ASJ=9682;AN_EAS=8492;AN_FIN=6516;AN_NFE=62506;AN_OTH=848;AN_SAS=15484;AN_POPMAX=62506;AN_Female=107572;AN_Male=132842;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:24,24:48:99:489,0,538\n', '6\t32713127\t.\tG\tC\t36.6\tPASS\tAC=1;AF=0.0005602;AN=121376;BaseQRankSum=0.624;ClippingRankSum=0.208;DP=40;FS=8.397;GQ_MEAN=60.93;GQ_STDDEV=38.61;InbreedingCoeff=-0.1131;MQ=58.97;MQ0=0;MQRankSum=-2.362;NCC=0;NEGATIVE_TRAIN_SITE;QD=0.47;ReadPosRankSum=-1.153;SOR=1.808;VQSLOD=-3.972;culprit=QD;AF_AFR=0.00020064;AF_AMR=0;AF_ASJ=0.00020375;AF_EAS=0;AF_FIN=0;AF_NFE=5.4268e-05;AF_OTH=0.00018349;AF_SAS=0;AN_AFR=9880;AN_AMR=11558;AN_ASJ=9816;AN_EAS=8610;AN_FIN=6614;AN_NFE=65344;AN_OTH=894;AN_SAS=16500;AN_POPMAX=9880;AN_Female=110276;AN_Male=134328;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=AFR;AC_POPMAX=9\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:37,3:40:12:0|1:32713102_G_A:12,0,1587\n', '6\t32713128\t.\tG\tT\t36.5\tPASS\tAC=1;AF=0.0005602;AN=121376;BaseQRankSum=1.21;ClippingRankSum=0.4;DP=40;FS=8.473;GQ_MEAN=62.13;GQ_STDDEV=39.02;InbreedingCoeff=-0.113;MQ=58.97;MQ0=0;MQRankSum=-1.733;NCC=0;NEGATIVE_TRAIN_SITE;QD=0.46;ReadPosRankSum=-1.438;SOR=1.802;VQSLOD=-3.762;culprit=QD;AF_AFR=0.00020048;AF_AMR=0;AF_ASJ=0.00020379;AF_EAS=0;AF_FIN=0;AF_NFE=6.3313e-05;AF_OTH=0.00018355;AF_SAS=0;AN_AFR=9880;AN_AMR=11556;AN_ASJ=9814;AN_EAS=8610;AN_FIN=6614;AN_NFE=65348;AN_OTH=894;AN_SAS=16498;AN_POPMAX=9880;AN_Female=110270;AN_Male=134304;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=AFR;AC_POPMAX=9\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:37,3:40:12:0|1:32713102_G_A:12,0,1587\n', '6\t33377482\t.\tCTGTGTGTGTGTG\tC\t5138.4\tPASS\tAC=0;AF=0;AN=2;BaseQRankSum=0.229;ClippingRankSum=-0.102;DP=22;FS=1.227;GQ_MEAN=72.71;GQ_STDDEV=125.54;InbreedingCoeff=0.2881;MQ=60;MQ0=0;MQRankSum=0.406;NCC=1;QD=11.43;ReadPosRankSum=0.665;SOR=0.748;VQSLOD=0.424;culprit=InbreedingCoeff\tGT:AD:DP:GQ:PL\t0/0:0,0,3,11,8:22:99:1089,627,552\n', '6\t33377482\t.\tCTGTGTGTGTGTG\tC\t5138.4\tPASS\tAC=0;AF=0;AN=2;BaseQRankSum=0.229;ClippingRankSum=-0.102;DP=22;FS=1.227;GQ_MEAN=72.71;GQ_STDDEV=125.54;InbreedingCoeff=0.2881;MQ=60;MQ0=0;MQRankSum=0.406;NCC=1;QD=11.43;ReadPosRankSum=0.665;SOR=0.748;VQSLOD=0.424;culprit=InbreedingCoeff\tGT:AD:DP:GQ:PL\t0/0:0,0,3,11,8:22:99:1089,627,552\n', '6\t33411157\t.\tG\tC\t844.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-0.504;ClippingRankSum=-0.912;DP=55;FS=0;GQ_MEAN=112.87;GQ_STDDEV=79.07;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.81;NCC=0;QD=15.35;ReadPosRankSum=0.274;SOR=0.62;VQSLOD=14.4;culprit=MQRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=8.9688e-06;AF_OTH=0;AF_SAS=0;AN_AFR=15248;AN_AMR=33574;AN_ASJ=9838;AN_EAS=17236;AN_FIN=22210;AN_NFE=111498;AN_OTH=5480;AN_SAS=30782;AN_POPMAX=111498;AN_Female=111042;AN_Male=134824\tGT:AD:DP:GQ:PL\t0/1:19,36:55:99:880,0,394\n', '6\t56365932\t.\tC\tA\t305.3\tPASS\tAC=1;AF=0.0001325;AN=120798;BaseQRankSum=0.117;ClippingRankSum=-0.317;DP=35;FS=5.023;GQ_MEAN=117.93;GQ_STDDEV=61.94;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.15;NCC=0;QD=8.72;ReadPosRankSum=1.72;SOR=0.924;VQSLOD=15.97;culprit=ReadPosRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00024211;AF_OTH=0;AF_SAS=0;AN_AFR=9776;AN_AMR=11304;AN_ASJ=9834;AN_EAS=8592;AN_FIN=6584;AN_NFE=66402;AN_OTH=884;AN_SAS=16388;AN_POPMAX=66402;AN_Female=111040;AN_Male=134578;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00036214388092048466;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=16\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:20,15:35:99:1|0:56365924_A_G:341,0,524\n', '6\t84896196\t.\tT\tC\t461.3\tPASS\tAC=1;AF=0.000486;AN=121404;BaseQRankSum=-1.019;ClippingRankSum=0.204;DP=50;FS=0;GQ_MEAN=127.73;GQ_STDDEV=102.36;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.37;NCC=0;QD=9.23;ReadPosRankSum=2.03;SOR=0.743;VQSLOD=15.07;culprit=ReadPosRankSum;AF_AFR=0.00058839;AF_AMR=8.9344e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=8.9726e-05;AF_NFE=0.0010216;AF_OTH=0.00018248;AF_SAS=0;AN_AFR=10398;AN_AMR=11578;AN_ASJ=9846;AN_EAS=8654;AN_FIN=6612;AN_NFE=66708;AN_OTH=906;AN_SAS=16508;AN_POPMAX=66708;AN_Female=111288;AN_Male=134812;KG_AF_POPMAX=0.001500000013038516;ESP_AF_POPMAX=0.00046511628897860646;KG_AF_GLOBAL=0.0005990415229462087;KG_AC=3;POPMAX=NFE;AC_POPMAX=50\tGT:AD:DP:GQ:PL\t0/1:26,24:50:99:497,0,605\n', '6\t131481327\t.\tA\tG\t423.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-2.083;ClippingRankSum=-0.467;DP=50;FS=1.088;GQ_MEAN=121.33;GQ_STDDEV=93.76;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.701;NCC=0;QD=8.47;ReadPosRankSum=-1.11;SOR=0.91;VQSLOD=13.54;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PL\t0/1:27,23:50:99:459,0,649\n', '7\t26224871\t.\tG\tA\t527.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=2.58;ClippingRankSum=0.108;DP=37;FS=5.128;GQ_MEAN=115.67;GQ_STDDEV=57.12;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.851;NCC=0;QD=14.25;ReadPosRankSum=0.603;SOR=1.567;VQSLOD=16.28;culprit=MQ\tGT:AD:DP:GQ:PL\t0/1:15,22:37:99:563,0,322\n', '7\t26248176\t.\tG\tGC\t39.5\tVQSRTrancheINDEL99.00to99.90\tAC=1;AF=0.000404,3.298e-05;AN=121282;BaseQRankSum=1.52;ClippingRankSum=-0.432;DP=46;FS=1.429;GQ_MEAN=94.13;GQ_STDDEV=28.49;InbreedingCoeff=-0.0526;MQ=58.51;MQ0=0;MQRankSum=-2.884;NCC=0;NEGATIVE_TRAIN_SITE;QD=0.86;ReadPosRankSum=-2.753;SOR=1.113;VQSLOD=-4.124;culprit=ReadPosRankSum;AF_AFR=0.00019955,0;AF_AMR=0,0;AF_ASJ=0,0.00010557;AF_EAS=0,0;AF_FIN=0,4.509e-05;AF_NFE=7.3109e-05,5.4832e-05;AF_OTH=0,0;AF_SAS=0,6.6863e-05;AN_AFR=9510;AN_AMR=11480;AN_ASJ=9472;AN_EAS=8584;AN_FIN=6594;AN_NFE=65432;AN_OTH=890;AN_SAS=16310;AN_POPMAX=9510,9510;AN_Female=108302;AN_Male=132152;KG_AF_POPMAX=0,0;ESP_AF_POPMAX=0,0;KG_AF_GLOBAL=0,0;KG_AC=0,0;POPMAX=AFR,AFR;AC_POPMAX=8,1\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:41,5:46:73:0|1:26248176_G_GC:73,0,5554\n', '7\t26248177\t.\tT\tTGACAAACC\t36.8\tVQSRTrancheINDEL99.00to99.90\tAC=1;AF=0.0002968,3.298e-05,4.123e-05;AN=121274;BaseQRankSum=2.57;ClippingRankSum=-0.023;DP=45;FS=2.045;GQ_MEAN=73.53;GQ_STDDEV=28.39;InbreedingCoeff=-0.0526;MQ=59.05;MQ0=0;MQRankSum=-0.933;NCC=0;NEGATIVE_TRAIN_SITE;QD=0.31;ReadPosRankSum=-2.844;SOR=1.355;VQSLOD=-3.147;culprit=ReadPosRankSum;AF_AFR=0,0,0;AF_AMR=0,0,0;AF_ASJ=0.0001269,0,0;AF_EAS=0,0,0;AF_FIN=0,0,0;AF_NFE=2.9499e-05,0,9.8328e-06;AF_OTH=0,0,0;AF_SAS=3.7205e-05,0,0;AN_AFR=8958;AN_AMR=11360;AN_ASJ=7880;AN_EAS=8394;AN_FIN=6494;AN_NFE=63200;AN_OTH=856;AN_SAS=14644;AN_POPMAX=8958,63200,63200;AN_Female=99718;AN_Male=121368;KG_AF_POPMAX=0,0,0;ESP_AF_POPMAX=0,0,0;KG_AF_GLOBAL=0,0,0;KG_AC=0,0,0;POPMAX=AFR,NFE,NFE;AC_POPMAX=7,2,4\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:41,4:45:72:0|1:26248176_G_GC:72,0,5554\n', '7\t141756669\t.\tC\tA\t598.3\tPASS\tAC=1;AF=3.309e-05;AN=120898;BaseQRankSum=1.54;ClippingRankSum=0.854;DP=49;FS=0;GQ_MEAN=126.87;GQ_STDDEV=100.96;InbreedingCoeff=-0.0345;MQ=59.65;MQ0=0;MQRankSum=-1.9;NCC=0;NEGATIVE_TRAIN_SITE;QD=12.21;ReadPosRankSum=1.88;SOR=0.6;VQSLOD=-0.9351;culprit=MQRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=5.3771e-05;AF_OTH=0;AF_SAS=0;AN_AFR=9788;AN_AMR=11540;AN_ASJ=9848;AN_EAS=8574;AN_FIN=6612;AN_NFE=66668;AN_OTH=894;AN_SAS=16470;AN_POPMAX=66668;AN_Female=111252;AN_Male=134832;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00012062726455042139;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=4\tGT:AD:DP:GQ:PL\t0/1:22,27:49:99:634,0,491\n', '7\t151800292\t.\tA\tG\t330.3\tPASS\tAC=1;AF=0.0002306;AN=121412;BaseQRankSum=-1.921;ClippingRankSum=-0.895;DP=52;FS=0;GQ_MEAN=119.6;GQ_STDDEV=68.63;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.671;NCC=0;QD=6.35;ReadPosRankSum=-0.186;SOR=0.72;VQSLOD=15.07;culprit=QD;AF_AFR=6.5342e-05;AF_AMR=0.00017867;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00048337;AF_OTH=0;AF_SAS=0;AN_AFR=10404;AN_AMR=11570;AN_ASJ=9850;AN_EAS=8654;AN_FIN=6614;AN_NFE=66720;AN_OTH=908;AN_SAS=16490;AN_POPMAX=66720;AN_Female=111360;AN_Male=134908;KG_AF_POPMAX=0.0010000000474974513;ESP_AF_POPMAX=0.0008139534620568156;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=25\tGT:AD:DP:GQ:PL\t0/1:31,21:52:99:366,0,687\n', '7\t154862950\t.\tG\tT\t332.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=1.18;ClippingRankSum=0.542;DP=41;FS=2.687;GQ_MEAN=110.6;GQ_STDDEV=72.36;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.125;NCC=0;QD=8.1;ReadPosRankSum=2.13;SOR=1.15;VQSLOD=16.31;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PL\t0/1:24,17:41:99:368,0,557\n', '8\t8749671\t.\tC\tG\t588.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-0.385;ClippingRankSum=-0.311;DP=43;FS=2.67;GQ_MEAN=105;GQ_STDDEV=77.27;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.311;NCC=0;QD=13.68;ReadPosRankSum=1.43;SOR=0.374;VQSLOD=15.03;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=1.8001e-05;AF_OTH=0;AF_SAS=0;AN_AFR=15146;AN_AMR=33548;AN_ASJ=9814;AN_EAS=17214;AN_FIN=20140;AN_NFE=111102;AN_OTH=5454;AN_SAS=30774;AN_POPMAX=111102;AN_Female=109532;AN_Male=133660\tGT:AD:DP:GQ:PL\t0/1:17,26:43:99:624,0,380\n', '8\t27637697\t.\tT\tG\t419.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=0.765;ClippingRankSum=-1.176;DP=45;FS=0;GQ_MEAN=125.93;GQ_STDDEV=91.32;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.902;NCC=0;QD=9.32;ReadPosRankSum=1.22;SOR=0.653;VQSLOD=15.32;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=9.0243e-06;AF_OTH=0;AF_SAS=0;AN_AFR=15256;AN_AMR=33394;AN_ASJ=9794;AN_EAS=17114;AN_FIN=22284;AN_NFE=110812;AN_OTH=5450;AN_SAS=29766;AN_POPMAX=110812;AN_Female=110454;AN_Male=133416\tGT:AD:DP:GQ:PL\t0/1:25,20:45:99:455,0,596\n', '8\t38913232\t.\tA\tG\t743.3\tPASS\tAC=1;AF=8.237e-06;AN=121410;BaseQRankSum=0.485;ClippingRankSum=1.76;DP=61;FS=0.97;GQ_MEAN=135.6;GQ_STDDEV=126.87;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.962;NCC=0;QD=12.18;ReadPosRankSum=2.4;SOR=0.88;VQSLOD=14.94;culprit=ReadPosRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=1.7941e-05;AF_OTH=0;AF_SAS=0;AN_AFR=10398;AN_AMR=11434;AN_ASJ=9842;AN_EAS=8642;AN_FIN=6584;AN_NFE=66610;AN_OTH=908;AN_SAS=16488;AN_POPMAX=66610;AN_Female=111188;AN_Male=134672;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:28,33:61:99:779,0,594\n', '8\t125081668\t.\tC\tCA\t940.3\tPASS\tAC=1;AF=1.655e-05;AN=120846;BaseQRankSum=0.869;ClippingRankSum=0.905;DP=54;FS=0;GQ_MEAN=128.07;GQ_STDDEV=113.37;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=2.28;NCC=0;QD=17.41;ReadPosRankSum=0.869;SOR=0.811;VQSLOD=1.15;culprit=FS;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=3.615e-05;AF_OTH=0;AF_SAS=0;AN_AFR=9740;AN_AMR=11546;AN_ASJ=9794;AN_EAS=8584;AN_FIN=6614;AN_NFE=66600;AN_OTH=898;AN_SAS=16486;AN_POPMAX=66600;AN_Female=109850;AN_Male=133258;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=2\tGT:AD:DP:GQ:PL\t0/1:20,34:54:99:976,0,536\n', '8\t144511675\t.\tC\tT\t530.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=0.87;ClippingRankSum=0.03;DP=49;FS=2.434;GQ_MEAN=110.47;GQ_STDDEV=127.53;InbreedingCoeff=-0.0346;MQ=60;MQ0=0;MQRankSum=1.51;NCC=0;QD=10.82;ReadPosRankSum=0.89;SOR=0.387;VQSLOD=13.66;culprit=DP\tGT:AD:DP:GQ:PL\t0/1:25,24:49:99:566,0,594\n', '9\t2039776\t.\tACAGCAGCAG\tA\t4303.2\tPASS\tAC=0;AF=0;AN=2;BaseQRankSum=-0.377;ClippingRankSum=-0.225;DP=46;FS=2.144;GQ_MEAN=132.2;GQ_STDDEV=177.84;InbreedingCoeff=0.4374;MQ=60.34;MQ0=0;MQRankSum=0.193;NCC=0;QD=20.53;ReadPosRankSum=-0.415;SOR=0.502;VQSLOD=1.87;culprit=InbreedingCoeff;CLNSIG=Uncertain_significance\tGT:AD:DP:GQ:PL\t0/0:1,0,45:46:98:1796,1799,1838\n', '9\t4605352\t.\tT\tC\t488.3\tPASS\tAC=1;AF=4.965e-05;AN=120838;BaseQRankSum=-3.107;ClippingRankSum=-1.451;DP=63;FS=0.996;GQ_MEAN=125.4;GQ_STDDEV=110.86;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.248;NCC=0;QD=7.75;ReadPosRankSum=-0.134;SOR=0.478;VQSLOD=15.36;culprit=QD;AF_AFR=0;AF_AMR=2.9781e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=6.2671e-05;AF_OTH=0;AF_SAS=0;AN_AFR=9790;AN_AMR=11540;AN_ASJ=9846;AN_EAS=8624;AN_FIN=6614;AN_NFE=66686;AN_OTH=898;AN_SAS=16498;AN_POPMAX=66686;AN_Female=111328;AN_Male=134884;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00024113817198667675;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=6\tGT:AD:DP:GQ:PL\t0/1:39,24:63:99:524,0,986\n', '9\t35906598\t.\tACCC\tA\t767.7\tPASS\tAC=0;AF=0.006968,0.0002452,9.429e-06,0.0006223,3.772e-05;AN=106052;BaseQRankSum=1.54;ClippingRankSum=1.33;DP=55;FS=5.339;GQ_MEAN=42.6;GQ_STDDEV=75.37;InbreedingCoeff=-0.2237;MQ=61.53;MQ0=0;MQRankSum=1.56;NCC=0;NEGATIVE_TRAIN_SITE;QD=21.33;ReadPosRankSum=-0.584;SOR=0.197;VQSLOD=-0.9931;culprit=SOR;KG_AF_POPMAX=0,NA,NA,NA,NA;ESP_AF_POPMAX=0.21732789278030396,NA,NA,NA,NA;KG_AF_GLOBAL=0,NA,NA,NA,NA;KG_AC=0,NA,NA,NA,NA;POPMAX=SAS,NFE,NA,AFR,AFR;AN_POPMAX=2398,11718,NA,1392,1392;AC_POPMAX=95,13,NA,23,1;AN_AFR=1392;AN_AMR=1858;AN_EAS=2146;AN_FIN=544;AN_NFE=11718;AN_OTH=104;AN_SAS=2398\tGT:AD:DP:GQ:PL\t0/0:55,0:55:0:0,0,628\n', '9\t35906601\t.\tC\tA\t1953.2\tVQSRTrancheINDEL99.00to99.90\tAC=0;AF=0;AN=2;BaseQRankSum=0.736;ClippingRankSum=0.579;DP=23;FS=0.776;GQ_MEAN=84.93;GQ_STDDEV=98.77;InbreedingCoeff=0.2949;MQ=60;MQ0=0;MQRankSum=-0.656;NCC=0;NEGATIVE_TRAIN_SITE;QD=2.62;ReadPosRankSum=0.217;SOR=0.856;VQSLOD=-2.106;culprit=DP\tGT:AD:DP:GQ:PL\t0/0:20,0,3,0:23:99:347,409,1158\n', '9\t35906601\t.\tC\tCCCACCACACCCCTCACCACCTCCACCACCACCACCACCACCA\t1953.2\tVQSRTrancheINDEL99.00to99.90\tAC=0;AF=0;AN=2;BaseQRankSum=0.736;ClippingRankSum=0.579;DP=23;FS=0.776;GQ_MEAN=84.93;GQ_STDDEV=98.77;InbreedingCoeff=0.2949;MQ=60;MQ0=0;MQRankSum=-0.656;NCC=0;NEGATIVE_TRAIN_SITE;QD=2.62;ReadPosRankSum=0.217;SOR=0.856;VQSLOD=-2.106;culprit=DP\tGT:AD:DP:GQ:PL\t0/0:20,0,3,0:23:99:347,409,1158\n', '9\t96019399\t.\tC\tT\t548.3\tPASS\tAC=1;AF=4.12e-05;AN=121368;BaseQRankSum=2.9;ClippingRankSum=0.939;DP=41;FS=1.193;GQ_MEAN=113.13;GQ_STDDEV=61.29;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.278;NCC=0;QD=13.37;ReadPosRankSum=2.32;SOR=0.919;VQSLOD=15.27;culprit=ReadPosRankSum;AF_AFR=0.00019965;AF_AMR=3.087e-05;AF_ASJ=0;AF_EAS=0.00017872;AF_FIN=0;AF_NFE=1.8496e-05;AF_OTH=0;AF_SAS=6.5445e-05;AN_AFR=9360;AN_AMR=11288;AN_ASJ=9628;AN_EAS=8518;AN_FIN=6010;AN_NFE=63252;AN_OTH=824;AN_SAS=16256;AN_POPMAX=9360;AN_Female=106980;AN_Male=131816;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00022696323867421597;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=AFR;AC_POPMAX=2\tGT:AD:DP:GQ:PL\t0/1:17,24:41:99:584,0,329\n', '9\t114304465\t.\tG\tA\t512.3\tPASS\tAC=1;AF=1.647e-05;AN=121398;BaseQRankSum=3.67;ClippingRankSum=0.783;DP=45;FS=0;GQ_MEAN=123.4;GQ_STDDEV=95.85;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.237;NCC=0;QD=11.38;ReadPosRankSum=-0.284;SOR=0.622;VQSLOD=15.26;culprit=MQRankSum;AF_AFR=0.00019747;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=1.8058e-05;AF_OTH=0;AF_SAS=0;AN_AFR=9736;AN_AMR=11524;AN_ASJ=9804;AN_EAS=8598;AN_FIN=6612;AN_NFE=66066;AN_OTH=896;AN_SAS=16436;AN_POPMAX=9736;AN_Female=110586;AN_Male=134350;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=AFR;AC_POPMAX=2\tGT:AD:DP:GQ:PL\t0/1:23,22:45:99:548,0,468\n', '9\t125890531\t.\tC\tG\t657.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-1.51;ClippingRankSum=-0.616;DP=53;FS=2.417;GQ_MEAN=124.8;GQ_STDDEV=124.01;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.902;NCC=0;QD=12.4;ReadPosRankSum=0.17;SOR=1.232;VQSLOD=16.29;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=8.9686e-06;AF_OTH=0;AF_SAS=0;AN_AFR=15302;AN_AMR=33534;AN_ASJ=9846;AN_EAS=17244;AN_FIN=22300;AN_NFE=111500;AN_OTH=5476;AN_SAS=30778;AN_POPMAX=111500;AN_Female=111238;AN_Male=134742\tGT:AD:DP:GQ:PL\t0/1:24,29:53:99:693,0,570\n', '9\t134388668\t.\tC\tG\t524.4\tPASS\tAC=1;AF=0.003319,3.295e-05;AN=121408;BaseQRankSum=3.74;ClippingRankSum=-0.733;DP=42;FS=6.825;GQ_MEAN=108.07;GQ_STDDEV=65.21;InbreedingCoeff=-0.0417;MQ=60;MQ0=0;MQRankSum=-0.859;NCC=0;POSITIVE_TRAIN_SITE;QD=12.49;ReadPosRankSum=0.682;SOR=0.172;VQSLOD=17.86;culprit=MQ;AF_AFR=0.0377,0,0;AF_AMR=0.0016097,0,0;AF_ASJ=0,0,0;AF_EAS=0,0,0;AF_FIN=0,0,0;AF_NFE=9.0395e-05,3.6158e-05,9.0395e-06;AF_OTH=0.0011001,0,0;AF_SAS=0.00026009,0,0;AN_AFR=10008;AN_AMR=11386;AN_ASJ=9808;AN_EAS=8514;AN_FIN=5950;AN_NFE=65082;AN_OTH=850;AN_SAS=16270;AN_POPMAX=10008,65082;AN_Female=110236;AN_Male=134096;KG_AF_POPMAX=0.04390000179409981,0;ESP_AF_POPMAX=0.03245574235916138,0;clinvar_pathogenic=0,NA;KG_AF_GLOBAL=0.01218051090836525,0;KG_AC=61,0;POPMAX=AFR,NFE;AC_POPMAX=373,4\tGT:AD:DP:GQ:PL\t0/1:19,23:42:99:560,0,324\n', '9\t136633651\t.\tC\tG\t470.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-3.16;ClippingRankSum=-0.841;DP=47;FS=2.488;GQ_MEAN=120.53;GQ_STDDEV=107.08;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.181;NCC=0;QD=10.01;ReadPosRankSum=0.458;SOR=0.856;VQSLOD=15.52;culprit=MQRankSum\tGT:AD:DP:GQ:PL\t0/1:24,23:47:99:506,0,589\n', '9\t139396266\t.\tT\tG\t468.3\tPASS\tAC=1;AF=1.655e-05,8.274e-06;AN=120858;BaseQRankSum=1.53;ClippingRankSum=1.55;DP=46;FS=0;GQ_MEAN=124.27;GQ_STDDEV=105.33;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.02;NCC=0;QD=10.18;ReadPosRankSum=0.627;SOR=0.735;VQSLOD=15.61;culprit=MQ;AF_AFR=0,0;AF_AMR=0.00011918,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=4.5098e-05,9.0196e-06;AF_OTH=0.00018382,0;AF_SAS=0,0;AN_AFR=9358;AN_AMR=11424;AN_ASJ=9808;AN_EAS=8518;AN_FIN=6130;AN_NFE=64374;AN_OTH=850;AN_SAS=16462;AN_POPMAX=11424,64374;AN_Female=110344;AN_Male=134528;KG_AF_POPMAX=0,0;ESP_AF_POPMAX=0,0;KG_AF_GLOBAL=0,0;KG_AC=0,0;POPMAX=AMR,NFE;AC_POPMAX=2,1\tGT:AD:DP:GQ:PL\t0/1:24,22:46:99:504,0,535\n', '9\t139943392\t.\tC\tA\t548.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-1.187;ClippingRankSum=-0.331;DP=66;FS=0;GQ_MEAN=125.6;GQ_STDDEV=129.23;InbreedingCoeff=-0.0346;MQ=60;MQ0=0;MQRankSum=-0.253;NCC=0;QD=8.31;ReadPosRankSum=1.04;SOR=0.73;VQSLOD=15.77;culprit=MQ\tGT:AD:DP:GQ:PL\t0/1:38,28:66:99:584,0,884\n', '9\t139944752\t.\tA\tACCCGCCTGCC\t194.7\tVQSRTrancheINDEL99.00to99.90\tAC=1;AF=0.5;AN=2;BaseQRankSum=-1.021;ClippingRankSum=0.778;DP=60;FS=0.878;GQ_MEAN=103.53;GQ_STDDEV=16.94;InbreedingCoeff=-0.0714;MQ=53.96;MQ0=0;MQRankSum=-4.758;NCC=0;NEGATIVE_TRAIN_SITE;QD=0.6;ReadPosRankSum=-4.672;SOR=0.839;VQSLOD=-10.77;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:46,14,0:60:99:1|0:139944728_C_T:124,0,4013\n', '10\t323464\t.\tG\tA\t735.3\tPASS\tAC=1;AF=3.295e-05;AN=121412;BaseQRankSum=3.3;ClippingRankSum=0.037;DP=52;FS=0;GQ_MEAN=116.2;GQ_STDDEV=80.25;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.522;NCC=0;QD=14.14;ReadPosRankSum=0.354;SOR=0.793;VQSLOD=15.77;culprit=MQ;AF_AFR=6.5591e-05;AF_AMR=0;AF_ASJ=0;AF_EAS=0.00017408;AF_FIN=0;AF_NFE=3.5977e-05;AF_OTH=0;AF_SAS=0;AN_AFR=10218;AN_AMR=11528;AN_ASJ=9812;AN_EAS=8616;AN_FIN=6612;AN_NFE=66336;AN_OTH=900;AN_SAS=16462;AN_POPMAX=8616;AN_Female=111012;AN_Male=134552;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=EAS;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:21,31:52:99:771,0,403\n', '10\t17156095\t.\tC\tT\t467.3\tPASS\tAC=1;AF=0.0003542,8.237e-06;AN=121408;BaseQRankSum=4.12;ClippingRankSum=-0.287;DP=46;FS=11.316;GQ_MEAN=123.27;GQ_STDDEV=97.53;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.478;NCC=0;POSITIVE_TRAIN_SITE;QD=10.16;ReadPosRankSum=0.419;SOR=0.982;VQSLOD=17.12;culprit=MQRankSum;AF_AFR=6.6216e-05,0;AF_AMR=0.00050856,0;AF_ASJ=0,0.00010221;AF_EAS=0,0;AF_FIN=4.5102e-05,0;AF_NFE=0.00041507,1.8047e-05;AF_OTH=0.00091811,0;AF_SAS=0.00075613,0;AN_AFR=9226;AN_AMR=10426;AN_ASJ=9784;AN_EAS=8116;AN_FIN=5952;AN_NFE=61610;AN_OTH=818;AN_SAS=14612;AN_POPMAX=14612,61610;AN_Female=110524;AN_Male=133802;KG_AF_POPMAX=0.003100000089034438,0;ESP_AF_POPMAX=0.0006976744043640792,0;KG_AF_GLOBAL=0.000798722030594945,0;KG_AC=4,0;POPMAX=SAS,NFE;AC_POPMAX=11,1\tGT:AD:DP:GQ:PL\t0/1:25,21:46:99:503,0,475\n', '10\t33015754\t.\tC\tT\t572.3\tPASS\tAC=1;AF=4.122e-05;AN=121292;BaseQRankSum=2.38;ClippingRankSum=1.06;DP=59;FS=0;GQ_MEAN=136.47;GQ_STDDEV=128.54;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.099;NCC=0;QD=9.7;ReadPosRankSum=-0.417;SOR=0.783;VQSLOD=15.13;culprit=MQ;AF_AFR=0,6.7186e-05;AF_AMR=0,6.283e-05;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=0,2.784e-05;AF_OTH=0,0;AF_SAS=3.3679e-05,0;AN_AFR=9676;AN_AMR=11174;AN_ASJ=9544;AN_EAS=8420;AN_FIN=6544;AN_NFE=65014;AN_OTH=890;AN_SAS=16188;AN_POPMAX=9676;AN_Female=106998;AN_Male=130794;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=AFR;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:31,28:59:99:608,0,600\n', '10\t70056041\t.\tC\tG\t372.3\tPASS\tAC=1;AF=0.0004118;AN=121412;BaseQRankSum=1.08;ClippingRankSum=-0.688;DP=39;FS=4.773;GQ_MEAN=118;GQ_STDDEV=81.02;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.436;NCC=0;QD=9.55;ReadPosRankSum=0.913;SOR=0.234;VQSLOD=15.87;culprit=MQ;AF_AFR=0.00019646;AF_AMR=5.9655e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00077227;AF_OTH=0.00073099;AF_SAS=0.00042287;AN_AFR=9904;AN_AMR=11102;AN_ASJ=9828;AN_EAS=8542;AN_FIN=6316;AN_NFE=64604;AN_OTH=868;AN_SAS=15808;AN_POPMAX=64604;AN_Female=111074;AN_Male=134622;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00046511628897860646;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=43\tGT:AD:DP:GQ:PL\t0/1:20,19:39:99:408,0,459\n', '10\t91498735\t.\tC\tT\t431.3\tPASS\tAC=1;AF=4.942e-05;AN=121410;BaseQRankSum=-0.342;ClippingRankSum=-0.884;DP=44;FS=0;GQ_MEAN=125.73;GQ_STDDEV=94.59;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.106;NCC=0;QD=9.8;ReadPosRankSum=-1.426;SOR=0.722;VQSLOD=14.81;culprit=ReadPosRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=9.0108e-05;AF_OTH=0;AF_SAS=0;AN_AFR=10374;AN_AMR=11512;AN_ASJ=9798;AN_EAS=8620;AN_FIN=6606;AN_NFE=66638;AN_OTH=906;AN_SAS=16482;AN_POPMAX=66638;AN_Female=110490;AN_Male=133910;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=6\tGT:AD:DP:GQ:PL\t0/1:24,20:44:99:467,0,580\n', '10\t95326494\t.\tC\tG\t722.3\tPASS\tAC=1;AF=2.497e-05;AN=120146;BaseQRankSum=2.95;ClippingRankSum=1.5;DP=69;FS=0;GQ_MEAN=138.8;GQ_STDDEV=171.18;InbreedingCoeff=-0.0345;MQ=59.66;MQ0=0;MQRankSum=-1.099;NCC=0;QD=10.47;ReadPosRankSum=-0.114;SOR=0.646;VQSLOD=-0.2132;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=8.059e-05;AF_OTH=0;AF_SAS=0;AN_AFR=4086;AN_AMR=6746;AN_ASJ=9048;AN_EAS=4754;AN_FIN=1976;AN_NFE=33584;AN_OTH=382;AN_SAS=7060;AN_POPMAX=33584;AN_Female=96928;AN_Male=122026;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00023457658244296908;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=3\tGT:AD:DP:GQ:PL\t0/1:36,33:69:99:758,0,756\n', '10\t101578700\t.\tCT\tC\t813.3\tPASS\tAC=1;AF=8.236e-06;AN=121412;BaseQRankSum=-1.743;ClippingRankSum=-0.066;DP=51;FS=2.422;GQ_MEAN=145.4;GQ_STDDEV=194.96;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.292;NCC=0;QD=15.95;ReadPosRankSum=-0.198;SOR=1.154;VQSLOD=1.18;culprit=SOR;AF_AFR=0,0;AF_AMR=0,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=0,3.5901e-05;AF_OTH=0,0;AF_SAS=3.2489e-05,0;AN_AFR=10182;AN_AMR=11574;AN_ASJ=9838;AN_EAS=8638;AN_FIN=6614;AN_NFE=66710;AN_OTH=908;AN_SAS=16504;AN_POPMAX=66710;AN_Female=111204;AN_Male=134720;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:26,25:51:99:849,0,880\n', '10\t102107858\t.\tC\tG\t646.3\tPASS\tAC=1;AF=8.236e-06;AN=121412;BaseQRankSum=3.75;ClippingRankSum=1.52;DP=43;FS=1.267;GQ_MEAN=100.73;GQ_STDDEV=27.9;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.31;NCC=0;QD=15.03;ReadPosRankSum=0.505;SOR=0.555;VQSLOD=15.12;culprit=MQ;AF_AFR=0,0;AF_AMR=0,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=1.7953e-05,0;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=10372;AN_AMR=11576;AN_ASJ=9850;AN_EAS=8652;AN_FIN=6614;AN_NFE=66590;AN_OTH=908;AN_SAS=16506;AN_POPMAX=66590;AN_Female=111198;AN_Male=134702;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:14,29:43:99:682,0,191\n', '10\t114057917\t.\tC\tT\t525.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=1.54;ClippingRankSum=-0.165;DP=54;FS=0;GQ_MEAN=130.8;GQ_STDDEV=119.15;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.036;NCC=0;QD=9.73;ReadPosRankSum=1.19;SOR=0.693;VQSLOD=15.47;culprit=MQ\tGT:AD:DP:GQ:PL\t0/1:30,24:54:99:561,0,725\n', '11\t1016715\t.\tT\tC\t491.7\tVQSRTrancheSNP99.90to100.00\tAC=1;AF=0.000346;AN=121378;BaseQRankSum=0.84;ClippingRankSum=-0.57;DP=99;FS=23.18;GQ_MEAN=115.87;GQ_STDDEV=45.07;InbreedingCoeff=-0.1538;MQ=53.3;MQ0=0;MQRankSum=-1.358;NCC=0;QD=0.9;ReadPosRankSum=-0.351;SOR=4.003;VQSLOD=-234.6;culprit=DP;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0;AF_OTH=0;AF_SAS=0;AN_AFR=9996;AN_AMR=11448;AN_ASJ=9846;AN_EAS=8620;AN_FIN=6600;AN_NFE=66448;AN_OTH=898;AN_SAS=16498;AN_POPMAX=9996;AN_Female=111248;AN_Male=134732;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=AFR;AC_POPMAX=4\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:92,7:99:87:0|1:1016715_T_C:87,0,3848\n', '11\t1016719\t.\tT\tG\t494.7\tVQSRTrancheSNP99.90to100.00\tAC=1;AF=0.0003378;AN=121378;BaseQRankSum=2.09;ClippingRankSum=-0.454;DP=104;FS=18.231;GQ_MEAN=116.93;GQ_STDDEV=43.28;InbreedingCoeff=-0.154;MQ=53.41;MQ0=0;MQRankSum=-0.391;NCC=0;QD=0.85;ReadPosRankSum=-1.556;SOR=3.558;VQSLOD=-220.6;culprit=DP;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0;AF_OTH=0;AF_SAS=0;AN_AFR=10006;AN_AMR=11502;AN_ASJ=9848;AN_EAS=8628;AN_FIN=6600;AN_NFE=66552;AN_OTH=902;AN_SAS=16504;AN_POPMAX=10006;AN_Female=111266;AN_Male=134764;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=AFR;AC_POPMAX=4\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:93,11:104:99:0|1:1016715_T_C:111,0,3930\n', '11\t1017952\t.\tG\tT\t37.3\tVQSRTrancheSNP99.90to100.00\tAC=1;AF=0.5;AN=2;BaseQRankSum=0.91;ClippingRankSum=-1.046;DP=178;FS=26.265;GQ_MEAN=116.87;GQ_STDDEV=12.14;InbreedingCoeff=-0.0345;MQ=48.32;MQ0=0;MQRankSum=-1.813;NCC=0;QD=0.21;ReadPosRankSum=1.49;SOR=4.545;VQSLOD=-190.6;culprit=DP;AF_AFR=0,0;AF_AMR=0,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=0,0;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=15304;AN_AMR=33576;AN_ASJ=9850;AN_EAS=17248;AN_FIN=22298;AN_NFE=111708;AN_OTH=5482;AN_SAS=30778;AN_POPMAX=0,0;AN_Female=111346;AN_Male=134898\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:164,14:178:73:0|1:1017949_G_A:73,0,6878\n', '11\t1026987\t.\tG\tA\t585.3\tPASS\tAC=1;AF=7.47e-05;AN=120474;BaseQRankSum=-0.903;ClippingRankSum=0.682;DP=52;FS=3.953;GQ_MEAN=122.67;GQ_STDDEV=94.32;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.51;NCC=0;QD=11.26;ReadPosRankSum=0.387;SOR=0.93;VQSLOD=15.6;culprit=MQRankSum;AF_AFR=0.00023515;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00016813;AF_OTH=0;AF_SAS=0;AN_AFR=4060;AN_AMR=3124;AN_ASJ=9340;AN_EAS=3300;AN_FIN=2558;AN_NFE=27942;AN_OTH=380;AN_SAS=9844;AN_POPMAX=4060;AN_Female=101408;AN_Male=123290;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00024078978458419442;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=AFR;AC_POPMAX=2\tGT:AD:DP:GQ:PL\t0/1:23,29:52:99:621,0,463\n', '11\t1267817\t.\tG\tC\t469.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-2.49;ClippingRankSum=0.465;DP=40;FS=4.59;GQ_MEAN=108;GQ_STDDEV=76.97;InbreedingCoeff=-0.0345;MQ=59.14;MQ0=0;MQRankSum=0.41;NCC=0;NEGATIVE_TRAIN_SITE;QD=11.73;ReadPosRankSum=-0.985;SOR=0.415;VQSLOD=-0.7081;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=8.9526e-06;AF_OTH=0;AF_SAS=0;AN_AFR=15300;AN_AMR=33578;AN_ASJ=9846;AN_EAS=17248;AN_FIN=22298;AN_NFE=111700;AN_OTH=5480;AN_SAS=30778;AN_POPMAX=111700;AN_Female=111340;AN_Male=134888\tGT:AD:DP:GQ:PL\t0/1:17,23:40:99:505,0,377\n', '11\t3059308\t.\tG\tA\t613.3\tPASS\tAC=1;AF=7.413e-05,5.765e-05,3.295e-05,8.236e-06;AN=121412;BaseQRankSum=3.52;ClippingRankSum=0.258;DP=52;FS=0;GQ_MEAN=121.07;GQ_STDDEV=86.45;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.221;NCC=0;QD=11.79;ReadPosRankSum=0.737;SOR=0.688;VQSLOD=15.92;culprit=MQ;AF_AFR=0.00019605,0.0011763,0,0;AF_AMR=0,0.00011917,0,0;AF_ASJ=0,0,0,0;AF_EAS=0,0,0,0;AF_FIN=0,0,0,0;AF_NFE=8.066e-05,0,4.4811e-05,0;AF_OTH=0,0,0,0;AF_SAS=3.2486e-05,0,0,0;AN_AFR=10406;AN_AMR=11578;AN_ASJ=9846;AN_EAS=8654;AN_FIN=6614;AN_NFE=66696;AN_OTH=908;AN_SAS=16416;AN_POPMAX=10406,10406,66696,66696;AN_Female=111294;AN_Male=134800;KG_AF_POPMAX=0,0,0,0;ESP_AF_POPMAX=0.00136239780113101,0,0,0;KG_AF_GLOBAL=0,0,0,0;KG_AC=0,0,0,0;POPMAX=AFR,AFR,NFE,NFE;AC_POPMAX=8,2,4,1\tGT:AD:DP:GQ:PL\t0/1:23,29:52:99:649,0,432\n', '11\t6644464\t.\tC\tT\t786.3\tPASS\tAC=1;AF=4.954e-05;AN=121104;BaseQRankSum=-0.582;ClippingRankSum=0.568;DP=62;FS=0.979;GQ_MEAN=134.6;GQ_STDDEV=130.85;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=2.2;NCC=0;QD=12.68;ReadPosRankSum=0.17;SOR=0.884;VQSLOD=14.14;culprit=MQRankSum;AF_AFR=0,0;AF_AMR=0,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=0.00021489,0;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=5196;AN_AMR=4536;AN_ASJ=9050;AN_EAS=3582;AN_FIN=2808;AN_NFE=30778;AN_OTH=460;AN_SAS=10040;AN_POPMAX=30778;AN_Female=95812;AN_Male=115220;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00022727272880729288;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=5\tGT:AD:DP:GQ:PL\t0/1:27,35:62:99:822,0,607\n', '11\t32417885\t.\tG\tA\t378.3\tPASS\tAC=1;AF=0.00014;AN=121412;BaseQRankSum=-2.43;ClippingRankSum=0.379;DP=39;FS=1.236;GQ_MEAN=116.8;GQ_STDDEV=83.46;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.62;NCC=0;QD=9.7;ReadPosRankSum=2.8;SOR=0.644;VQSLOD=15.22;culprit=MQRankSum;AF_AFR=6.5342e-05;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00041178;AF_OTH=0.00018228;AF_SAS=0;AN_AFR=10404;AN_AMR=11570;AN_ASJ=9850;AN_EAS=8650;AN_FIN=6614;AN_NFE=66696;AN_OTH=906;AN_SAS=16510;AN_POPMAX=66696;AN_Female=111354;AN_Male=134902;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00046522446791641414;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=16\tGT:AD:DP:GQ:PL\t0/1:20,19:39:99:414,0,491\n', '11\t66137005\t.\tT\tC\t522.3\tPASS\tAC=1;AF=2.471e-05;AN=121406;BaseQRankSum=-3.266;ClippingRankSum=1.78;DP=49;FS=1.114;GQ_MEAN=122.47;GQ_STDDEV=114.18;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.07;NCC=0;QD=10.66;ReadPosRankSum=0.131;SOR=0.461;VQSLOD=15.65;culprit=SOR;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=3.604e-05;AF_OTH=0;AF_SAS=0;AN_AFR=10098;AN_AMR=11542;AN_ASJ=9822;AN_EAS=8592;AN_FIN=6612;AN_NFE=65610;AN_OTH=894;AN_SAS=16476;AN_POPMAX=65610;AN_Female=110670;AN_Male=134610;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=3\tGT:AD:DP:GQ:PL\t0/1:22,27:49:99:558,0,531\n', '11\t88300239\t.\tG\tA\t392.3\tPASS\tAC=1;AF=0.0001894;AN=121410;BaseQRankSum=1.04;ClippingRankSum=0.311;DP=40;FS=0;GQ_MEAN=118.73;GQ_STDDEV=86.66;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.879;NCC=0;QD=9.81;ReadPosRankSum=0.473;SOR=0.892;VQSLOD=15.6;culprit=MQ;AF_AFR=6.5394e-05;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00032115;AF_OTH=0;AF_SAS=6.5634e-05;AN_AFR=10220;AN_AMR=11492;AN_ASJ=9656;AN_EAS=8556;AN_FIN=6576;AN_NFE=65380;AN_OTH=870;AN_SAS=13672;AN_POPMAX=65380;AN_Female=109756;AN_Male=132870;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.000348918343661353;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=21\tGT:AD:DP:GQ:PL\t0/1:20,20:40:99:428,0,452\n', '11\t102650052\t.\tC\tCT\t952.3\tPASS\tAC=1;AF=0.0003624;AN=121412;BaseQRankSum=0.758;ClippingRankSum=0.899;DP=49;FS=8.135;GQ_MEAN=140.2;GQ_STDDEV=151.57;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.535;NCC=0;QD=19.43;ReadPosRankSum=-0.313;SOR=0.98;VQSLOD=0.918;culprit=FS;AF_AFR=0.00026144;AF_AMR=0.00020856;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00076128;AF_OTH=0.0003647;AF_SAS=0;AN_AFR=10406;AN_AMR=11526;AN_ASJ=9850;AN_EAS=8652;AN_FIN=6614;AN_NFE=66732;AN_OTH=908;AN_SAS=16512;AN_POPMAX=66732;AN_Female=111318;AN_Male=134862;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.0012115337885916233;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=38\tGT:AD:DP:GQ:PL\t0/1:21,28:49:99:988,0,687\n', '11\t103070158\t.\tA\tG\t461.3\tPASS\tAC=1;AF=0.0001242;AN=120764;BaseQRankSum=-1.538;ClippingRankSum=-0.747;DP=46;FS=1.145;GQ_MEAN=127.27;GQ_STDDEV=102.37;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.33;NCC=0;QD=10.03;ReadPosRankSum=0.176;SOR=0.583;VQSLOD=15.58;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00020925;AF_OTH=0;AF_SAS=0;AN_AFR=9012;AN_AMR=9740;AN_ASJ=9730;AN_EAS=7430;AN_FIN=6058;AN_NFE=59414;AN_OTH=804;AN_SAS=14318;AN_POPMAX=59414;AN_Female=110150;AN_Male=133040;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.0005310674314387143;clinvar_pathogenic=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=15\tGT:AD:DP:GQ:PL\t0/1:23,23:46:99:497,0,543\n', '12\t6560489\t.\tG\tA\t426.3\tPASS\tAC=1;AF=4.942e-05;AN=121410;BaseQRankSum=0.509;ClippingRankSum=0.378;DP=41;FS=12.871;GQ_MEAN=123.47;GQ_STDDEV=95.5;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.404;NCC=0;QD=10.4;ReadPosRankSum=-0.248;SOR=2.518;VQSLOD=14.52;culprit=SOR;AF_AFR=6.5385e-05,0;AF_AMR=0,2.9787e-05;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=0.00011717,0;AF_OTH=0.00018281,0;AF_SAS=0,0;AN_AFR=10324;AN_AMR=11562;AN_ASJ=9846;AN_EAS=8634;AN_FIN=6596;AN_NFE=66326;AN_OTH=892;AN_SAS=16506;AN_POPMAX=66326;AN_Female=110890;AN_Male=134558;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=6\tGT:AD:DP:GQ:PL\t0/1:21,20:41:99:462,0,499\n', '12\t7805403\t.\tC\tT\t599.3\tPASS\tAC=1;AF=0.0001154;AN=121346;BaseQRankSum=4.76;ClippingRankSum=0.45;DP=54;FS=0;GQ_MEAN=125.93;GQ_STDDEV=110.14;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.592;NCC=0;QD=11.1;ReadPosRankSum=-0.363;SOR=0.693;VQSLOD=14.98;culprit=MQRankSum;AF_AFR=0;AF_AMR=3.1644e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=9.3519e-05;AF_NFE=0.00019492;AF_OTH=0.00038685;AF_SAS=0;AN_AFR=9144;AN_AMR=11438;AN_ASJ=9234;AN_EAS=8396;AN_FIN=6586;AN_NFE=63328;AN_OTH=880;AN_SAS=15620;AN_POPMAX=63328;AN_Female=105604;AN_Male=129408;KG_AF_POPMAX=0.0010000000474974513;ESP_AF_POPMAX=0.00011630611697910354;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=11\tGT:AD:DP:GQ:PL\t0/1:27,27:54:99:635,0,520\n', '12\t10854602\t.\tC\tT\t977.3\tPASS\tAC=1;AF=0.0001071,8.236e-06;AN=121412;BaseQRankSum=4.68;ClippingRankSum=-0.569;DP=59;FS=7.16;GQ_MEAN=155.13;GQ_STDDEV=238.02;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.432;NCC=0;QD=16.56;ReadPosRankSum=-0.584;SOR=1.407;VQSLOD=15.95;culprit=ReadPosRankSum;AF_AFR=0,0;AF_AMR=0.00053757,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=5.3776e-05,8.9627e-06;AF_OTH=0.00036576,0;AF_SAS=0,0;AN_AFR=10406;AN_AMR=11578;AN_ASJ=9844;AN_EAS=8654;AN_FIN=6614;AN_NFE=66670;AN_OTH=908;AN_SAS=16456;AN_POPMAX=11578,66670;AN_Female=111222;AN_Male=134728;KG_AF_POPMAX=0,0;ESP_AF_POPMAX=0,0;KG_AF_GLOBAL=0,0;KG_AC=0,0;POPMAX=AMR,NFE;AC_POPMAX=11,1\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:30,29:59:99:0|1:10854602_C_T:1013,0,1061\n', '12\t53086339\t.\tC\tCCAGCTACTCAGGAGGCTGAGGCAGGAGAATCACTTGGACCCAGGAGGCGGAGTTTGTAGTGA\t372.3\tVQSRTrancheINDEL99.00to99.90\tAC=1;AF=0.5;AN=2;BaseQRankSum=1.27;ClippingRankSum=-0.361;DP=38;FS=0;GQ_MEAN=114.2;GQ_STDDEV=82.29;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.68;NCC=0;NEGATIVE_TRAIN_SITE;QD=0.47;ReadPosRankSum=-4.915;SOR=0.56;VQSLOD=-5.605;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PL\t0/1:26,12:38:99:408,0,10036\n', '12\t71978399\t.\tC\tA\t707.3\tPASS\tAC=1;AF=0.0001318;AN=121412;BaseQRankSum=3.09;ClippingRankSum=-0.256;DP=66;FS=0;GQ_MEAN=141.27;GQ_STDDEV=153.03;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.757;NCC=0;POSITIVE_TRAIN_SITE;QD=10.72;ReadPosRankSum=-0.256;SOR=0.7;VQSLOD=16.42;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0.00010152;AF_EAS=0;AF_FIN=0;AF_NFE=0.00034912;AF_OTH=0.00018228;AF_SAS=0;AN_AFR=10406;AN_AMR=11578;AN_ASJ=9850;AN_EAS=8654;AN_FIN=6614;AN_NFE=66736;AN_OTH=908;AN_SAS=16512;AN_POPMAX=66736;AN_Female=111354;AN_Male=134900;KG_AF_POPMAX=0.0010000000474974513;ESP_AF_POPMAX=0.0005813953466713428;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=16\tGT:AD:DP:GQ:PL\t0/1:33,33:66:99:743,0,694\n', '12\t81101681\t.\tT\tG\t224.3\tPASS\tAC=1;AF=8.237e-06,8.237e-06;AN=121410;BaseQRankSum=-0.306;ClippingRankSum=2.07;DP=45;FS=12.935;GQ_MEAN=106.33;GQ_STDDEV=44.05;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.091;NCC=0;QD=4.98;ReadPosRankSum=-1.41;SOR=1.642;VQSLOD=13.67;culprit=QD;AF_AFR=0,0;AF_AMR=0,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=8.9558e-06,8.9558e-06;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=10304;AN_AMR=11570;AN_ASJ=9850;AN_EAS=8644;AN_FIN=6612;AN_NFE=66492;AN_OTH=904;AN_SAS=16510;AN_POPMAX=66492,66492;AN_Female=111314;AN_Male=134884;KG_AF_POPMAX=0,0;ESP_AF_POPMAX=0,0;KG_AF_GLOBAL=0,0;KG_AC=0,0;POPMAX=NFE,NFE;AC_POPMAX=1,1\tGT:AD:DP:GQ:PL\t0/1:31,14:45:99:260,0,789\n', '13\t21729290\t.\tC\tCAGTTTTCTTTGTTGCTGACATCTCGGATGTTCTGTCCATGTTTAAGGAACCT\t722.7\tVQSRTrancheINDEL99.00to99.90\tAC=0;AF=0;AN=2;BaseQRankSum=0.619;ClippingRankSum=-0.008;DP=68;FS=0.844;GQ_MEAN=139.4;GQ_STDDEV=99.52;InbreedingCoeff=-0.0714;MQ=60;MQ0=0;MQRankSum=0.024;NCC=0;NEGATIVE_TRAIN_SITE;QD=0.34;ReadPosRankSum=-5.304;SOR=0.56;VQSLOD=-6.97;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PGT:PID:PL\t0/0:56,0,12:68:99:0|1:21729252_T_C:374,546,3356\n', '13\t21734127\t.\tC\tCACTTTTTTCCAACTGCTGGATGATGGGGCTGGGAGTGGCAAAAACATTATCATTGAGCCTGGATTCTG\t836.7\tVQSRTrancheINDEL99.00to99.90\tAC=1;AF=0.5;AN=2;BaseQRankSum=0.76;ClippingRankSum=1.01;DP=66;FS=16.45;GQ_MEAN=146.27;GQ_STDDEV=140.48;InbreedingCoeff=-0.0714;MQ=60;MQ0=0;MQRankSum=-0.599;NCC=0;NEGATIVE_TRAIN_SITE;QD=0.27;ReadPosRankSum=-5.016;SOR=1.337;VQSLOD=-8.072;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PL\t0/1:56,10:66:99:246,0,20386\n', '13\t21736016\t.\tT\tTTTTATTATTCCTC\t1000.0\tVQSRTrancheINDEL99.00to99.90\tAC=1;AF=0.5;AN=2;BaseQRankSum=2.27;ClippingRankSum=0.345;DP=60;FS=9.176;GQ_MEAN=157.27;GQ_STDDEV=114.14;InbreedingCoeff=-0.1111;MQ=60;MQ0=0;MQRankSum=-0.096;NCC=0;NEGATIVE_TRAIN_SITE;QD=1.53;ReadPosRankSum=-5.007;SOR=1.477;VQSLOD=-7.626;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:46,14:60:99:0|1:21736016_T_TTTTATTATTCCTC:445,0,19819\n', '13\t43788214\t.\tC\tT\t742.3\tPASS\tAC=1;AF=2.471e-05;AN=121412;BaseQRankSum=2.55;ClippingRankSum=-0.785;DP=62;FS=5.124;GQ_MEAN=127.6;GQ_STDDEV=103.07;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.7;NCC=0;QD=11.97;ReadPosRankSum=-0.87;SOR=0.934;VQSLOD=15.53;culprit=ReadPosRankSum;AF_AFR=6.5428e-05;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=3.5905e-05;AF_OTH=0;AF_SAS=6.5206e-05;AN_AFR=10406;AN_AMR=11578;AN_ASJ=9840;AN_EAS=8654;AN_FIN=6614;AN_NFE=66696;AN_OTH=908;AN_SAS=16480;AN_POPMAX=16480;AN_Female=110964;AN_Male=134474;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=SAS;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:28,34:62:99:778,0,498\n', '13\t99907195\t.\tC\tA\t458.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=2.44;ClippingRankSum=0.704;DP=42;FS=6.641;GQ_MEAN=118.53;GQ_STDDEV=87.88;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.736;NCC=0;QD=10.91;ReadPosRankSum=2.14;SOR=1.041;VQSLOD=16.45;culprit=MQRankSum;AF_AFR=0,0;AF_AMR=0,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=8.9633e-06,5.378e-05;AF_OTH=0,0;AF_SAS=6.499e-05,0;AN_AFR=15304;AN_AMR=33574;AN_ASJ=9842;AN_EAS=17248;AN_FIN=22298;AN_NFE=111566;AN_OTH=5482;AN_SAS=30774;AN_POPMAX=30774,111566;AN_Female=111284;AN_Male=134804\tGT:AD:DP:GQ:PL\t0/1:21,21:42:99:494,0,433\n', '13\t111109205\t.\tC\tCTGCGTCTGCGTGGGACCCCAGGCGTCCGTGGGGCTGATGCCG\t97.7\tPASS\tAC=2;AF=0.0007324,4.882e-05,4.882e-05;AN=20482;DP=0;FS=0;GQ_MEAN=34.53;GQ_STDDEV=23.83;InbreedingCoeff=0.4205;MQ=59.43;MQ0=0;NCC=0;SOR=0.693;VQSLOD=1.25;culprit=FS;KG_AF_POPMAX=0,0,0;ESP_AF_POPMAX=0,0,0;KG_AF_GLOBAL=0,0,0;KG_AC=0,0,0;POPMAX=NFE,NFE,EAS;AN_POPMAX=4330,4330,366;AC_POPMAX=11,1,1;AN_AFR=678;AN_AMR=224;AN_EAS=366;AN_FIN=242;AN_NFE=4330;AN_OTH=152;AN_SAS=7262\tGT:AD:DP:GQ:PL\t1/1:0,0:0:6:137,6,0\n', '13\t114149939\t.\tG\tA\t545.3\tPASS\tAC=1;AF=4.122e-05;AN=121302;BaseQRankSum=4.69;ClippingRankSum=0.281;DP=59;FS=3.586;GQ_MEAN=127.8;GQ_STDDEV=125.82;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.483;NCC=0;QD=9.24;ReadPosRankSum=-1.21;SOR=0.76;VQSLOD=15.44;culprit=ReadPosRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0.00012191;AF_FIN=0;AF_NFE=4.056e-05;AF_OTH=0;AF_SAS=0;AN_AFR=10206;AN_AMR=11474;AN_ASJ=6444;AN_EAS=8536;AN_FIN=6606;AN_NFE=63870;AN_OTH=792;AN_SAS=9396;AN_POPMAX=8536;AN_Female=97864;AN_Male=116072;KG_AF_POPMAX=0.0020000000949949026;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0.0003993610152974725;KG_AC=2;POPMAX=EAS;AC_POPMAX=2\tGT:AD:DP:GQ:PL\t0/1:32,27:59:99:581,0,622\n', '14\t24045068\t.\tG\tA\t462.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=0.043;ClippingRankSum=0.775;DP=62;FS=5.204;GQ_MEAN=119.73;GQ_STDDEV=106.09;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.029;NCC=0;QD=7.46;ReadPosRankSum=-0.603;SOR=0.716;VQSLOD=15.68;culprit=QD\tGT:AD:DP:GQ:PL\t0/1:37,25:62:99:498,0,890\n', '14\t65241903\t.\tG\tA\t414.3\tPASS\tAC=1;AF=0.0004695;AN=121412;BaseQRankSum=4.47;ClippingRankSum=-0.303;DP=48;FS=4.181;GQ_MEAN=112.07;GQ_STDDEV=95.56;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.68;NCC=0;QD=8.63;ReadPosRankSum=-0.91;SOR=1.402;VQSLOD=16.4;culprit=ReadPosRankSum;AF_AFR=0.0001308,0;AF_AMR=0.00029781,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=8.9775e-05,0;AF_NFE=0.00079836,8.9704e-06;AF_OTH=0.00036496,0;AF_SAS=0.00045481,0;AN_AFR=10356;AN_AMR=11554;AN_ASJ=9846;AN_EAS=8610;AN_FIN=6614;AN_NFE=66406;AN_OTH=902;AN_SAS=16512;AN_POPMAX=66406;AN_Female=111158;AN_Male=134816;KG_AF_POPMAX=0.00139999995008111;ESP_AF_POPMAX=0.0005813953466713428;KG_AF_GLOBAL=0.0003993610152974725;KG_AC=2;POPMAX=NFE;AC_POPMAX=46\tGT:AD:DP:GQ:PL\t0/1:28,20:48:99:450,0,554\n', '15\t54804026\t.\tG\tA\t782.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=2.75;ClippingRankSum=1.35;DP=73;FS=6.113;GQ_MEAN=146.67;GQ_STDDEV=178.92;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.546;NCC=0;QD=10.72;ReadPosRankSum=2.63;SOR=0.698;VQSLOD=15.54;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PL\t0/1:37,36:73:99:818,0,793\n', '15\t78894569\t.\tCTTTGGTCTT\tC\t1057.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-2.897;ClippingRankSum=0.364;DP=54;FS=0;GQ_MEAN=163.33;GQ_STDDEV=257.28;InbreedingCoeff=-0.0345;MQ=60.39;MQ0=0;MQRankSum=1.51;NCC=0;QD=6.53;ReadPosRankSum=-0.798;SOR=0.684;VQSLOD=1.4;culprit=FS\tGT:AD:DP:GQ:PL\t0/1:25,29:54:99:1093,0,2720\n', '15\t80415126\t.\tA\tC\t539.3\tPASS\tAC=1;AF=8.237e-06;AN=121410;BaseQRankSum=-1.859;ClippingRankSum=-0.009;DP=53;FS=0;GQ_MEAN=134.67;GQ_STDDEV=121.94;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.5;NCC=0;QD=10.17;ReadPosRankSum=0.294;SOR=0.627;VQSLOD=14.62;culprit=MQRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=2.6923e-05;AF_OTH=0;AF_SAS=0;AN_AFR=10354;AN_AMR=11548;AN_ASJ=9844;AN_EAS=8644;AN_FIN=6612;AN_NFE=66606;AN_OTH=904;AN_SAS=16476;AN_POPMAX=66606;AN_Female=111156;AN_Male=134656;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00023255814448930323;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:27,26:53:99:575,0,618\n', '15\t85400413\t.\tG\tA\t611.3\tPASS\tAC=1;AF=9.884e-05;AN=121406;BaseQRankSum=0.459;ClippingRankSum=0.909;DP=50;FS=5.957;GQ_MEAN=123.33;GQ_STDDEV=107.03;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.049;NCC=0;QD=12.23;ReadPosRankSum=0.205;SOR=0.223;VQSLOD=16.57;culprit=MQ;AF_AFR=0.00013098;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00012554;AF_OTH=0;AF_SAS=0;AN_AFR=10314;AN_AMR=11552;AN_ASJ=9840;AN_EAS=8648;AN_FIN=6580;AN_NFE=66100;AN_OTH=894;AN_SAS=16506;AN_POPMAX=66100;AN_Female=111150;AN_Male=134864;KG_AF_POPMAX=0.0010000000474974513;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=11\tGT:AD:DP:GQ:PL\t0/1:22,28:50:99:647,0,509\n', '16\t816650\t.\tC\tT\t418.3\tPASS\tAC=1;AF=0.0001494;AN=120478;BaseQRankSum=4.11;ClippingRankSum=-0.24;DP=48;FS=1.133;GQ_MEAN=117.8;GQ_STDDEV=93.77;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.031;NCC=0;QD=8.71;ReadPosRankSum=-0.868;SOR=0.46;VQSLOD=15.65;culprit=ReadPosRankSum;AF_AFR=6.5833e-05;AF_AMR=2.9788e-05;AF_ASJ=0;AF_EAS=0.00017412;AF_FIN=0;AF_NFE=0.00018937;AF_OTH=0.00018328;AF_SAS=0.00019498;AN_AFR=10134;AN_AMR=11540;AN_ASJ=9794;AN_EAS=8596;AN_FIN=6610;AN_NFE=65080;AN_OTH=882;AN_SAS=16498;AN_POPMAX=8596;AN_Female=110344;AN_Male=134532;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00022872826957609504;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=EAS;AC_POPMAX=2\tGT:AD:DP:GQ:PL\t0/1:28,20:48:99:454,0,593\n', '16\t15045628\t.\tT\tC\t45.7\tVQSRTrancheSNP99.90to100.00\tAC=1;AF=0.5;AN=2;BaseQRankSum=-0.705;ClippingRankSum=1.88;DP=22;FS=9.379;GQ_MEAN=77.73;GQ_STDDEV=30.73;InbreedingCoeff=-0.0505;MQ=38.49;MQ0=0;MQRankSum=-1.175;NCC=0;QD=2.08;ReadPosRankSum=-1.175;SOR=3.407;VQSLOD=-19.27;culprit=MQ\tGT:AD:DP:GQ:PL\t0/1:17,5:22:81:81,0,420\n', '16\t30036507\t.\tG\tC\t595.3\tPASS\tAC=1;AF=5.557e-05;AN=35988;BaseQRankSum=2.06;ClippingRankSum=-0.22;DP=42;FS=0;GQ_MEAN=108.8;GQ_STDDEV=62.72;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.894;NCC=0;QD=14.17;ReadPosRankSum=0.505;SOR=0.838;VQSLOD=15.17;culprit=MQ;AF_AFR=0.00018077,0;AF_AMR=0,0.00017671;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=0.00028307,0;AF_OTH=0.000516,0;AF_SAS=0,0;AN_AFR=388;AN_AMR=64;AN_ASJ=2598;AN_EAS=60;AN_FIN=4;AN_NFE=640;AN_OTH=18;AN_SAS=248;AN_POPMAX=NA;AN_Female=34276;AN_Male=38030;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NA;AC_POPMAX=NA\tGT:AD:DP:GQ:PL\t0/1:16,26:42:99:631,0,329\n', '16\t88789357\t.\tT\tG\t390.3\tPASS\tAC=1;AF=7.788e-05;AN=25680;BaseQRankSum=-1.546;ClippingRankSum=1.78;DP=47;FS=0;GQ_MEAN=115.4;GQ_STDDEV=87.99;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.1;NCC=0;QD=8.3;ReadPosRankSum=1.27;SOR=0.79;VQSLOD=15.5;culprit=MQ;AF_AFR=0,0;AF_AMR=0.00029279,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0.00048679,0;AF_NFE=0.00077112,1.836e-05;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=1486;AN_AMR=334;AN_ASJ=8150;AN_EAS=484;AN_FIN=30;AN_NFE=6060;AN_OTH=154;AN_SAS=7862;AN_POPMAX=6060;AN_Female=66444;AN_Male=78380;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=2\tGT:AD:DP:GQ:PL\t0/1:25,22:47:99:426,0,555\n', '17\t7139692\t.\tT\tC\t353.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=1.78;ClippingRankSum=-0.087;DP=43;FS=1.217;GQ_MEAN=116.47;GQ_STDDEV=76.53;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=2.32;NCC=0;QD=8.22;ReadPosRankSum=-1.379;SOR=1.061;VQSLOD=15.6;culprit=ReadPosRankSum\tGT:AD:DP:GQ:PL\t0/1:26,17:43:99:389,0,620\n', '17\t7760689\t.\tGC\tG\t490.3\tPASS\tAC=1;AF=8.237e-06,2.471e-05;AN=121404;BaseQRankSum=-0.167;ClippingRankSum=0.015;DP=37;FS=7.684;GQ_MEAN=120.8;GQ_STDDEV=113.47;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.988;NCC=0;NEGATIVE_TRAIN_SITE;QD=13.25;ReadPosRankSum=-0.714;SOR=2.133;VQSLOD=-0.7477;culprit=FS;AF_AFR=6.5703e-05;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=6.3027e-05;AF_OTH=0;AF_SAS=0;AN_AFR=9648;AN_AMR=11536;AN_ASJ=9820;AN_EAS=8586;AN_FIN=6614;AN_NFE=65204;AN_OTH=880;AN_SAS=16368;AN_POPMAX=65204,65204;AN_Female=110502;AN_Male=134386;KG_AF_POPMAX=NA,0;ESP_AF_POPMAX=NA,0.00012115338176954538;KG_AF_GLOBAL=NA,0;KG_AC=NA,0;POPMAX=NFE,NFE;AC_POPMAX=1,3\tGT:AD:DP:GQ:PL\t0/1:19,18:37:99:526,0,557\n', '17\t18205701\t.\tG\tA\t573.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-0.287;ClippingRankSum=0.838;DP=46;FS=6.29;GQ_MEAN=123.73;GQ_STDDEV=104.34;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.57;NCC=0;QD=12.46;ReadPosRankSum=0.132;SOR=1.248;VQSLOD=16.32;culprit=MQRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=8.9728e-06;AF_OTH=0;AF_SAS=0;AN_AFR=15290;AN_AMR=33524;AN_ASJ=9824;AN_EAS=17228;AN_FIN=22282;AN_NFE=111448;AN_OTH=5478;AN_SAS=30756;AN_POPMAX=111448;AN_Female=111128;AN_Male=134702\tGT:AD:DP:GQ:PL\t0/1:21,25:46:99:609,0,500\n', '17\t26715410\t.\tT\tG\t490.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-1.172;ClippingRankSum=2.1;DP=54;FS=0;GQ_MEAN=123.33;GQ_STDDEV=112.34;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.312;NCC=0;QD=9.08;ReadPosRankSum=1.36;SOR=0.713;VQSLOD=15.34;culprit=MQRankSum\tGT:AD:DP:GQ:PL\t0/1:31,23:54:99:526,0,734\n', '17\t28380680\t.\tA\tT\t594.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-1.265;ClippingRankSum=1.22;DP=48;FS=2.541;GQ_MEAN=124.2;GQ_STDDEV=87.02;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=2.02;NCC=0;QD=12.38;ReadPosRankSum=0.738;SOR=1.009;VQSLOD=14.63;culprit=MQRankSum\tGT:AD:DP:GQ:PL\t0/1:19,29:48:99:630,0,438\n', '17\t38975214\t.\tT\tTGCCGCCGTGGCCGCCGCTGGAGCTTCC\t485.1\tVQSRTrancheINDEL99.00to99.90\tAC=1;AF=0.014,6.154e-05;AN=16250;BaseQRankSum=0.298;ClippingRankSum=0.757;DP=29;FS=8.994;GQ_MEAN=91.07;GQ_STDDEV=124.33;InbreedingCoeff=-0.0645;MQ=61.3;MQ0=0;MQRankSum=1.26;NCC=0;NEGATIVE_TRAIN_SITE;QD=1.86;ReadPosRankSum=-1.354;SOR=2.285;VQSLOD=-1.864;culprit=FS;AF_AFR=0.0080091,0;AF_AMR=0.0211,8.5999e-05;AF_ASJ=0.014949,0;AF_EAS=0,0;AF_FIN=0.0255,0;AF_NFE=0.019443,0;AF_OTH=0.012913,0;AF_SAS=0.02,6.5522e-05;AN_AFR=202;AN_AMR=80;AN_ASJ=6288;AN_EAS=120;AN_FIN=88;AN_NFE=2382;AN_OTH=110;AN_SAS=6972;AN_POPMAX=6972,6972;AN_Female=29008;AN_Male=40974;KG_AF_POPMAX=0,0;ESP_AF_POPMAX=0,0;KG_AF_GLOBAL=0,0;KG_AC=0,0;POPMAX=SAS,SAS;AC_POPMAX=180,1\tGT:AD:DP:GQ:PL\t0/1:19,10:29:99:520,0,748\n', '17\t44143920\t.\tC\tT\t604.3\tPASS\tAC=1;AF=4.118e-05;AN=121410;BaseQRankSum=4.94;ClippingRankSum=-1.764;DP=57;FS=5.324;GQ_MEAN=129.07;GQ_STDDEV=109.62;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.14;NCC=0;QD=10.6;ReadPosRankSum=1.01;SOR=0.803;VQSLOD=15.39;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=6.3354e-05;AF_OTH=0;AF_SAS=0;AN_AFR=10374;AN_AMR=11466;AN_ASJ=9766;AN_EAS=8618;AN_FIN=6586;AN_NFE=66228;AN_OTH=888;AN_SAS=15668;AN_POPMAX=66228;AN_Female=110722;AN_Male=133876;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00011627907224465162;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=5\tGT:AD:DP:GQ:PL\t0/1:29,28:57:99:640,0,525\n', '17\t72860042\t.\tC\tT\t481.3\tPASS\tAC=1;AF=0.0001812;AN=121412;BaseQRankSum=1.3;ClippingRankSum=0.078;DP=50;FS=8.094;GQ_MEAN=121.67;GQ_STDDEV=109.83;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.35;NCC=0;QD=9.63;ReadPosRankSum=-0.993;SOR=0.964;VQSLOD=16.67;culprit=ReadPosRankSum;AF_AFR=6.5342e-05;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=4.4908e-05;AF_NFE=0.00032435;AF_OTH=0.0003655;AF_SAS=0;AN_AFR=10380;AN_AMR=11572;AN_ASJ=9812;AN_EAS=8644;AN_FIN=6614;AN_NFE=66286;AN_OTH=896;AN_SAS=16068;AN_POPMAX=66286;AN_Female=111046;AN_Male=134386;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.00046511628897860646;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=21\tGT:AD:DP:GQ:PL\t0/1:27,23:50:99:517,0,606\n', '18\t21406711\t.\tC\tG\t314.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-0.155;ClippingRankSum=1.04;DP=44;FS=0;GQ_MEAN=116.47;GQ_STDDEV=64.93;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.06;NCC=0;POSITIVE_TRAIN_SITE;QD=7.14;ReadPosRankSum=1.54;SOR=0.693;VQSLOD=16.73;culprit=QD;AF_AFR=0,0;AF_AMR=0,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=4.3146e-05,0;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=9984;AN_AMR=25796;AN_ASJ=8564;AN_EAS=12852;AN_FIN=16122;AN_NFE=69532;AN_OTH=4150;AN_SAS=24128;AN_POPMAX=69532,0;AN_Female=79228;AN_Male=91900\tGT:AD:DP:GQ:PL\t0/1:26,18:44:99:350,0,582\n', '19\t872114\t.\tG\tA\t274.3\tPASS\tAC=1;AF=0.0001584,8.337e-06;AN=119948;BaseQRankSum=0.308;ClippingRankSum=-0.178;DP=36;FS=5.439;GQ_MEAN=97.67;GQ_STDDEV=62.11;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.925;NCC=0;QD=7.62;ReadPosRankSum=-1.476;SOR=0.157;VQSLOD=14.16;culprit=ReadPosRankSum;AF_AFR=0.00027337,0;AF_AMR=0.00022114,0;AF_ASJ=0,0;AF_EAS=6.065e-05,0;AF_FIN=0,0;AF_NFE=0.00022658,9.4409e-06;AF_OTH=0.00097771,0;AF_SAS=0,3.3472e-05;AN_AFR=9252;AN_AMR=11080;AN_ASJ=9322;AN_EAS=8386;AN_FIN=5970;AN_NFE=61838;AN_OTH=816;AN_SAS=15364;AN_POPMAX=9252,61838;AN_Female=105120;AN_Male=129690;KG_AF_POPMAX=0.00139999995008111,0;ESP_AF_POPMAX=0.0004679457051679492,0;KG_AF_GLOBAL=0.00019968050764873624,0;KG_AC=1,0;POPMAX=AFR,NFE;AC_POPMAX=3,1\tGT:AD:DP:GQ:PL\t0/1:22,14:36:99:310,0,554\n', '19\t9968062\t.\tC\tT\t749.3\tPASS\tAC=1;AF=0.0002141;AN=121412;BaseQRankSum=1.39;ClippingRankSum=0.114;DP=64;FS=3.442;GQ_MEAN=138.2;GQ_STDDEV=145.07;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.047;NCC=0;QD=11.71;ReadPosRankSum=0.289;SOR=0.774;VQSLOD=15.71;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0.00017952;AF_NFE=0.00038512;AF_OTH=0.00018235;AF_SAS=0;AN_AFR=10380;AN_AMR=11562;AN_ASJ=9840;AN_EAS=8644;AN_FIN=6590;AN_NFE=66632;AN_OTH=904;AN_SAS=16512;AN_POPMAX=66632;AN_Female=111318;AN_Male=134856;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.0003488372021820396;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=25\tGT:AD:DP:GQ:PL\t0/1:30,34:64:99:785,0,661\n', '19\t11040069\t.\tC\tT\t449.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=1.21;ClippingRankSum=-0.456;DP=50;FS=1.126;GQ_MEAN=120.8;GQ_STDDEV=101.28;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-2.398;NCC=0;QD=8.99;ReadPosRankSum=0.029;SOR=0.454;VQSLOD=15.02;culprit=MQRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=1.8939e-05;AF_OTH=0;AF_SAS=0;AN_AFR=13982;AN_AMR=33148;AN_ASJ=9586;AN_EAS=16880;AN_FIN=19448;AN_NFE=105600;AN_OTH=5244;AN_SAS=30428;AN_POPMAX=105600;AN_Female=104450;AN_Male=129866\tGT:AD:DP:GQ:PL\t0/1:26,24:50:99:485,0,575\n', '19\t18343943\t.\tC\tA\t707.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=2.97;ClippingRankSum=0.503;DP=49;FS=0;GQ_MEAN=105.47;GQ_STDDEV=70.42;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.359;NCC=0;QD=14.43;ReadPosRankSum=0.256;SOR=0.657;VQSLOD=15.39;culprit=MQ;AF_AFR=0;AF_AMR=4.067e-05;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=1.6742e-05;AF_OTH=0;AF_SAS=0;AN_AFR=7902;AN_AMR=24588;AN_ASJ=8258;AN_EAS=11078;AN_FIN=15210;AN_NFE=59730;AN_OTH=3914;AN_SAS=23502;AN_POPMAX=24588;AN_Female=70426;AN_Male=83756\tGT:AD:DP:GQ:PL\t0/1:19,30:49:99:743,0,358\n', '19\t48184370\t.\tC\tT\t100.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=0.659;ClippingRankSum=-0.884;DP=39;FS=1.448;GQ_MEAN=92.67;GQ_STDDEV=23.02;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.338;NCC=0;QD=2.57;ReadPosRankSum=0.756;SOR=1.043;VQSLOD=14.83;culprit=QD;AF_AFR=0.0002061,0;AF_AMR=0.00019533,0;AF_ASJ=0,0;AF_EAS=0,0.00011312;AF_FIN=0,0;AF_NFE=0.0004056,0;AF_OTH=0.00033921,0;AF_SAS=0,5.3124e-05;AN_AFR=4852;AN_AMR=20478;AN_ASJ=5832;AN_EAS=8840;AN_FIN=4102;AN_NFE=36982;AN_OTH=2948;AN_SAS=18824;AN_POPMAX=36982,8840;AN_Female=45944;AN_Male=56914\tGT:AD:DP:GQ:PL\t0/1:29,10:39:99:136,0,653\n', '19\t49001133\t.\tGGGA\tG\t645.3\tPASS\tAC=1;AF=1.729e-05;AN=115704;BaseQRankSum=-1.588;ClippingRankSum=-0.48;DP=43;FS=9.057;GQ_MEAN=126.67;GQ_STDDEV=154.29;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=2.33;NCC=0;NEGATIVE_TRAIN_SITE;QD=15.01;ReadPosRankSum=1;SOR=1.367;VQSLOD=-0.9573;culprit=FS;AF_AFR=0,0;AF_AMR=8.6371e-05,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=0,7.1788e-05;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=1160;AN_AMR=760;AN_ASJ=1676;AN_EAS=856;AN_FIN=342;AN_NFE=5722;AN_OTH=80;AN_SAS=1020;AN_POPMAX=NA;AN_Female=40658;AN_Male=47206;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NA;AC_POPMAX=NA\tGT:AD:DP:GQ:PGT:PID:PL\t0/1:25,18:43:99:0|1:49001122_C_A:681,0,1142\n', '19\t49850479\t.\tG\tT\t579.3\tPASS\tAC=1;AF=3.295e-05,1.647e-05,3.295e-05;AN=121412;BaseQRankSum=-1.878;ClippingRankSum=-0.072;DP=57;FS=5.341;GQ_MEAN=131.93;GQ_STDDEV=133.75;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.823;NCC=0;QD=10.16;ReadPosRankSum=0.599;SOR=0.766;VQSLOD=16.03;culprit=MQ;AF_AFR=0,6.5342e-05,0;AF_AMR=2.9785e-05,0,0;AF_ASJ=0,0,0;AF_EAS=0,0,0;AF_FIN=4.4863e-05,0,0;AF_NFE=1.8155e-05,3.6309e-05,3.6309e-05;AF_OTH=0,0,0;AF_SAS=0,0,0;AN_AFR=10404;AN_AMR=11576;AN_ASJ=9840;AN_EAS=8654;AN_FIN=6614;AN_NFE=66708;AN_OTH=908;AN_SAS=16510;AN_POPMAX=66708,66708,10404;AN_Female=110464;AN_Male=134214;KG_AF_POPMAX=0,0,0;ESP_AF_POPMAX=0,0,0.00011627907224465162;KG_AF_GLOBAL=0,0,0;KG_AC=0,0,0;POPMAX=NFE,NFE,AFR;AC_POPMAX=4,1,1\tGT:AD:DP:GQ:PL\t0/1:27,30:57:99:615,0,616\n', '19\t58199292\t.\tG\tA\t671.3\tPASS\tAC=1;AF=8.236e-06;AN=121412;BaseQRankSum=3.44;ClippingRankSum=0.44;DP=57;FS=3.783;GQ_MEAN=127.53;GQ_STDDEV=103.6;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.312;NCC=0;QD=11.78;ReadPosRankSum=1.53;SOR=0.304;VQSLOD=15.15;culprit=MQ;AF_AFR=0;AF_AMR=2.9781e-05;AF_ASJ=0;AF_EAS=5.7978e-05;AF_FIN=8.9694e-05;AF_NFE=6.2681e-05;AF_OTH=0.00018228;AF_SAS=0;AN_AFR=10404;AN_AMR=11576;AN_ASJ=9850;AN_EAS=8654;AN_FIN=6614;AN_NFE=66728;AN_OTH=908;AN_SAS=16512;AN_POPMAX=11576;AN_Female=111338;AN_Male=134884;KG_AF_POPMAX=0.00139999995008111;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=AMR;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:27,30:57:99:707,0,502\n', '20\t34057781\t.\tA\tG\t620.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=0.857;ClippingRankSum=-0.026;DP=54;FS=2.334;GQ_MEAN=128.93;GQ_STDDEV=130.74;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.684;NCC=0;QD=11.49;ReadPosRankSum=-1.203;SOR=1.179;VQSLOD=16.32;culprit=ReadPosRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=1.7913e-05;AF_OTH=0;AF_SAS=0;AN_AFR=15302;AN_AMR=33578;AN_ASJ=9844;AN_EAS=17246;AN_FIN=22300;AN_NFE=111648;AN_OTH=5480;AN_SAS=30772;AN_POPMAX=111648;AN_Female=111326;AN_Male=134844\tGT:AD:DP:GQ:PL\t0/1:26,28:54:99:656,0,600\n', '21\t34625019\t.\tA\tG\t667.3\tPASS\tAC=1;AF=0.0002224;AN=121412;BaseQRankSum=1.13;ClippingRankSum=-0.234;DP=49;FS=4.429;GQ_MEAN=126.6;GQ_STDDEV=87.87;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.824;NCC=0;QD=13.62;ReadPosRankSum=0.498;SOR=0.239;VQSLOD=15.44;culprit=MQ;AF_AFR=6.5351e-05,0;AF_AMR=2.9796e-05,0;AF_ASJ=0,0;AF_EAS=0,0;AF_FIN=0,0;AF_NFE=0.00059186,0;AF_OTH=0,0;AF_SAS=0,3.2522e-05;AN_AFR=10386;AN_AMR=11512;AN_ASJ=9846;AN_EAS=8644;AN_FIN=6600;AN_NFE=66566;AN_OTH=906;AN_SAS=16494;AN_POPMAX=66566;AN_Female=111254;AN_Male=134730;KG_AF_POPMAX=0.00139999995008111;ESP_AF_POPMAX=0.00046511628897860646;KG_AF_GLOBAL=0.00019968050764873624;KG_AC=1;POPMAX=NFE;AC_POPMAX=25\tGT:AD:DP:GQ:PL\t0/1:20,29:49:99:703,0,444\n', '22\t19978137\t.\tG\tA\t769.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=-1.558;ClippingRankSum=0.921;DP=69;FS=3.268;GQ_MEAN=135.8;GQ_STDDEV=159.83;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.608;NCC=0;QD=11.15;ReadPosRankSum=0.945;SOR=0.404;VQSLOD=15.64;culprit=MQ;AF_AFR=0,0;AF_AMR=3.0122e-05,0;AF_ASJ=0,0;AF_EAS=0,5.8432e-05;AF_FIN=0,0;AF_NFE=0,0;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=14220;AN_AMR=33198;AN_ASJ=9652;AN_EAS=17114;AN_FIN=20718;AN_NFE=107092;AN_OTH=5268;AN_SAS=29942;AN_POPMAX=33198,17114;AN_Female=106358;AN_Male=130846\tGT:AD:DP:GQ:PL\t0/1:32,37:69:99:805,0,712\n', '22\t20460112\t.\tTCCG\tT\t156.2\tPASS\tAC=2;AF=1;AN=2;DP=3;FS=0;GQ_MEAN=47.78;GQ_STDDEV=29.99;MQ=25;MQ0=0;NCC=6;NEGATIVE_TRAIN_SITE;QD=31.24;SOR=3.611;VQSLOD=-1.099;culprit=FS;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0;AF_OTH=0.00044563;AF_SAS=0;AN_AFR=8592;AN_AMR=13580;AN_ASJ=4766;AN_EAS=6516;AN_FIN=6434;AN_NFE=42614;AN_OTH=2244;AN_SAS=13844;AN_POPMAX=0;AN_Female=43902;AN_Male=54688\tGT:AD:DP:GQ:PL\t1/1:0,3:3:9:117,9,0\n', '22\t50962329\t.\tC\tT\t353.3\tPASS\tAC=1;AF=2.471e-05,8.236e-06;AN=121412;BaseQRankSum=3.18;ClippingRankSum=-0.769;DP=42;FS=2.652;GQ_MEAN=117.4;GQ_STDDEV=75.78;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=0.051;NCC=0;QD=8.41;ReadPosRankSum=0;SOR=1.013;VQSLOD=15.79;culprit=MQ;AF_AFR=0,0;AF_AMR=0,0;AF_ASJ=0,0;AF_EAS=0,5.7978e-05;AF_FIN=0,0;AF_NFE=4.4877e-05,0;AF_OTH=0,0;AF_SAS=0,0;AN_AFR=10370;AN_AMR=11566;AN_ASJ=9838;AN_EAS=8640;AN_FIN=6612;AN_NFE=66406;AN_OTH=904;AN_SAS=16510;AN_POPMAX=11566,8640;AN_Female=111194;AN_Male=134744;KG_AF_POPMAX=0,0;ESP_AF_POPMAX=0,0;KG_AF_GLOBAL=0,0;KG_AC=0,0;POPMAX=AMR,EAS;AC_POPMAX=1,1\tGT:AD:DP:GQ:PL\t0/1:25,17:42:99:389,0,547\n', 'X\t49061635\t.\tC\tT\t305.3\tPASS\tAC=1;AF=8.237e-05;AN=121408;BaseQRankSum=0.129;ClippingRankSum=0.776;DP=48;FS=19.442;GQ_MEAN=94.4;GQ_STDDEV=73.54;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.06;NCC=0;QD=6.36;ReadPosRankSum=1.14;SOR=3.379;VQSLOD=14.52;culprit=SOR;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00015105;AF_OTH=0;AF_SAS=0;AN_AFR=7914;AN_AMR=8790;AN_ASJ=7263;AN_EAS=6222;AN_FIN=3784;AN_NFE=43613;AN_OTH=557;AN_SAS=8723;AN_POPMAX=43613;AN_Female=111210;AN_Male=66347;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.0001486325782025233;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=8\tGT:AD:DP:GQ:PL\t0/1:31,17:48:99:341,0,733\n', 'X\t110654142\t.\tC\tA\t558.3\tPASS\tAC=1;AF=8.237e-06;AN=121408;BaseQRankSum=-0.881;ClippingRankSum=0.898;DP=53;FS=3.91;GQ_MEAN=118.87;GQ_STDDEV=133.08;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-1.272;NCC=0;QD=10.53;ReadPosRankSum=0.827;SOR=0.314;VQSLOD=14.84;culprit=MQRankSum;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=5.0032e-05;AF_OTH=0;AF_SAS=0;AN_AFR=8514;AN_AMR=9318;AN_ASJ=7286;AN_EAS=6608;AN_FIN=4530;AN_NFE=47989;AN_OTH=633;AN_SAS=10124;AN_POPMAX=47989;AN_Female=111266;AN_Male=67269;KG_AF_POPMAX=0;ESP_AF_POPMAX=0;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=1\tGT:AD:DP:GQ:PL\t0/1:27,26:53:99:594,0,614\n', 'X\t130409472\t.\tG\tA\t569.3\tPASS\tAC=1;AF=1.647e-05;AN=121410;BaseQRankSum=1.02;ClippingRankSum=0.592;DP=44;FS=1.126;GQ_MEAN=106.73;GQ_STDDEV=91.9;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=-0.9;NCC=0;QD=12.94;ReadPosRankSum=0.071;SOR=0.686;VQSLOD=15;culprit=MQ;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0;AF_FIN=0;AF_NFE=0.00010062;AF_OTH=0;AF_SAS=0;AN_AFR=8506;AN_AMR=9314;AN_ASJ=7242;AN_EAS=6631;AN_FIN=4530;AN_NFE=47726;AN_OTH=621;AN_SAS=9188;AN_POPMAX=47726;AN_Female=111204;AN_Male=66694;KG_AF_POPMAX=0;ESP_AF_POPMAX=0.0001486325782025233;KG_AF_GLOBAL=0;KG_AC=0;POPMAX=NFE;AC_POPMAX=2\tGT:AD:DP:GQ:PL\t0/1:19,25:44:99:605,0,425\n', 'X\t153219786\t.\tC\tT\t335.3\tPASS\tAC=1;AF=0.5;AN=2;BaseQRankSum=2.52;ClippingRankSum=0.107;DP=51;FS=1.101;GQ_MEAN=94.6;GQ_STDDEV=79.61;InbreedingCoeff=-0.0345;MQ=60;MQ0=0;MQRankSum=1.63;NCC=0;QD=6.57;ReadPosRankSum=2.7;SOR=0.693;VQSLOD=13.38;culprit=DP;AF_AFR=0;AF_AMR=0;AF_ASJ=0;AF_EAS=0.00015823;AF_FIN=0;AF_NFE=1.3473e-05;AF_OTH=0;AF_SAS=0;AN_AFR=12118;AN_AMR=25582;AN_ASJ=6175;AN_EAS=12640;AN_FIN=15695;AN_NFE=74223;AN_OTH=3753;AN_SAS=16623;AN_POPMAX=12640;AN_Female=108408;AN_Male=58401\tGT:AD:DP:GQ:PL\t0/1:32,19:51:99:371,0,662\n']
+infoDf initialized
+Calling to_excel...
+('xlsx data written to', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/UDN771219_stmpAnnotatedOutput.xlsx')
+('Starting Step 7 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/UDN771219_stmpAnnotatedOutput.xlsx')
+('Merging currentWorkingXls with', '/home/ccurnin/toAnnotate/ElM_PredictedDeleterious_HPO_output_forCharlie_Chloe_2.xlsx')
+AF_EAS
+('appending', 'AF_EAS')
+AF_NFE
+('appending', 'AF_NFE')
+AF_SAS
+('appending', 'AF_SAS')
+AF_AMR
+('appending', 'AF_AMR')
+AF_AFR
+('appending', 'AF_AFR')
+NC
+NI
+NA
+ESP_AF_POPMAX
+('appending', 'ESP_AF_POPMAX')
+KG_AF_POPMAX
+('appending', 'KG_AF_POPMAX')
+SD
+SF
+QUAL
+('appending', 'QUAL')
+ID
+('appending', 'ID')
+FILTER
+('appending', 'FILTER')
+GT
+('appending', 'GT')
+NJ
+SX
+GI
+AN_AFR
+('appending', 'AN_AFR')
+AN_AMR
+('appending', 'AN_AMR')
+AN_ASJ
+('appending', 'AN_ASJ')
+AN_EAS
+('appending', 'AN_EAS')
+AN_FIN
+('appending', 'AN_FIN')
+AN_NFE
+('appending', 'AN_NFE')
+AN_OTH
+('appending', 'AN_OTH')
+AN_SAS
+('appending', 'AN_SAS')
+clinvar_pathogenic
+('appending', 'clinvar_pathogenic')
+KG_AF_GLOBAL
+('appending', 'KG_AF_GLOBAL')
+KG_AC
+('appending', 'KG_AC')
+POPMAX
+('appending', 'POPMAX')
+AN_POPMAX
+('appending', 'AN_POPMAX')
+AC_POPMAX
+('appending', 'AC_POPMAX')
+AF
+('appending', 'AF')
+AN
+('appending', 'AN')
+AN_Female
+('appending', 'AN_Female')
+AN_Male
+('appending', 'AN_Male')
+    Chromosome   Position Reference Allele  \
+0            1   12443036                C   
+1            1   16902784                G   
+2            1   19166377                C   
+3            1  145416614                G   
+4            1  156905823                G   
+5            1  201338951                G   
+6            1  225607471                A   
+7            1  236758906                C   
+8            2   27601172                C   
+9            2   29293599                G   
+10           2   43571360                T   
+11           2   98430726                A   
+12           2  179306432                C   
+13           2  179567166                T   
+14           2  179590139                T   
+15           2  198352663                T   
+16           2  219140307                C   
+17           2  220022915                C   
+18           2  231120221                C   
+19           2  241401875                C   
+20           2  241826521                T   
+21           2  242075315                T   
+22                                       X   
+23                                      $   
+24           3   44803004                G   
+25           3   52486222                G   
+26           3  122873827                A   
+27           3  182948795                G   
+28           4    8621131                A   
+29           4   39501825                G   
+..         ...        ...              ...   
+114         16   88789357                T   
+115         17    7139692                T   
+116         17    7760689               GC   
+117         17    7760689               GC   
+118         17    7760689               GC   
+119         17   18205701                G   
+120         17   26715410                T   
+121         17   28380680                A   
+122         17   38975214                T   
+123         17   44143920                C   
+124         17   72860042                C   
+125         18   21406711                C   
+126         19     872114                G   
+127         19    9968062                C   
+128         19   11040069                C   
+129         19   18343943                C   
+130         19   48184370                C   
+131         19   49001133             GGGA   
+132         19   49850479                G   
+133         19   58199292                G   
+134         20   34057781                A   
+135         21   34625019                A   
+136         22   19978137                G   
+137         22   20460112             TCCG   
+138         22   50962329                C   
+139          X   49061635                C   
+140                                        
+141          X  110654142                C   
+142          X  130409472                G   
+143          X  153219786                C   
+
+                                         Sample Allele Variation Type  \
+0                                                    T            SNV   
+1                                                    T            SNV   
+2                                                    T            SNV   
+3                                                    T            SNV   
+4                                                    A            SNV   
+5                                                    A            SNV   
+6                                                    G            SNV   
+7                                                    T            SNV   
+8                                                    G            SNV   
+9                                                    A            SNV   
+10                                                   C            SNV   
+11                                                   C            SNV   
+12   CAGTTTCCATAAATGACTCTAGCCTGCAAATTGTAGTATATTCTCT...      Insertion   
+13                                                   A            SNV   
+14                                                   C            SNV   
+15                                                   C            SNV   
+16                                                   T            SNV   
+17                                                   T            SNV   
+18                                                   T            SNV   
+19                                                   T            SNV   
+20                                                   C            SNV   
+21                                                   C            SNV   
+22                                                   ´                 
+23                                                   ÷                 
+24                                                   T            SNV   
+25                                                   T            SNV   
+26                                                   T            SNV   
+27                                                   A            SNV   
+28                                                   C            SNV   
+29                                                   A            SNV   
+..                                                 ...            ...   
+114                                                  G            SNV   
+115                                                  C            SNV   
+116                                                  G       Deletion   
+117                                                  G      Insertion   
+118                                                  G       Deletion   
+119                                                  A            SNV   
+120                                                  G            SNV   
+121                                                  T            SNV   
+122                       TGCCGCCGTGGCCGCCGCTGGAGCTTCC     Breakpoint   
+123                                                  T            SNV   
+124                                                  T            SNV   
+125                                                  G            SNV   
+126                                                  A            SNV   
+127                                                  T            SNV   
+128                                                  T            SNV   
+129                                                  A            SNV   
+130                                                  T            SNV   
+131                                                  G       Deletion   
+132                                                  T            SNV   
+133                                                  A            SNV   
+134                                                  G            SNV   
+135                                                  G            SNV   
+136                                                  A            SNV   
+137                                                  T       Deletion   
+138                                                  T            SNV   
+139                                                  T            SNV   
+140                                                                 ð   
+141                                                  A            SNV   
+142                                                  A            SNV   
+143                                                  T            SNV   
+
+                    Gene Region               Gene Symbol  \
+0                        Exonic                    VPS13D   
+1                        Exonic  NBPF10 (includes others)   
+2                        Exonic                    TAS1R2   
+3                        Exonic                      HFE2   
+4                        Exonic                  ARHGEF11   
+5              Exonic; Intronic                     TNNT2   
+6                        Exonic                       LBR   
+7                        Exonic                    HEATR1   
+8                        Exonic                    ZNF513   
+9                        Exonic                   C2orf71   
+10                Exonic; ncRNA                     THADA   
+11                       Exonic                   TMEM131   
+12                  Splice Site                     PRKRA   
+13                     Intronic                       TTN   
+14             Exonic; Intronic                       TTN   
+15             Promoter; Exonic          HSPD1; SNORA105B   
+16      Exonic; Intronic; ncRNA              PNKD; TMBIM1   
+17                       Exonic                     NHEJ1   
+18             Intronic; Exonic                     SP140   
+19                       Exonic                      GPC1   
+20                       Exonic                   C2orf54   
+21                       Exonic                      PASK   
+22                                                         
+23                                                          
+24             Promoter; Exonic           KIAA1143; KIF15   
+25                       Exonic                     TNNC1   
+26                ncRNA; Exonic                     PDIA5   
+27                       Exonic                    MCF2L2   
+28                       Exonic                       CPZ   
+29                       Exonic                      UGDH   
+..                          ...                       ...   
+114                      Exonic                    PIEZO1   
+115            Promoter; Exonic               DVL2; PHF23   
+116                      Exonic                     KDM6B   
+117                      Exonic                     KDM6B   
+118  Promoter; Exonic; Intronic             NAA38; CYB5D1   
+119                      Exonic                     TOP3A   
+120                      Exonic                     SARM1   
+121               ncRNA; Exonic                    EFCAB5   
+122            Promoter; Exonic             TMEM99; KRT10   
+123                      Exonic                    KANSL1   
+124               Exonic; ncRNA                      FDXR   
+125                      Exonic                     LAMA3   
+126                      Exonic                     MED16   
+127                      Exonic                     OLFM2   
+128            Promoter; Exonic             YIPF2; TIMM29   
+129                      Exonic                     PDE4C   
+130                      Exonic                     BICRA   
+131                      Exonic                     LMTK3   
+132                      Exonic                     TEAD2   
+133               ncRNA; Exonic                    ZNF551   
+134               5'UTR; Exonic                    CEP250   
+135                      Exonic                    IFNAR2   
+136                      Exonic                     ARVCF   
+137                      Exonic  RIMBP3 (includes others)   
+138               Exonic; 3'UTR              SCO2; NCAPH2   
+139                      Exonic                   CACNA1F   
+140                                                       
+141            Exonic; Intronic                       DCX   
+142                      Exonic                     IGSF1   
+143                      Exonic                     HCFC1   
+
+                                         Transcript ID  \
+0                             NM_015378.3; NM_018156.3   
+1                                          NM_017940.4   
+2                                          NM_152232.2   
+3    NM_202004.3; NM_001316767.1; NM_145277.4; NM_2...   
+4                             NM_198236.2; NM_014784.3   
+5    NM_001001431.2; NM_001276347.1; NM_000364.3; N...   
+6                             NM_002296.3; NM_194442.2   
+7                                          NM_018072.5   
+8                          NM_144631.5; NM_001201459.1   
+9                                       NM_001029883.2   
+10   NM_022065.4; NM_001345924.1; NM_001083953.1; N...   
+11                                         NM_015348.1   
+12   NM_003690.4; NM_001139517.1; NM_001316362.1; N...   
+13   NM_001267550.2; NM_003319.4; NM_133432.3; NM_1...   
+14   NM_001267550.2; NM_003319.4; NM_133432.3; NM_1...   
+15               NR_132788.1; NM_002156.4; NM_199440.1   
+16   NM_015488.4; NM_001321436.1; NM_001321427.1; N...   
+17                                         NM_024782.2   
+18   NM_001278453.1; NM_001278452.1; NM_007237.4; N...   
+19                                         NM_002081.2   
+20         NM_001282921.1; NM_024861.3; NM_001085437.2   
+21   NM_001252120.1; NM_001252124.1; NM_001252122.1...   
+22                                                       
+23                                                       
+24            NM_020242.2; NM_001320334.1; NM_020696.3   
+25                                         NM_003280.2   
+26                            NM_006810.3; NR_028444.1   
+27                                         NM_015078.3   
+28         NM_001014447.2; NM_001014448.2; NM_003652.3   
+29         NM_001184701.1; NM_003359.3; NM_001184700.1   
+..                                                 ...   
+114                                     NM_001142864.3   
+115  NM_001284518.1; NM_024297.2; NM_004422.2; NM_0...   
+116                     NM_001348716.1; NM_001080424.2   
+117                     NM_001348716.1; NM_001080424.2   
+118  NM_144607.5; NM_032356.5; NM_001320924.2; NM_0...   
+119                        NM_001320759.1; NM_004618.4   
+120                                        NM_015077.3   
+121           NM_198529.3; NR_026738.1; NM_001145053.1   
+122  NM_145274.3; NM_001195386.1; NM_000421.3; NM_0...   
+123        NM_001193465.1; NM_015443.3; NM_001193466.1   
+124  NM_001258013.3; NM_024417.4; NM_001258015.2; N...   
+125                        NM_198129.2; NM_001127717.2   
+126                                        NM_005481.2   
+127        NM_001304348.1; NM_058164.3; NM_001304347.1   
+128  NM_138358.2; NM_001321440.1; NM_024029.4; NM_0...   
+129                        NM_000923.5; NM_001330172.1   
+130                                        NM_015711.3   
+131                                     NM_001080434.1   
+132  NM_001256662.1; NM_001256660.1; NM_001256661.1...   
+133           NR_073102.1; NM_001270938.1; NM_138347.4   
+134                        NM_001318219.1; NM_007186.5   
+135  NM_001289128.1; NM_207585.2; NM_001289125.1; N...   
+136                                        NM_001670.2   
+137                                        NM_015672.1   
+138  NM_001169110.1; NM_001169111.1; NM_152299.3; N...   
+139        NM_001256789.2; NM_001256790.2; NM_005183.3   
+140                                                     
+141  NM_178153.2; NM_178151.2; NM_000555.3; NM_0011...   
+142        NM_001555.4; NM_001170961.1; NM_001170962.1   
+143                                        NM_005334.2   
+
+                                    Transcript Variant  \
+0                               c.11192C>T; c.11117C>T   
+1                                          c.2097A>C *   
+2                                            c.2236G>A   
+3                         c.281G>T; c.620G>T; c.959G>T   
+4                                 c.4658C>T; c.4538C>T   
+5                  c.53-1596C>T; c.68-1596C>T; c.90C>T   
+6                                             c.396T>C   
+7                                            c.1024G>A   
+8                                   c.680G>C; c.866G>C   
+9                                            c.3529C>T   
+10                     c.4244A>G; c.4241A>G; c.4121A>G   
+11                                           c.1418T>G   
+12   c.515-2_515-1insTAAGAGAGAATATACTACAATTTGCAGGCT...   
+13   c.13657+35643A>T; c.13858+35643A>T; c.26701+15...   
+14   c.13282+12670A>G; c.17060A>G; c.19841A>G; c.13...   
+15                                  c.1488A>G; unknown   
+16                   c.236+4035C>T; c.827G>A; c.494G>A   
+17                                            c.170G>A   
+18      c.1034C>T; c.872C>T; c.1214C>T; c.1159+2089C>T   
+19                                            c.593C>T   
+20                       c.1310A>G; c.806A>G; c.863A>G   
+21                                c.1172A>G; c.1277A>G   
+22                                                       
+23                                                       
+24                                  c.91C>A; c.-354G>T   
+25                                            c.102C>A   
+26                                           c.1283A>T   
+27                                           c.1873C>T   
+28                     c.1746A>C; c.1713A>C; c.1335A>C   
+29                     c.1132C>T; c.1222C>T; c.1423C>T   
+..                                                 ...   
+114                                          c.4556A>C   
+115           c.353A>G; c.542A>G; c.554A>G; c.-2111A>G   
+116                                 c.786_791delACCACC   
+117                                 c.786_791dupACCACC   
+118     c.4-174delG; c.-763delC; c.81+11delG; c.52delG   
+119                                 c.691C>T; c.406C>T   
+120                                          c.1775T>G   
+121                               c.1708A>T; c.1540A>T   
+122  TMEM99 - KRT10:A1573_A1755; KRT10:A1_A1573 - T...   
+123                                          c.1831G>A   
+124  c.994G>A; c.1168G>A; c.1150G>A; c.1243G>A; c.1...   
+125                                          c.2617C>G   
+126                                          c.1910C>T   
+127                       c.223G>A; c.457G>A; c.529G>A   
+128                     c.-839G>A; c.-913G>A; c.474C>T   
+129                                            c.59G>T   
+130                                          c.1943C>T   
+131                                  c.3277_3279delTCC   
+132             c.493C>A; c.886C>A; c.889C>A; c.877C>A   
+133                               c.1565G>A; c.1649G>A   
+134                                c.918A>G; c.-982A>G   
+135                                           c.593A>G   
+136                                           c.181C>T   
+137                                  c.1187_1189delCGG   
+138                                c.512G>A; c.*525C>T   
+139                    c.5896G>A; c.5863G>A; c.5701G>A   
+140                                                     
+141                              c.-22-494G>T; c.61G>T   
+142                    c.3179C>T; c.3137C>T; c.3164C>T   
+143                                          c.4064G>A   
+
+                                       Protein Variant    ...     \
+0                                   p.A3731V; p.A3706V    ...      
+1                                              p.Q699H    ...      
+2                                              p.A746T    ...      
+3                             p.G94V; p.G207V; p.G320V    ...      
+4                                   p.T1513I; p.T1553I    ...      
+5                                               p.D30D    ...      
+6                                              p.Y132Y    ...      
+7                                              p.D342N    ...      
+8                                     p.C289S; p.C227S    ...      
+9                                             p.R1177W    ...      
+10                        p.Q1414R; p.Q1374R; p.Q1415R    ...      
+11                                             p.L473R    ...      
+12                                                 NaN    ...      
+13                                                 NaN    ...      
+14                        p.N6931S; p.N6614S; p.N5687S    ...      
+15                                             p.Q496Q    ...      
+16                                    p.R165Q; p.R276Q    ...      
+17                                              p.R57Q    ...      
+18                           p.S405F; p.S345F; p.S291F    ...      
+19                                             p.A198V    ...      
+20                           p.Q269R; p.Q288R; p.Q437R    ...      
+21                                    p.Q426R; p.Q391R    ...      
+22                                                        ...      
+23                                                   (    ...      
+24                                              p.P31T    ...      
+25                                              p.G34G    ...      
+26                                             p.H428L    ...      
+27                                             p.R625C    ...      
+28                           p.Q445H; p.Q582H; p.Q571H    ...      
+29                           p.P378S; p.P408S; p.P475S    ...      
+..                                                 ...    ...      
+114                                           p.Q1519P    ...      
+115                          p.N118S; p.N181S; p.N185S    ...      
+116                                     p.P263_P264del    ...      
+117                                     p.P263_P264dup    ...      
+118                                          p.A18fs*6    ...      
+119                                   p.P136S; p.P231S    ...      
+120                                            p.F592C    ...      
+121                                   p.R570*; p.R514*    ...      
+122  TMEM99 - KRT10:S525_*585; KRT10:M1_S525 - TMEM...    ...      
+123                                            p.V611I    ...      
+124  p.E344K; p.E427K; p.E390K; p.E415K; p.E332K; p...    ...      
+125                                            p.L873V    ...      
+126                                            p.S637F    ...      
+127                           p.V75M; p.V153M; p.V177M    ...      
+128                                            p.D158D    ...      
+129                                             p.R20L    ...      
+130                                            p.P648L    ...      
+131                                         p.S1093del    ...      
+132                 p.P296T; p.P165T; p.P297T; p.P293T    ...      
+133                                   p.R550Q; p.R522Q    ...      
+134                                            p.I306M    ...      
+135                                            p.D198G    ...      
+136                                             p.P61S    ...      
+137                                          p.A396del    ...      
+138                                            p.R171Q    ...      
+139                       p.D1966N; p.D1955N; p.D1901N    ...      
+140                                                      ...      
+141                                             p.E21*    ...      
+142                       p.T1060I; p.T1046I; p.T1055I    ...      
+143                                           p.R1355H    ...      
+
+    clinvar_pathogenic              KG_AF_GLOBAL     KG_AC       POPMAX  \
+0             no value    0.00019968050764873624         1          NFE   
+1             no value                       0,0       0,0      AFR,NFE   
+2             no value                         0         0          SAS   
+3                    1                         0         0          NFE   
+4             no value    0.00019968050764873624         1          NFE   
+5                    0                         0         0          NFE   
+6             no value                         0         0          NFE   
+7             no value    0.00019968050764873624         1          AMR   
+8             no value    0.00019968050764873624         1          NFE   
+9             no value     0.0005990415229462087         3          NFE   
+10            no value                         0         0          NFE   
+11            no value                         0         0          NFE   
+12            no value                  no value  no value     no value   
+13            no value                       0,0       0,0      NFE,EAS   
+14            no value    0.00019968050764873624         1          NFE   
+15            no value                         0         0          NFE   
+16            no value                  no value  no value     no value   
+17            no value                         0         0          NFE   
+18            no value                  no value  no value     no value   
+19            no value    0.00019968050764873624         1          NFE   
+20            no value                         0         0          NFE   
+21            no value                         0         0          NFE   
+22                                                                    P   
+23                                                       °            Æ   
+24            no value  0.00019968050764873624,0       1,0      NFE,NFE   
+25            no value                  no value  no value     no value   
+26            no value  0.00019968050764873624,0       1,0      NFE,SAS   
+27            no value                         0         0          NFE   
+28            no value                  no value  no value     no value   
+29            no value    0.00019968050764873624         1          NFE   
+..                 ...                       ...       ...          ...   
+114           no value                         0         0          NFE   
+115           no value                  no value  no value     no value   
+116           no value                      NA,0      NA,0      NFE,NFE   
+117           no value                      NA,0      NA,0      NFE,NFE   
+118           no value                      NA,0      NA,0      NFE,NFE   
+119           no value                  no value  no value     no value   
+120           no value                  no value  no value     no value   
+121           no value                  no value  no value     no value   
+122           no value                       0,0       0,0      SAS,SAS   
+123           no value                         0         0          NFE   
+124           no value                         0         0          NFE   
+125           no value                  no value  no value     no value   
+126           no value  0.00019968050764873624,0       1,0      AFR,NFE   
+127           no value                         0         0          NFE   
+128           no value                  no value  no value     no value   
+129           no value                  no value  no value     no value   
+130           no value                  no value  no value     no value   
+131           no value                         0         0          NaN   
+132           no value                     0,0,0     0,0,0  NFE,NFE,AFR   
+133           no value    0.00019968050764873624         1          AMR   
+134           no value                  no value  no value     no value   
+135           no value    0.00019968050764873624         1          NFE   
+136           no value                  no value  no value     no value   
+137           no value                  no value  no value     no value   
+138           no value                       0,0       0,0      AMR,EAS   
+139           no value                         0         0          NFE   
+140                                                                    
+141           no value                         0         0          NFE   
+142           no value                         0         0          NFE   
+143           no value                  no value  no value     no value   
+
+                            AN_POPMAX AC_POPMAX  \
+0                               66504        18   
+1                          9242,64374     47,31   
+2                               16512         4   
+3                               66730        21   
+4                               66544        26   
+5                               66732        18   
+6                               66696         7   
+7                               11554         4   
+8                               65486         9   
+9                               66612        10   
+10                              49192        31   
+11                              66698         4   
+12   111078,111078,9778,22276,0,33338  no value   
+13                         66644,8626      25,1   
+14                              49592        24   
+15                              66082         5   
+16                              17234  no value   
+17                              66708        26   
+18                             111404  no value   
+19                              42376        30   
+20                              66708        30   
+21                              66676        24   
+22                                  P         G   
+23                                              
+24                        65458,65458      29,1   
+25                           no value  no value   
+26                        66730,16512      38,1   
+27                              66602         8   
+28                           no value  no value   
+29                              66664        51   
+..                                ...       ...   
+114                              6060         2   
+115                          no value  no value   
+116                       65204,65204       1,3   
+117                       65204,65204       1,3   
+118                       65204,65204       1,3   
+119                            111448  no value   
+120                          no value  no value   
+121                          no value  no value   
+122                         6972,6972     180,1   
+123                             66228         5   
+124                             66286        21   
+125                           69532,0  no value   
+126                        9252,61838       3,1   
+127                             66632        25   
+128                            105600  no value   
+129                             24588  no value   
+130                        36982,8840  no value   
+131                               NaN       NaN   
+132                 66708,66708,10404     4,1,1   
+133                             11576         1   
+134                            111648  no value   
+135                             66566        25   
+136                       33198,17114  no value   
+137                                 0  no value   
+138                        11566,8640       1,1   
+139                             43613         8   
+140                                           à   
+141                             47989         1   
+142                             47726         2   
+143                             12640  no value   
+
+                                AF      AN AN_Female   AN_Male  
+0                        0.0001483  121412    110822    134200  
+1               0.002595,0.0004613  121394    104668    127662  
+2                        5.765e-05  121412    111356    134900  
+3                         0.000173  121412    111310    134868  
+4                        0.0002389  121412    111286    134802  
+5                        0.0001647  121412    111356    134904  
+6                        5.766e-05  121410    111280    134756  
+7                        0.0001977  121412    111184    134686  
+8                        7.414e-05  121398    104998    129290  
+9                        0.0001074  121062    111304    134876  
+10                        0.000298  120796    104060    125692  
+11                        3.31e-05  120828    111276    134814  
+12                             0.5       2    110758    134278  
+13             0.0002069,8.275e-06  120842    111210    134806  
+14                       0.0002152  120834    108408    131060  
+15                       4.942e-05  121408    111206    134730  
+16                             0.5       2    111054    134560  
+17                       0.0002224  121412    111350    134904  
+18                             0.5       2    111198    134674  
+19                       0.0003257  119748    100038    125804  
+20                       0.0002481  120902    110594    134268  
+21                       0.0002059  121412    111344    134904  
+22                                                             
+23                                                              
+24               0.00028,8.236e-06  121412    110972    134512  
+25                             0.5       2  no value  no value  
+26             0.0003459,1.647e-05  121412    111346    134878  
+27                       7.413e-05  121412    111142    134614  
+28                             0.5       2  no value  no value  
+29                        0.000486  121408    111086    134452  
+..                             ...     ...       ...       ...  
+114                      7.788e-05   25680     66444     78380  
+115                            0.5       2  no value  no value  
+116            8.237e-06,2.471e-05  121404    110502    134386  
+117            8.237e-06,2.471e-05  121404    110502    134386  
+118            8.237e-06,2.471e-05  121404    110502    134386  
+119                            0.5       2    111128    134702  
+120                            0.5       2  no value  no value  
+121                            0.5       2  no value  no value  
+122                0.014,6.154e-05   16250     29008     40974  
+123                      4.118e-05  121410    110722    133876  
+124                      0.0001812  121412    111046    134386  
+125                            0.5       2     79228     91900  
+126            0.0001584,8.337e-06  119948    105120    129690  
+127                      0.0002141  121412    111318    134856  
+128                            0.5       2    104450    129866  
+129                            0.5       2     70426     83756  
+130                            0.5       2     45944     56914  
+131                      1.729e-05  115704     40658     47206  
+132  3.295e-05,1.647e-05,3.295e-05  121412    110464    134214  
+133                      8.236e-06  121412    111338    134884  
+134                            0.5       2    111326    134844  
+135                      0.0002224  121412    111254    134730  
+136                            0.5       2    106358    130846  
+137                              1       2     43902     54688  
+138            2.471e-05,8.236e-06  121412    111194    134744  
+139                      8.237e-05  121408    111210     66347  
+140                                                         
+141                      8.237e-06  121408    111266     67269  
+142                      1.647e-05  121410    111204     66694  
+143                            0.5       2    108408     58401  
+
+[144 rows x 73 columns]
+('Starting Step 8 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/UDN771219_merged.xlsx')
+('Annotating with websearchAnnotations', ['omim', 'fathmm', 'mTaster', 'sift', 'phylop', 'mgi', 'rvis'])
+0
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=VPS13D&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=VPS13D')
+1
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=NBPF10 (includes others)&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=NBPF10 (includes others)')
+2
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TAS1R2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TAS1R2')
+3
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=HFE2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=HFE2')
+4
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ARHGEF11&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ARHGEF11')
+5
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TNNT2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TNNT2')
+6
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=LBR&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=LBR')
+7
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=HEATR1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=HEATR1')
+8
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ZNF513&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ZNF513')
+9
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=C2orf71&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=C2orf71')
+10
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=THADA&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=THADA')
+11
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TMEM131&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TMEM131')
+12
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PRKRA&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PRKRA')
+13
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TTN&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TTN')
+14
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TTN&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TTN')
+15
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=HSPD1; SNORA105B&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=HSPD1; SNORA105B')
+16
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PNKD; TMBIM1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PNKD; TMBIM1')
+17
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=NHEJ1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=NHEJ1')
+18
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SP140&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SP140')
+19
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=GPC1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=GPC1')
+20
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=C2orf54&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=C2orf54')
+21
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PASK&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PASK')
+22
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=nan&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=nan')
+23
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=nan&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=nan')
+24
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=KIAA1143; KIF15&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=KIAA1143; KIF15')
+25
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TNNC1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TNNC1')
+26
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PDIA5&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PDIA5')
+27
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MCF2L2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MCF2L2')
+28
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CPZ&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CPZ')
+29
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=UGDH&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=UGDH')
+30
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CAMK2D&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CAMK2D')
+31
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=KIAA1109&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=KIAA1109')
+32
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=AGGF1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=AGGF1')
+33
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CHD1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CHD1')
+34
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ALDH7A1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ALDH7A1')
+35
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=LARS&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=LARS')
+36
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PPP2R2B&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PPP2R2B')
+37
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=EXOC2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=EXOC2')
+38
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PRRC2A&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PRRC2A')
+39
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=HLA-DQA2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=HLA-DQA2')
+40
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=HLA-DQA2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=HLA-DQA2')
+41
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=KIFC1; PHF1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=KIFC1; PHF1')
+42
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=KIFC1; PHF1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=KIFC1; PHF1')
+43
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SYNGAP1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SYNGAP1')
+44
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=DST&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=DST')
+45
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CEP162&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CEP162')
+46
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=AKAP7&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=AKAP7')
+47
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=NFE2L3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=NFE2L3')
+48
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CBX3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CBX3')
+49
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CBX3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CBX3')
+50
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MGAM&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MGAM')
+51
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=GALNT11&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=GALNT11')
+52
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=HTR5A; HTR5A-AS1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=HTR5A; HTR5A-AS1')
+53
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MFHAS1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MFHAS1')
+54
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ESCO2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ESCO2')
+55
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ADAM9&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ADAM9')
+56
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=FER1L6&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=FER1L6')
+57
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MAFA&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MAFA')
+58
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SMARCA2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SMARCA2')
+59
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SPATA6L&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SPATA6L')
+60
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=HRCT1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=HRCT1')
+61
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=WNK2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=WNK2')
+62
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ZNF483&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ZNF483')
+63
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=STRBP&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=STRBP')
+64
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=POMT1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=POMT1')
+65
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=VAV2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=VAV2')
+66
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=NOTCH1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=NOTCH1')
+67
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ENTPD2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ENTPD2')
+68
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ENTPD2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ENTPD2')
+69
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=DIP2C&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=DIP2C')
+70
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CUBN&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CUBN')
+71
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CCDC7&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CCDC7')
+72
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PBLD&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PBLD')
+73
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=KIF20B&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=KIF20B')
+74
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=FFAR4&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=FFAR4')
+75
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ABCC2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ABCC2')
+76
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SCD&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SCD')
+77
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TECTB&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TECTB')
+78
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MUC6&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MUC6')
+79
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MUC6&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MUC6')
+80
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MUC6&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MUC6')
+81
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MUC6&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MUC6')
+82
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MUC5B&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MUC5B')
+83
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CARS&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CARS')
+84
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=DCHS1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=DCHS1')
+85
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=WT1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=WT1')
+86
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SLC29A2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SLC29A2')
+87
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=GRM5&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=GRM5')
+88
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MMP10&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MMP10')
+89
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=DYNC2H1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=DYNC2H1')
+90
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CD27-AS1; CD27; TAPBPL&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CD27-AS1; CD27; TAPBPL')
+91
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=')
+92
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=APOBEC1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=APOBEC1')
+93
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=YBX3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=YBX3')
+94
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=KRT77&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=KRT77')
+95
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=LGR5&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=LGR5')
+96
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MYF6&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MYF6')
+97
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SKA3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SKA3')
+98
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SKA3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SKA3')
+99
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SKA3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SKA3')
+100
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ENOX1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ENOX1')
+101
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=GPR18; UBAC2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=GPR18; UBAC2')
+102
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=COL4A2; COL4A2-AS2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=COL4A2; COL4A2-AS2')
+103
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TMCO3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TMCO3')
+104
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=JPH4&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=JPH4')
+105
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SPTB&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SPTB')
+106
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=UNC13C&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=UNC13C')
+107
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CHRNA3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CHRNA3')
+108
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ZFAND6&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ZFAND6')
+109
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ALPK3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ALPK3')
+110
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MSLN&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MSLN')
+111
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PKD1P3-NPIPA1; NPIPA7 (includes others)&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PKD1P3-NPIPA1; NPIPA7 (includes others)')
+112
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=FAM57B&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=FAM57B')
+113
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=nan&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=nan')
+114
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PIEZO1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PIEZO1')
+115
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=DVL2; PHF23&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=DVL2; PHF23')
+116
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=KDM6B&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=KDM6B')
+117
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=KDM6B&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=KDM6B')
+118
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=NAA38; CYB5D1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=NAA38; CYB5D1')
+119
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TOP3A&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TOP3A')
+120
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SARM1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SARM1')
+121
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=EFCAB5&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=EFCAB5')
+122
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TMEM99; KRT10&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TMEM99; KRT10')
+123
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=KANSL1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=KANSL1')
+124
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=FDXR&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=FDXR')
+125
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=LAMA3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=LAMA3')
+126
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=MED16&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=MED16')
+127
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=OLFM2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=OLFM2')
+128
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=YIPF2; TIMM29&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=YIPF2; TIMM29')
+129
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=PDE4C&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=PDE4C')
+130
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=BICRA&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=BICRA')
+131
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=LMTK3&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=LMTK3')
+132
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=TEAD2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=TEAD2')
+133
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ZNF551&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ZNF551')
+134
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CEP250&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CEP250')
+135
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=IFNAR2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=IFNAR2')
+136
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=ARVCF&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=ARVCF')
+137
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=RIMBP3 (includes others)&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=RIMBP3 (includes others)')
+138
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=SCO2; NCAPH2&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=SCO2; NCAPH2')
+139
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=CACNA1F&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=CACNA1F')
+140
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=')
+141
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=DCX&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=DCX')
+142
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=IGSF1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=IGSF1')
+143
+('Opening', u'http://www.informatics.jax.org/allele/report.txt?phenotype=&nomen=HCFC1&chromosome=any&cm=&coordinate=&coordUnit=bp')
+('Opening', u'http://genic-intolerance.org/Search?query=HCFC1')
+('Annotated XLS is at', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/UDN771219_merged.xlsx')
+('Starting Step 9 with', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/UDN771219_merged.xlsx')
+('More legible XLS at', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/UDN771219_merged.xlsx')
+('Generating PowerPoint', 'python powerpoint_export.py /scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/UDN771219_merged.xlsx UDN771219 /scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/')
+('cwd', '/home/ccurnin/stmp4')
+('Final VCF', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/preprocessed-UDN771219-SL209167_fbL_final_annotated_vcf.vcf')
+('Final XLS', '/scratch/PI/euan/common/udn/gateway/data/UDN771219/stmp-2/UDN771219_merged.xlsx')
+Done.

@@ -1,4 +1,4 @@
-#written by Noah Friedman
+#Written by Noah Friedman, edited by Charlie Curnin.
 """
 Tools for processing the final xls for use by GCs and visualization
 """
@@ -19,24 +19,32 @@ columnMappings = {'CHROM': ['CHROM', 'Chromosome'], 'POS': ['POS', 'Position']}
 #I do this with inefficient looping over both spreadsheets
 #and looping over DFs
 #this will not work if we have big spreadsheets, in that case we need to implement a pandas merge
-def merge_and_add_columns(df1, df2, userColumnsToAdd, idxForColMappingsdf1, idxForColMappingsdf2):
-	#now do the merge
-	colNames = df1.columns.tolist() + userColumnsToAdd
-	numRows = len(df1.index)
+def merge_and_add_columns(dfUser, dfSTMP, userColumnsToAdd):
+
+	colNames = dfUser.columns.tolist() + userColumnsToAdd
+	numRows = len(dfUser.index)
 	returnMergedDf = pd.DataFrame(np.empty((numRows, len(colNames)), dtype=str), columns=colNames) 
-	for index, row in df1.iterrows():
-		df1key = str(row[columnMappings['CHROM'][idxForColMappingsdf1]]) + ':' + str(row[columnMappings['POS'][idxForColMappingsdf1]])
-		for idx, r in df2.iterrows():
-			df2Key = str(r[columnMappings['CHROM'][idxForColMappingsdf2]]) + ':' + str(r[columnMappings['POS'][idxForColMappingsdf2]])
-			#print df2Key
-			#print '__________'
-			if df1key == df2Key:
-				#copy over values from pipeline df
-				for column in df1.columns.tolist():
-					returnMergedDf.set_value(index, column, row[column])
-				#copy over values from userDf
+
+	for index, row in dfUser.iterrows():
+
+		print(row)
+		#Copy data from user sheet
+		for column in dfUser.columns.tolist(): 
+			print(index, column, row[column])
+			returnMergedDf.set_value(index, column, row[column])
+
+		#Copy data from STMP-generated sheet, if we find the variant
+		dfUserVariantKey = str(row["Chromosome"]) + ':' + str(row["Position"])
+	
+		for idx, r in dfSTMP.iterrows():
+
+			dfSTMPVariantKey = str(r["CHROM"]) + ':' + str(r["POS"])
+			if dfUserVariantKey == dfSTMPVariantKey: #Merge the rows
+				print("match for", dfSTMPVariantKey)
+				#copy over values from stmp
 				for column in userColumnsToAdd:
 					returnMergedDf.set_value(index, column, r[column])
+		
 	return returnMergedDf
 
 #Converts a value to float iff it can be
@@ -131,9 +139,10 @@ def merge_columns_across_spreadsheets(spreadSheetPipeline, spreadSheetUser, outp
 	if len(sheetDictUser) != 1:
 		print 'error we expect an excel sheet from the user with a single sheet'
 		sys.exit()
-	
-	mergedDfPipeline = merge_and_add_columns(sheetDictPipeline[sheetDictPipelineNames[1]], sheetDictUser[sheetDictUserNames[0]], [ #indicies indicate where we can find the two actual data spreadsheets
-	'Transcript ID', 'Transcript Variant', 'Protein Variant', 'Gene Region', 'Gene Symbol'], 0, 1) #list of columns to add from the user uploaded columns
+
+	#this variable is never used (and user sheet should be first argument)
+	#mergedDfPipeline = merge_and_add_columns(sheetDictPipeline[sheetDictPipelineNames[1]], sheetDictUser[sheetDictUserNames[0]], [ #indicies indicate where we can find the two actual data spreadsheets
+	#'Transcript ID', 'Transcript Variant', 'Protein Variant', 'Gene Region', 'Gene Symbol'], 0, 1) #list of columns to add from the user uploaded columns 
 	
 	colsToAddToDf = ['AF_EAS', 'AF_NFE', 'AF_SAS', 'AF_AMR', 'AF_AFR', 
 	'NC', 'NI', 'NA', 'ESP_AF_POPMAX', 'KG_AF_POPMAX', 
@@ -150,12 +159,11 @@ def merge_columns_across_spreadsheets(spreadSheetPipeline, spreadSheetUser, outp
 			colsFinal.append(x)
 
 	# the 0s /1s relate to is it the GC xls first or the pipeline xls first
-	mergedDfUser = merge_and_add_columns(sheetDictUser[sheetDictUserNames[0]], sheetDictPipeline[sheetDictPipelineNames[1]], colsFinal, 1, 0)
+	mergedDfUser = merge_and_add_columns(sheetDictUser[sheetDictUserNames[0]], sheetDictPipeline[sheetDictPipelineNames[1]], colsFinal)
 	add_allele_freq_summary_column(mergedDfUser)
 
 	#if False:
 	#	sort_sheets(mergedDfUser)
-
 	#Save everything to an XLSX
 	outputXlsxName = os.path.join(outputDir, udnId + '_merged.xlsx')
 

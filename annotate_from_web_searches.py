@@ -37,6 +37,7 @@ def find_first_correct_result_url(firstFiftyResults, correctWebpageString):
 
  #helper function for getting raw html of a webpage
 def get_raw_html(url):
+	print("Opening", url)
 	f = urllib.urlopen(url)
 	return f.read()
 
